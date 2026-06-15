@@ -44,7 +44,7 @@ The project focuses on public safety and can be developed using web technologies
 Residents often do not know how to report water-related issues such as pollution, leaks, blocked drains, or unsafe water conditions.
 
 ### Target Users
-Community residents, environmental agencies, and local government staff.
+Community residents, environmental agencies, and local government staff. 
 
 ### Current Alternative
 People report problems through phone calls, social media posts, or in-person visits to government offices.
