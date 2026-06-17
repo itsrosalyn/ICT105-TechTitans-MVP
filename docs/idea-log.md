@@ -1,10 +1,11 @@
 # Initial IT Venture Idea Log
 
-## Idea 1: QR Code Lecture Attendance System
+## Idea 1: QR code attendance system with GPS verification
 
 ### Problem Area
 
-Students often do not know their attendance percentage, and lectures find it difficult to identify students with poor attendance before it affects their academic performance.
+Manual attendance tracking consumes valuable lecture time, is prone to human error, and may allow proxy attendance. Students and lecturers also lack a convenient way to monitor attendance records throughout the semester.
+
 ### Target Users
 
 University students, lecturers, and university administrators.
@@ -14,15 +15,15 @@ University students, lecturers, and university administrators.
 Attendance and academic performance are usually managed seperately, making it difficult to monitor student progress effectively.
 ### Proposed IT Solution
 
-A web-based platform that records attendance and displays attendance statistics, class participation, and alerts for students who are at risk due to low attendance.
+A web-based platform that allows lecturers to generate a unique QR code for each lecture session. Students scan the QR code to record attendance, while the system verifies their location using GPS to ensure they are physically present in the classroom. The platform stores attendance records automatically and provides dashboards, attendance statistics, and alerts for students with low attendance.
 
 ### Possible Technology
 
-HTML/CSS/JavaScript, MySQL or Firebase database, QR code generation and scanning, user authentication, dashboard.
+HTML/CSS/JavaScript, MySQL or Firebase database, QR code generation and scanning, GPS/Geolocation API, user authentication, dashboard, cloud hosting.
 
 ### Why This is Suitable
 
-The system improves attendance accuracy, reduces classroom time spent on attendance, and provides secure digital records using fundamental web development technologies.
+The system improves attendance accuracy, reduces classroom time spent on attendance, helps prevent proxy attendance through location verification, and provides secure digital attendance records using technologies that are feasible to implement within the project timeline.
 
 ⸻
 
