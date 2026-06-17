@@ -38,29 +38,33 @@ Our most important team decision was finalizing the core theme of our venture: w
 
 ## What We Completed
 
-Brainstormed five attendance system ideas for educational institutions.
+Brainstormed three IT startup ideas and identified six related opportunities/problems affecting students, lecturers, and university administrators.
 Evaluated each idea using the NUF (New, Useful, Feasible) scoring method.
 Selected the best project based on the highest NUF score.
 
 ## Selected Opportunity
 
-### QR Code Attendance System
+### QR code attendance system with GPS verification
 
 ## Why We Selected It
 
-The QR Code Attendance System was selected because it achieved the highest NUF score (26 points) and ranked 1st among all proposed ideas.
+The QR Code Attendance System with GPS Verification was selected because it achieved the highest NUF score (26 points) and ranked first among the proposed ideas.
 
-New (8): Uses QR code technology to modernize the attendance process.
-Useful (9): Provides fast and accurate attendance tracking while reducing manual work and proxy attendance.
-Feasible (9): Can be developed using web technologies, a database, and QR code integration within the project timeline.
+New (8): Uses QR code and GPS verification technology to modernize attendance tracking and reduce proxy attendance.
+Useful (9): Saves lecture time, improves attendance accuracy, reduces manual work, and helps prevent students from checking in remotely.
+Feasible (9): Can be developed using web technologies, geolocation APIs, databases, and QR code libraries within the semester timeline.
 
-The team concluded that this idea offers the best balance of innovation, usefulness, and feasibility.
+The team concluded that this idea provides the best balance of innovation, usefulness, and development feasibility.
 
 ## What We Rejected
 
+### Online Course Registration System
+
+This idea aims to reduce registration delays and scheduling conflicts by providing an online platform for course enrollment and availability checking. While useful, it was ranked lower than the attendance system because existing registration systems already provide similar functionality.
+
 ### Smart Campus Parking System
 
-Although the idea addresses a real campus problem, it was rejected because it requires more advanced technologies such as GPS integration, real-time parking data, and possibly IoT sensors. These requirements make it more complex and less feasible within the available development time.
+This idea aims to help students and staff find available parking spaces and reduce congestion during peak hours. However, the system may require additional technologies, real-time parking information, and more complex implementation, making it less feasible within the available project timeframe.
 
 ## What We Learned
 
@@ -72,9 +76,9 @@ QR code technology is a simple and effective solution for improving classroom at
 
 Opportunity scan file: Completed
 NUF scoring file: Completed
-Selected opportunity file: QR Code Attendance System
+Selected opportunity file: QR code attendance system with GPS verification
 GitHub issue screenshot: Attached
-Commit link: (Insert your GitHub commit link here)
+Commit link: Submitted
 
 ## Plan for Lab 03
 
