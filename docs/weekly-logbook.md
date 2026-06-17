@@ -50,9 +50,9 @@ Selected the best project based on the highest NUF score.
 
 The QR Code Attendance System with GPS Verification was selected because it achieved the highest NUF score (26 points) and ranked first among the proposed ideas.
 
-New (8): Uses QR code and GPS verification technology to modernize attendance tracking and reduce proxy attendance.
-Useful (9): Saves lecture time, improves attendance accuracy, reduces manual work, and helps prevent students from checking in remotely.
-Feasible (9): Can be developed using web technologies, geolocation APIs, databases, and QR code libraries within the semester timeline.
+- New (8): Uses QR code and GPS verification technology to modernize attendance tracking and reduce proxy attendance.
+- Useful (9): Saves lecture time, improves attendance accuracy, reduces manual work, and helps prevent students from checking in remotely.
+- Feasible (9): Can be developed using web technologies, geolocation APIs, databases, and QR code libraries within the semester timeline.
 
 The team concluded that this idea provides the best balance of innovation, usefulness, and development feasibility.
 
@@ -68,17 +68,18 @@ This idea aims to help students and staff find available parking spaces and redu
 
 ## What We Learned
 
-NUF scoring helps compare different ideas objectively.
-A successful project should be innovative, useful, and feasible to develop.
-QR code technology is a simple and effective solution for improving classroom attendance management.
+- Opportunity scanning helps identify real-world problems that can be solved using technology.
+- NUF scoring provides a structured way to compare multiple ideas objectively.
+- A successful project should be innovative, useful to users, and feasible to develop with available resources.
+- QR code and GPS technologies can be combined to create a practical solution for attendance management.
 
 ## Evidence of Work
 
-Opportunity scan file: Completed
-NUF scoring file: Completed
-Selected opportunity file: QR code attendance system with GPS verification
-GitHub issue screenshot: Attached
-Commit link: Submitted
+- Opportunity scan file: Completed
+- NUF scoring file: Completed
+- Selected opportunity file: QR code attendance system with GPS verification
+- GitHub issue screenshot: Attached
+- Commit link: Submitted
 
 ## Plan for Lab 03
 
