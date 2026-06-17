@@ -4,19 +4,17 @@
 
 ### Problem Area
 
-Lecturers spend valuable class time taking attendance manually, which is time-consuming and may result in inaccurate or proxy attendance records.
-
+Students often do not know their attendance percentage, and lectures find it difficult to identify students with poor attendance before it affects their academic performance.
 ### Target Users
 
 University students, lecturers, and university administrators.
 
 ### Current Alternative
 
-Attendance is recorded using paper sign-in sheets, verbal roll calls, or basic online attendance systems.
-
+Attendance and academic performance are usually managed seperately, making it difficult to monitor student progress effectively.
 ### Proposed IT Solution
 
-A web-based or mobile application that allows lecturers to generate a unique QR code for each class. Students scan the QR code to record their attendance, while lecturers can monitor attendance records and generate reports in real time.
+A web-based platform that records attendance and displays attendance statistics, class participation, and alerts for students who are at risk due to low attendance.
 
 ### Possible Technology
 
