@@ -47,7 +47,9 @@ Possible technologies:
 | Lab 2 | IT Opportunity Scanning and NUF Evaluation | Oppprtunity scan, NUF scoring sheet, selected project idea | Completed |
 
 ## Current Status
-Today, our team formed the project group and discussed potential IT venture ideas related to attendance management and monitoring. We selected an Attendance Check System as our proposed project and identified the target users, problem area, and proposed solution. We created the GitHub repository and organized the initial project structure, including documentation folders. We also prepared the README file and documented our initial venture direction using the problem-user-solution format. Finally, we discussed future tasks and planned how to use GitHub Issues and commits to track project progress throughout the semester
+In Lab 02, we reviewed several IT venture opportunities, evaluated them using the NUF scoring method, and selected the Attendance Check System as our semester project idea.
+
 ## Next Step
-Next week, our team will conduct opportunity scanning to identify and evaluate potential problems related to attendance management and tracking. We will research the needs and challenges faced by students, teachers, and administrators and gather supporting evidence for our chosen problem area. The team will compare different attendance system features and select the most feasible and impactful solution. We will also begin creating user personas and defining the project's key requirements. Finally, we will document our findings in the GitHub repository and update the project board with new tasks and progress tracking.
+In Lab 03, we will conduct opportunity scanning, evaluate attendance management problems, and gather supporting evidence from target users to refine our proposed solution.
+
 
