@@ -44,6 +44,8 @@ Possible technologies:
 | Lab | Main Activity | Output | Status | 
 |---|---|---|---| 
 | Lab 1 | Lab setup and idea log | Repository, team profile, initial idea log | Completed |
+| Lab 2 | IT Opportunity Scanning and NUF Evaluation | Oppprtunity scan, NUF scoring sheet, selected project idea | Completed |
+
 ## Current Status
 Today, our team formed the project group and discussed potential IT venture ideas related to attendance management and monitoring. We selected an Attendance Check System as our proposed project and identified the target users, problem area, and proposed solution. We created the GitHub repository and organized the initial project structure, including documentation folders. We also prepared the README file and documented our initial venture direction using the problem-user-solution format. Finally, we discussed future tasks and planned how to use GitHub Issues and commits to track project progress throughout the semester
 ## Next Step
