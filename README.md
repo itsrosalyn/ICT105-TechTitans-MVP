@@ -18,22 +18,20 @@ Tech Titans
 | Mya Hninsi Phyu | UX/UI Lead | Design wireframes, user flow, and interface screens,  maintains report files | 
 | Phoo Myat Thwin | Validation Lead | Manages customer discovery survey/interview evidence and metric collection, maintains final submission package | 
 ## Initial Problem Area
-Residents are often unaware when local water sources become contaminated and unsafe for drinking or daily use.
+Lecturers spend valuable class time taking attendance manually, and paper-based attendance records are time-consuming and prone to errors or proxy attendance.
 ## Target Users
-Local residents, environmental agencies, and community leaders.
+University students, lecturers,university administrators and stuff.
 ## Initial IT Venture Direction
-Develop a web-based platform that provides residents with easy access to water quality information, contamination alerts, and safety recommendations to improve public health and awareness.
+A web-based or mobile application that allows lecturers to generate a unique QR code for each class. Students scan the QR code to register their attendance, while lecturers can monitor attendance records in real time.
 ## Technology Possibility
 Possible technologies:
 - Web application
 - Mobile application
 - Dashboard
-- AI-assisted feature
 - Cloud-based system
-- IoT-supported system
 - Cybersecurity tool
-- SaaS platform
-- Marketplace or digital platform
+- QR code generation and scanning
+- Location based system
 ## Repository Structure
 - docs: reports, profiles, idea logs, and weekly logbooks
 - prototype: source code or clickable prototype files
@@ -47,6 +45,7 @@ Possible technologies:
 |---|---|---|---| 
 | Lab 1 | Lab setup and idea log | Repository, team profile, initial idea log | Completed |
 ## Current Status
-Today, our team formed the project group and discussed potential IT venture ideas related to public safety. We selected a Water Safety Monitoring System as our proposed project and identified the target users, problem area, and proposed solution. We created the GitHub repository and organized the initial project structure, including documentation folders. We also prepared the README file and documented our initial venture direction using the problem-user-solution format. Finally, we discussed future tasks and planned how to use GitHub Issues and commits to track project.
+Today, our team formed the project group and discussed potential IT venture ideas related to attendance management and monitoring. We selected an Attendance Check System as our proposed project and identified the target users, problem area, and proposed solution. We created the GitHub repository and organized the initial project structure, including documentation folders. We also prepared the README file and documented our initial venture direction using the problem-user-solution format. Finally, we discussed future tasks and planned how to use GitHub Issues and commits to track project progress throughout the semester
 ## Next Step
-Next week, our team will conduct opportunity scanning to identify and evaluate potential problems related to public safety. We will research the needs and challenges faced by users and gather supporting evidence for our chosen problem area. The team will compare different project ideas and select the most feasible and impactful solution. We will also begin creating user personas and defining the project's key requirements. Finally, we will document our findings in the GitHub repository and update the project board with new tasks.
+Next week, our team will conduct opportunity scanning to identify and evaluate potential problems related to attendance management and tracking. We will research the needs and challenges faced by students, teachers, and administrators and gather supporting evidence for our chosen problem area. The team will compare different attendance system features and select the most feasible and impactful solution. We will also begin creating user personas and defining the project's key requirements. Finally, we will document our findings in the GitHub repository and update the project board with new tasks and progress tracking.
+
