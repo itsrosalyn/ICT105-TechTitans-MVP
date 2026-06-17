@@ -1,61 +1,83 @@
 # Initial IT Venture Idea Log
-## Idea 1: Community Water Quality Monitoring System
+
+## Idea 1: QR Code Lecture Attendance System
+
 ### Problem Area
-Residents are often unaware when local water sources become contaminated and unsafe for drinking or daily use.
+
+Lecturers spend valuable class time taking attendance manually, and paper-based attendance records are time-consuming and prone to errors or proxy attendance.
 
 ### Target Users
-Local residents, environmental agencies, and community leaders.
+
+University students, lecturers, and university administrators.
 
 ### Current Alternative
-People rely on periodic government reports or news announcements, which may not provide timely information.
+
+Attendance is recorded using paper sign-in sheets, verbal roll calls, or basic online forms.
 
 ### Proposed IT Solution
-A web-based platform that displays water quality information, contamination alerts, and safety recommendations for nearby water sources.
+
+A web-based or mobile application that allows lecturers to generate a unique QR code for each class. Students scan the QR code to register their attendance, while lecturers can monitor attendance records in real time.
 
 ### Possible Technology
-HTML/CSS/JavaScript, database, dashboard with charts, notification system.
+
+HTML/CSS/JavaScript, database (MySQL/Firebase), QR code generation and scanning, user authentication, dashboard.
 
 ### Why This is Suitable
-The system can be prototyped using web development, database management, and data visualization techniques while addressing a real public safety concern.
 
----
-## Idea 2: Flood and Water Hazard Alert System
+The system improves attendance accuracy, saves classroom time, and provides digital attendance records. It is practical and can be developed using fundamental web technologies.
+
+⸻
+
+## Idea 2: Smart Attendance and Student Performance Tracker
+
 ### Problem Area
-Communities near rivers or lakes may not receive early warnings about rising water levels and potential flooding.
+
+Students often do not know their attendance percentage, and lecturers find it difficult to identify students with poor attendance before it affects their academic performance.
 
 ### Target Users
-Residents in flood-prone areas, emergency responders, and local authorities.
+
+University students, lecturers, and academic advisors.
 
 ### Current Alternative
-People rely on weather forecasts, social media, or local announcements, which may be delayed.
+
+Attendance and academic performance are usually managed separately, making it difficult to monitor student progress effectively.
 
 ### Proposed IT Solution
-A web-based alert system that monitors water levels and sends notifications when flood risks are detected.
+
+A web-based platform that records attendance and displays attendance statistics, class participation, and alerts for students who are at risk due to low attendance.
 
 ### Possible Technology
-HTML/ CSS/ JavaScript, database, notification service, maps integration.
+
+HTML/CSS/JavaScript, database, dashboard with charts, notification system, data analytics.
 
 ### Why This is Suitable
-The project focuses on public safety and can be developed using web technologies, real-time data handling, and user-centered design.
 
----
-## Idea 3:  Water Issue Reporting and Tracking Platform
+The project combines attendance management with performance monitoring, helping students stay informed while enabling lecturers to identify at-risk students early.
+
+⸻
+
+## Idea 3: Smart Campus Attendance and Class Management System
+
 ### Problem Area
-Residents often do not know how to report water-related issues such as pollution, leaks, blocked drains, or unsafe water conditions.
+
+Universities often use multiple systems for attendance, class schedules, announcements, and attendance reports, making management inefficient.
 
 ### Target Users
-Community residents, environmental agencies, and local government staff. 
+
+Students, lecturers, and university administrators.
 
 ### Current Alternative
-People report problems through phone calls, social media posts, or in-person visits to government offices.
+
+Different systems or manual methods are used for attendance tracking, scheduling, and communication.
 
 ### Proposed IT Solution
-A web-based reporting platform where users can submit water-related issues with photos, location details, and descriptions while tracking the status of their reports.
+
+A web-based campus management platform that includes QR-code attendance, class schedules, attendance reports, announcements, and automated notifications in one application.
 
 ### Possible Technology
-HTML/CSS/JavaScript, database, image upload feature, GPS/location services, status tracking system.
+
+HTML/CSS/JavaScript, database, QR code integration, notification service, user authentication, cloud storage.
 
 ### Why This is Suitable
-The system is practical, easy to prototype, and combines web development, database design, and user interaction features to improve public safety and community engagement.
 
----
+The system streamlines classroom management by combining multiple academic services into a single platform. It is scalable, user-friendly, and demonstrates entrepreneurship potential by offering 
