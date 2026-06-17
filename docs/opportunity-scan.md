@@ -2,7 +2,7 @@
 ## Ideas Reviewed from Lab 1
 | Idea | Problem Area | Target User | Current Alternative | Initial Technology Direction |
 |---|---|---|---|---|
-Manual attendance tracking is time-consuming, prone to errors, and vulnerable to proxy attendance | Students, Lecturers, University Administrators | Paper sign-in sheets, verbal roll calls | Web/mobile app with QR code generation, scanning, and GPS verification |
+| Idea 1 | Manual attendance tracking is time-consuming, prone to errors, and vulnerable to proxy attendance | Students, Lecturers, University Administrators | Paper sign-in sheets, verbal roll calls | Web/mobile app with QR code generation, scanning, and GPS verification |
 | Idea 2 | Course registration can be slow and difficult due to schedule conflicts and limited seats | Students, Lecturers, Academic Administrators | Paper forms and existing registration systems | Web-based course registration platform |
 | Idea 3 | Students and staff spend time searching for parking spaces | Students, Lecturers, Campus Staff, Administrators | Manual parking search and security guidance | Web-based parking management system with reservations |
 ## Opportunity Discovery Table
