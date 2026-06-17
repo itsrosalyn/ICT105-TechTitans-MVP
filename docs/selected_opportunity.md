@@ -2,7 +2,7 @@
 
 ## Selected Project Title
 
-QR Code Lecture Attendance System
+QR code attendance system with GPS verification
 
 ## Target User
 
@@ -10,7 +10,7 @@ The primary users are university lecturers and students. University administrato
 
 ## Problem Statement
 
-Lecturers spend valuable class time taking attendance manually through roll calls or paper sign-in sheets. These methods are time-consuming, prone to human error, and may allow proxy attendance where students sign in for absent classmates. As a result, attendance records may be inaccurate and difficult to manage.
+Lecturers spend valuable class time taking attendance manually through roll calls or paper sign-in sheets. These methods are time-consuming, prone to human error, and may allow proxy attendance where students sign in for absent classmates. Even in some online attendance systems, students may submit attendance remotely without being physically present in class. As a result, attendance records may be inaccurate and difficult to manage.
 
 ## Current Alternative
 
@@ -25,12 +25,13 @@ These methods often require significant administrative effort and may not provid
 
 ## Proposed IT Solution
 
-The team will develop a web-based QR Code Lecture Attendance System. Lecturers can generate a unique QR code for each class session. Students scan the QR code using their smartphones to record attendance. The system automatically stores attendance data in a database and provides lecturers with a dashboard to view attendance records and generate reports.
+The team will develop a web-based QR Code Lecture Attendance System with location verification. Lecturers can generate a unique QR code for each class session. Students scan the QR code using their smartphones to record attendance. The system will also verify the student's location at the time of check-in to ensure they are physically present near the lecture venue. Attendance data is automatically stored in a database, and lecturers can access dashboards and reports.
 
 Key features include:
 
 * Lecturer login and class management
 * QR code generation for each lecture session
+* Location-based attendance verification (GPS check-in)
 * Student attendance scanning
 * Attendance database storage
 * Attendance reports and analytics dashboard
@@ -39,11 +40,11 @@ Key features include:
 
 ### NUF Scoring Explaination 
 
-The Attendance Check System was selected based on the NUF (New, Useful, Feasible) scoring process. Among the evaluated ideas, the QR Code Attendance System achieved the highest score of 26/30. The idea is useful because it simplifies attendance tracking for students and lecturers, reduces manual errors, and saves time. It is considered new compared to traditional paper-based attendance methods and is feasible to develop using available web technologies, QR code libraries, and the team's current technical skills. Therefore, the team selected this opportunity as the most practical and impactful project for the semester. 
+The Attendance Check System was selected based on the NUF (New, Useful, Feasible) scoring process. Among the evaluated ideas, the QR Code Attendance System achieved the highest score of 26/30. The idea is useful because it simplifies attendance tracking, reduces manual errors, saves time, and improves attendance accuracy through location verification. Combining QR code scanning with GPS validation helps prevent students from checking in remotely or sharing attendance access with others.
 
 ### Team Feasibility
 
-The project aligns with the team's skills in web development, database management, UI/UX design, and system analysis. QR code functionality can be implemented using existing libraries, making development achievable within the available timeframe.
+The project aligns with the team's skills in web development, database management, UI/UX design, and system analysis. QR code functionality can be implemented using existing libraries, while GPS location verification can be integrated through browser or smartphone geolocation APIs. Both technologies are widely available and achievable within the semester timeframe.
 
 ## Why This Is Feasible Without IoT or Advanced Cybersecurity
 
@@ -59,6 +60,7 @@ Core MVP Features:
 * Class creation
 * QR code generation
 * Student attendance submission
+* GPS location verification during check-in
 * Attendance dashboard
 * Exportable attendance report
 
