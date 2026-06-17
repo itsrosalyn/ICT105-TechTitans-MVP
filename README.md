@@ -20,18 +20,18 @@ Tech Titans
 ## Initial Problem Area
 Lecturers spend valuable class time taking attendance manually, and paper-based attendance records are time-consuming and prone to errors or proxy attendance.
 ## Target Users
-University students, lecturers,university administrators and stuff.
+University students, lecturers, university administrators and staff.
 ## Initial IT Venture Direction
-A web-based or mobile application that allows lecturers to generate a unique QR code for each class. Students scan the QR code to register their attendance, while lecturers can monitor attendance records in real time.
+A web-based application that allows lecturers to generate a unique QR code for each class session. Students scan the QR code to register their attendance, while the system verifies their location using GPS to ensure they are physically present at the lecture venue. Lecturers can monitor attendance records and generate reports in real time.
 ## Technology Possibility
 Possible technologies:
 - Web application
 - Mobile application
-- Dashboard
+- Dashboard system
 - Cloud-based system
 - Cybersecurity tool
 - QR code generation and scanning
-- Location based system
+- GPS/Location-based verification
 ## Repository Structure
 - docs: reports, profiles, idea logs, and weekly logbooks
 - prototype: source code or clickable prototype files
