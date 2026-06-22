@@ -73,5 +73,5 @@ Current attendance processes rely on manual or semi-digital methods that interru
 
 ## Decision for Next Step
 
-Based on the evidence collected, the team will continue developing the QR Code Attendance System with GPS Verification. The target segment has been refined to ICT students and lecturers at Rangsit University. The next step is to design and validate a mobile-friendly MVP that includes lecturer session creation, QR code attendance check-in, GPS-based location verification, real-time attendance recording, and a simple attendance monitoring dashboard.
+Our team will define the primary customer segments for the Attendance Check System, including students and lecturers. We will create user personas based on the customer discovery findings and develop user stories that describe how each user group will interact with the system. These user stories will help guide the design and development of the system's features and functionality.
 
