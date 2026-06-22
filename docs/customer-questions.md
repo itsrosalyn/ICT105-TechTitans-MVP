@@ -6,7 +6,7 @@ QR code attendance system with GPS verification
 
 ## Target Respondent
 
-First-year students, Lecturers, University Administrators
+University students, Lecturers
 
 ## Consent and Context
 
