@@ -40,16 +40,38 @@ Possible technologies:
 - diagrams: user flow and technical architecture diagrams
 - screenshots: evidence of prototype and repository progress
 - pitch: pitch deck and final demo files
+
 ## Weekly Progress Log
 | Lab | Main Activity | Output | Status | 
 |---|---|---|---| 
 | Lab 1 | Lab setup and idea log | Repository, team profile, initial idea log | Completed |
-| Lab 2 | IT Opportunity Scanning and NUF Evaluation | Oppprtunity scan, NUF scoring sheet, selected project idea | Completed |
+| Lab 2 | IT Opportunity Scanning and NUF Evaluation | Opportunity scan, NUF scoring sheet, selected project idea | Completed |
+| Lab 3 | Customer Problem Discovery | Target respondents, customer discovery questions, interview/survey evidence, problem findings, updated README | Completed |
 
-## Current Status
-In Lab 02, we reviewed several IT venture opportunities, evaluated them using the NUF scoring method, and selected the Attendance Check System as our semester project idea.
+## Customer Problem Discovery Summary
 
-## Next Step
-In Lab 03, we will conduct opportunity scanning, evaluate attendance management problems, and gather supporting evidence from target users to refine our proposed solution.
+In Lab 03, our team collected early problem evidence from ICT students and lecturers at Rangsit University. The purpose was to validate whether the attendance management problem identified in Lab 02 is a real and significant issue. Through interviews and surveys, we found that attendance checking consumes valuable lecture time, requires manual effort, and remains vulnerable to proxy attendance. The evidence confirmed that the problem is recurring and worth addressing through a digital solution.
 
+## Target Respondents
+
+The team collected feedback from:
+
+* 18 ICT students at Rangsit University
+* 3 ICT lecturers at Rangsit University
+
+These respondents were selected because they are directly involved in classroom attendance processes and experience the challenges associated with current attendance methods.
+
+## Main Evidence Found
+
+The interviews and surveys revealed several recurring attendance management challenges. Students and lecturers reported that attendance checking consumes valuable lecture time and often requires manual effort. Proxy attendance remains a concern, as students may ask classmates to mark attendance on their behalf. Lecturers also noted that attendance records require manual organization and tracking, while students reported difficulty monitoring their attendance status throughout the semester.
+
+Current workarounds include verbal roll calls, paper sign-in sheets, and spreadsheet-based attendance tracking. Although these methods are widely used, respondents described them as time-consuming, prone to human error, and inefficient for maintaining accurate attendance records.
+
+## Updated Problem Statement
+
+Current attendance processes rely on manual or semi-digital methods that interrupt lecture flow and reduce teaching efficiency. These methods are vulnerable to proxy attendance, inaccurate record keeping, and increased administrative workload. Students also lack real-time visibility of their attendance status, making attendance tracking inefficient and unreliable for both students and lecturers.
+
+## Decision for Next Step
+
+Based on the evidence collected, the team will continue developing the QR Code Attendance System with GPS Verification. The target segment has been refined to ICT students and lecturers at Rangsit University. The next step is to design and validate a mobile-friendly MVP that includes lecturer session creation, QR code attendance check-in, GPS-based location verification, real-time attendance recording, and a simple attendance monitoring dashboard.
 
