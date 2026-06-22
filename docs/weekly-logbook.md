@@ -84,3 +84,47 @@ This idea aims to help students and staff find available parking spaces and redu
 ## Plan for Lab 03
 
 Our team will conduct customer problem discovery by interviewing university students and lecturers about their current attendance process. We will prepare questionnaires to identify common challenges, such as manual attendance, proxy attendance, and time wasted during lectures. The feedback collected will be used to validate the problem and improve the design and features of the QR Code Attendance System.
+
+# Weekly Venture Logbook
+
+## Lab 03: Customer Problem Discovery
+
+### What We Completed
+
+1. Prepared customer discovery questions for students and  lecturers regarding attendance management.
+2. Conducted interviews and collected responses about current attendance tracking methods and challenges.
+3. Updated project evidence files, including problem notes, raw responses, and the assumption-evidence table in the GitHub repository.
+
+### What We Learned About the Problem
+
+1. Manual attendance checking consumes valuable lecture time and reduces teaching efficiency.
+2. Attendance records can contain errors due to manual recording and data entry mistakes.
+3. Existing methods make it difficult to prevent proxy attendance and efficiently monitor attendance records.
+
+### What Evidence We Collected
+
+* Number of respondents/interviews: 21 respondents
+* Evidence file: data/raw-responses.xlsx
+* Key repeated pattern: Most respondents reported that manual attendance is time-consuming and prone to errors.
+
+### What We Changed Based on Evidence
+
+Based on the interview results, we confirmed that attendance management is a significant problem for both students and lecturers. We refined our Attendance Check System concept to focus on faster attendance recording, improved accuracy, and automated attendance reporting. We also considered implementing QR code scanning to reduce manual work and prevent attendance fraud.
+
+### Problems or Difficulties
+
+1. Finding available respondents and scheduling interviews within the limited project timeframe.
+2. Some respondents provided brief answers, requiring additional follow-up questions to obtain useful insights.
+
+### Evidence of Work
+
+* GitHub repository link: [Insert Repository Link]
+* Customer questions file: docs/customer-questions.md
+* Raw responses file: data/raw-responses.xlsx
+* Assumption-evidence table: docs/assumption-evidence-table.md
+* Commit link: [Insert GitHub Commit Link]
+
+### Plan for Lab 04
+
+Our team will define the primary customer segments for the Attendance Check System, including students and lecturers. We will create user personas based on the customer discovery findings and develop user stories that describe how each user group will interact with the system. These user stories will help guide the design and development of the system's features and functionality.
+
