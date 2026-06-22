@@ -1,0 +1,7 @@
+# Assumption-Evidence Table
+
+| No. | Team Assumption                                                                   | Evidence Collected                                                                                                                              | Evidence Type      | Strength | Decision |
+| --: | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | -------- | -------- |
+|   1 | Lecturers spend too much class time taking attendance manually.                   | 8 out of 10 lecturers reported spending 5–10 minutes per class on attendance.                                                                   | Interview          | Strong   | Keep     |
+|   2 | Students find the current attendance process inconvenient and time-consuming.     | 15 out of 20 students stated that attendance procedures interrupt class time and delay lessons.                                                 | Survey             | Moderate | Keep     |
+|   3 | Lecturers and students would be willing to use a QR-code-based attendance system. | Most respondents expressed interest in a faster digital attendance method, but some raised concerns about internet access and proxy attendance. | Interview / Survey | Moderate | Revise   |
