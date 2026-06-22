@@ -6,7 +6,7 @@ QR Code Attendance System with GPS Verification
 ## Target Respondents
 | Respondent Type                    | Why This Respondent Matters                                                                                     | Planned Number | Actual Number |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------: | ------------: |
-| ICT students (Rangsit University)  | Primary users affected by attendance delays, proxy attendance issues, and lack of real-time attendance tracking |             20 |            18 |
+| ICT students (Rangsit University)  | Primary users affected by attendance delays, proxy attendance issues, and lack of real-time attendance tracking |          10-15 |            18 |
 | ICT lecturers (Rangsit University) | Responsible for managing attendance records and verifying student presence during lectures                      |            1–3 |             3 |
 
 ## Observed / Reported Problem
