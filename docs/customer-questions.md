@@ -6,7 +6,7 @@ QR code attendance system with GPS verification
 
 ## Target Respondent
 
-University students, Lecturers
+Rangsit University students, Lecturers
 
 ## Consent and Context
 
