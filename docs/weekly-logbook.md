@@ -104,8 +104,8 @@ Our team will conduct customer problem discovery by interviewing university stud
 ### What Evidence We Collected
 
 * Number of respondents/interviews: 21 respondents
-* Evidence file: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/c57256bb5a97e3247267bae4506b35523a698090/data/raw-responses.xlsx
-* Key repeated pattern: Most respondents reported that manual attendance is time-consuming and prone to errors.
+* Evidence file: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/86c5c4e87aca2586d34ea87e448dc08ba98fa878/docs/assumption-evidence-table.md
+* Key repeated pattern: Most respondents frequently face attendance check-in inefficiencies caused by time constraints, activation and dependence on devices systems.
 
 ### What We Changed Based on Evidence
 
@@ -118,12 +118,10 @@ Based on the interview results, we confirmed that attendance management is a sig
 
 ### Evidence of Work
 
-* GitHub repository link: (https://github.com/panthwaychalk68-afk/ICT105-TechTitans-MVP.git)
-* Customer questions file: (https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/a5329613a825cf406c8583864ab5ede76e65b887/docs/customer-questions.md)
-* Raw responses file: (https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/c57256bb5a97e3247267bae4506b35523a698090/data/raw-responses.xlsx
-)
-* Assumption-evidence table: (https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/347b8a5cef69912535463fe63b77a6ec642df48f/docs/assumption-evidence-table.md
-)
+* GitHub repository link: https://github.com/itsrosalyn/ICT105-TechTitans-MVP.git
+* Customer questions file: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/86c5c4e87aca2586d34ea87e448dc08ba98fa878/docs/customer-questions.md
+* Raw responses file: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/86c5c4e87aca2586d34ea87e448dc08ba98fa878/data/raw-responses.xlsx
+* Assumption-evidence table: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/86c5c4e87aca2586d34ea87e448dc08ba98fa878/docs/assumption-evidence-table.md
 * Commit link:(https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/c45a352c28c22ea4bbaa0f1c05e22e7608375e06)
 
 ### Plan for Lab 04
