@@ -46,11 +46,11 @@ Possible technologies:
 |---|---|---|---| 
 | Lab 1 | Lab setup and idea log | Repository, team profile, initial idea log | Completed |
 | Lab 2 | IT Opportunity Scanning and NUF Evaluation | Opportunity scan, NUF scoring sheet, selected project idea | Completed |
-| Lab 3 | Customer Problem Discovery | Target respondents, customer discovery questions, interview/survey evidence, problem findings, updated README | Completed |
+| Lab 3 | Customer Problem Discovery | Target respondents, customer discovery questions, interview/survey evidence, problem findings | Completed |
 
 ## Customer Problem Discovery Summary
 
-In Lab 03, our team collected early problem evidence from ICT students and lecturers at Rangsit University. The purpose was to validate whether the attendance management problem identified in Lab 02 is a real and significant issue. Through interviews and surveys, we found that attendance checking consumes valuable lecture time, requires manual effort, and remains vulnerable to proxy attendance. The evidence confirmed that the problem is recurring and worth addressing through a digital solution.
+In Lab 03, our team collected feedback from ICT students and lecturers at Rangsit University to validate the attendance management problem. The findings showed that attendance checking takes class time, requires manual effort, and remains vulnerable to proxy attendance. The evidence confirmed that this is a recurring problem worth solving.
 
 ## Target Respondents
 
@@ -63,13 +63,13 @@ These respondents were selected because they are directly involved in classroom 
 
 ## Main Evidence Found
 
-The interviews and surveys revealed several recurring attendance management challenges. Students and lecturers reported that attendance checking consumes valuable lecture time and often requires manual effort. Proxy attendance remains a concern, as students may ask classmates to mark attendance on their behalf. Lecturers also noted that attendance records require manual organization and tracking, while students reported difficulty monitoring their attendance status throughout the semester.
+Students and lecturers reported that attendance checking consumes lecture time and often requires manual effort. Proxy attendance remains a concern, while lecturers spend additional time organizing and correcting attendance records. Students also reported difficulty tracking their attendance status and confirming whether attendance had been successfully recorded.
 
-Current workarounds include verbal roll calls, paper sign-in sheets, and spreadsheet-based attendance tracking. Although these methods are widely used, respondents described them as time-consuming, prone to human error, and inefficient for maintaining accurate attendance records.
+Current workarounds include QR-code attendance forms, verbal roll calls, paper sign-in sheets, and spreadsheet-based tracking. Respondents described these methods as time-consuming and prone to errors.
 
 ## Updated Problem Statement
 
-Current attendance processes rely on manual or semi-digital methods that interrupt lecture flow and reduce teaching efficiency. These methods are vulnerable to proxy attendance, inaccurate record keeping, and increased administrative workload. Students also lack real-time visibility of their attendance status, making attendance tracking inefficient and unreliable for both students and lecturers.
+Current attendance processes rely on manual or semi-digital methods that interrupt lecture flow and reduce efficiency. These methods are vulnerable to proxy attendance, inaccurate records, and increased administrative workload. Students also have limited visibility of their attendance status.
 
 ## Decision for Next Step
 
