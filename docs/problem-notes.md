@@ -13,16 +13,18 @@ QR Code Attendance System with GPS Verification
 
 ## Observed / Reported Problem
 
-Current attendance processes rely on QR-code-based attendance systems and other semi-digital methods. While these approaches reduce the time required for attendance checking, they do not always verify whether students are physically present in class. Respondents also reported issues related to attendance reliability, missed check-ins, manual attendance corrections, and limited visibility of attendance records.
+Current attendance processes rely on QR-code-based attendance systems and other semi-digital methods. While these systems reduce the time required for attendance checking and are generally easy to use, they do not consistently ensure that students are physically present in class.
+
+Respondents reported issues such as missed or failed QR check-ins, uncertainty about whether attendance was successfully recorded, proxy attendance, and frequent manual correction of attendance records by lecturers. There is also limited visibility for students to track their own attendance status in real time.
 
 ## Current Alternatives or Workarounds
 
-| Workaround                     | Who Uses It?        | Weakness / Pain                                                    | Evidence Source               |
-| ------------------------------ | ------------------- | ------------------------------------------------------------------ | ----------------------------- |
-| QR-code Google Form attendance | Students, Lecturers | Does not verify physical presence and may allow remote submissions | Student & Lecturer interviews |
-| Verbal roll call               | Lecturers           | Time-consuming and reduces lecture time efficiency                 | Lecturer interview            |
-| Paper sign-in sheet            | Students, Lecturers | Can be manipulated, lost, or filled incorrectly                    | Student & Lecturer interviews |
-| Spreadsheet tracking           | Lecturers           | Requires manual entry and increases workload                       | Lecturer interview            |
+| Workaround                     | Who Uses It?        | Weakness / Pain                                                    | Evidence Source                        |
+| ------------------------------ | ------------------- | ------------------------------------------------------------------ | ---------------------------------------|
+| QR-code Google Form attendance | Students, Lecturers | Does not verify physical presence and may allow remote submissions | Student & Lecturer interviews/ Survey  |
+| Verbal roll call               | Lecturers           | Time-consuming and reduces lecture time efficiency                 | Lecturer interview/ Survey             |
+| Paper sign-in sheet            | Students, Lecturers | Can be manipulated, lost, or filled incorrectly                    | Student & Lecturer interviews/ Survey  |
+| Spreadsheet tracking           | Lecturers           | Requires manual entry and increases workload                       | Lecturer interview/ Survey             |
 
 ## Repeated Pain Points
 
