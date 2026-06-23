@@ -40,24 +40,8 @@ The team should further validate GPS verification requirements and ensure the sy
 
 ## Decision for Next Lab
 
-**Continue with same problem direction**
-
-## Updated Problem Statement
-
-ICT students and lecturers at Rangsit University rely on manual or semi-digital attendance methods that consume lecture time, increase lecturer workload, and allow proxy attendance. These methods do not provide reliable real-time attendance tracking, creating inefficiencies and reducing the accuracy of attendance records. A faster and more secure attendance process is needed to improve classroom management and attendance reliability.
-
-## Weak Evidence or Unclear Findings
-
-There is limited evidence regarding whether all lecturers would adopt a QR-code-based solution. Some concerns were raised about internet connectivity and preventing proxy attendance.
-
-## What We Must Revise
-
-Further investigate security and anti-proxy attendance features. Collect more feedback from lecturers regarding system adoption and usability.
-
-## Decision for Next Lab
-
 ☑ Continue with same problem direction
 
 ## Updated Problem Statement
 
-University lecturers spend valuable teaching time taking attendance manually through paper sign-in sheets, roll calls, or spreadsheets. These methods can be time-consuming, prone to recording errors, and difficult to manage. Students and lecturers need a faster and more accurate way to record and track attendance while minimizing disruption to classroom activities.
+ICT students and lecturers at Rangsit University rely on manual or semi-digital attendance methods that consume lecture time, increase lecturer workload, and allow proxy attendance. These methods do not provide reliable real-time attendance tracking, creating inefficiencies and reducing the accuracy of attendance records. A faster and more secure attendance process is needed to improve classroom management and attendance reliability.
