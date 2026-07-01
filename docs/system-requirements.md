@@ -6,7 +6,7 @@ These requirements define the minimum prototype functionalities that each ICT105
 
 | Req ID | Minimum Prototype Functionality | What Students Must Show in Final Prototype |
 | --- | --- | --- |
-| **FR-01** | **Clear problem-specific homepage or landing screen** | Login Screen: A welcome page where users select if thery are a "Student" or a "Lecturer" to access their accounts. |
+| **FR-01** | **Clear problem-specific homepage or landing screen** | Login Screen: A welcome page where users select if they are a "Student" or a "Lecturer" to access their accounts. |
 | **FR-02** | **Primary user pathway** | Check-In Flows: Shows a student logging in → scanning a QR code → sharing GPS location → getting a success message. |
 | **FR-03** | **User input or data submission feature** | Scan & Location Input: The student interface captures scanned QR code details and mobile GPS coordinates. |
 | **FR-04** | **Data storage or record management** | Cloud Database: Attendance date (Student ID, time, and class ID) is securely saved in a Firebase or MySQL database. |
