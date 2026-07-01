@@ -75,3 +75,53 @@ Current attendance processes rely on manual or semi-digital methods that interru
 
 Our team will define the primary customer segments for the Attendance Check System, including students and lecturers. We will create user personas based on the customer discovery findings and develop user stories that describe how each user group will interact with the system. These user stories will help guide the design and development of the system's features and functionality.
 
+# Lab 04: User Persona, Requirements, and User Stories
+
+### Primary Target User
+
+ICT students at Rangsit University who use QR-code attendance systems and need a fast, accurate, and secure way to verify their attendance while preventing proxy attendance.
+
+### Persona Summary
+
+* **Persona name:** Nara, Year 1 ICT Student
+* **User type:** University student who regularly uses QR-code attendance systems
+* **Main goal:** Check in to class quickly, receive confirmation, and monitor attendance records
+* **Main pain point:** Current QR attendance systems do not verify physical presence and can allow proxy attendance
+* **Current workaround:** Using standard QR-code attendance forms and relying on lecturers to manually correct attendance issues
+
+### Key Requirements
+
+| Req ID | Requirement                                                                       | Priority | Related Evidence                        |
+| ------ | --------------------------------------------------------------------------------- | -------- | --------------------------------------- |
+| FR-01  | Students can scan a QR code to record attendance                                  | Must     | F01 – Web-Based Code Scanner            |
+| FR-02  | System verifies attendance using GPS geofencing before check-in is accepted       | Must     | R011 – No location verification         |
+| FR-03  | System displays an instant success or failure message after attendance submission | Must     | R007, R012 – No confirmation message    |
+| FR-04  | Students can view attendance history and attendance percentage                    | Should   | R021 – No attendance tracking view      |
+| FR-05  | Lecturers can generate a unique QR code for each class session                    | Must     | F05 – Dynamic QR Code Generation        |
+| FR-06  | Lecturers can monitor attendance records through a real-time dashboard            | Must     | F06 – Lecturer Roster Dashboard         |
+| NFR-01 | Attendance verification should complete within a few seconds                      | Must     | Need for fast classroom check-in        |
+| NFR-02 | The system must be mobile-friendly for smartphone users                           | Must     | Students use smartphones for attendance |
+| NFR-03 | Attendance data should be stored securely and accurately                          | Must     | Reliable attendance records required    |
+
+### MVP Feature Scope
+
+| Feature                               | Priority | Included in Final Prototype? |
+| ------------------------------------- | -------- | ---------------------------- |
+| Web-Based QR Code Scanner             | Must     | Yes                          |
+| GPS Geofencing Location Verification  | Must     | Yes                          |
+| Instant Check-In Feedback Messages    | Must     | Yes                          |
+| Dynamic QR Code Generation            | Must     | Yes                          |
+| Real-Time Lecturer Roster Dashboard   | Must     | Yes                          |
+| Student Attendance History View       | Should   | Yes                          |
+| Automated Status Notifications        | Could    | No                           |
+| LMS Integration (University API Link) | Won't    | No                           |
+| Biometric Facial Recognition Check    | Won't    | No                           |
+
+### Diagram Links
+
+* User flow diagram:(https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/user-flow.png)
+* Use case diagram: (https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/use-case-diagram.png)
+
+### GitHub Contribution Evidence
+
+All members contributed to the repository through commits, issue discussions, feature implementation, documentation updates, and pull requests. Contribution evidence can be verified through the GitHub commit history and repository activity.
