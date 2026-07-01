@@ -36,5 +36,5 @@ Acceptable platforms may include:
 | Web app | Lecture Web Portal (HTML/CSS/JS + Cloud Hosting): A website for lecturers to log in, create QR codes, and manage active classrooms. |
 | Mobile app prototype | Student Check-In app (HTML/CSS/JS): A mobile app for students to log in, scan QR codes with their phone camera, and submit GPS coordinates via the Geolocation API. |
 | Dashboard system | Real Time Monitoring Panel (HTML/CSS/JS): A visual screen showing graphs or tables of live student presence and metrics tracking the 80% attendance rule. |
-| Data-driven prototype | Attendance Record System (Firebase/MySQ): A structured backend where student check-ins actively write data to a live database, alllowing records to be stored, filtered, and viewed. |
+| Data-driven prototype | Attendance Record System (Firebase/MySQL): A structured backend where student check-ins actively write data to a live database, alllowing records to be stored, filtered, and viewed. |
 
