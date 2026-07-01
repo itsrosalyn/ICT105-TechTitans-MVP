@@ -18,7 +18,7 @@ These requirements define the minimum prototype functionalities that each ICT105
 | **FR-10** | **Basic validation and error prevention** | Location Boundary Check: The system verifies the student's GPS data and rejects the log if they are outside the classroom wall. |
 | **FR-11** | **Confirmation or feedback message** | Status Pop-ups: Displays an immediate "Submission successful" message or an error message like "Too Far from Class" right after scanning. |
 | **FR-12** | **Dashboard, summary, or simple analytics view** | Summary Metrics: A dashboard for lecturers showing total students present, absent metrics, and location warnings. |
-| **FR-13** | **Basic user interface consistency** | Clean Layout: Uses a unified color theme (green for present, red for warnings), consistent font matching, and ma |
+| **FR-13** | **Basic user interface consistency** | Clean Layout: Uses a unified color theme (green for present, red for warnings), consistent font matching, and matching buttons. |
 | **FR-14** | **Mobile-friendly or responsive design consideration** | Optimized Screens: The student check-in portal is shaped perfectly for mobile web browsers, and the lecturer panel works great on desktop screens. |
 | **FR-15** | **Basic privacy and responsible data handling** | Safe Data Boundaries: The app only collects necessary check-in points (ID and time). No permanent background location tracking is used. |
 | **FR-16** | **Final prototype traceability** | Feature Traceability: Every interface screen maps perfectly back to our core Lab 04 features (Scanner maps to F01, GPS maps to F02). |
