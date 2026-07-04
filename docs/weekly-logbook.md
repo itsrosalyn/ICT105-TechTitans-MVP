@@ -128,3 +128,71 @@ Based on the interview results, we confirmed that attendance management is a sig
 
 Our team will define the primary customer segments for the Attendance Check System, including students and lecturers. We will create user personas based on the customer discovery findings and develop user stories that describe how each user group will interact with the system. These user stories will help guide the design and development of the system's features and functionality.
 
+# Lab 04 - Weekly Logbook
+
+## Group Information
+
+* **Course:** ICT105 Fundamental Technology Entrepreneurship
+* **Lab:** Lab 04 - User Persona, Requirements, and User Stories
+* **Group Name:** Tech Titans
+* **Repository Link:** * https://github.com/itsrosalyn/ICT105-TechTitans-MVP.git
+* **Date:** * 4.6.2026
+
+## 1. Work Completed Today
+
+| Member Name               | Contribution                                                                                                                          | GitHub Evidence (Commit/Issue/PR Link) |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| Thun Thiri Khin           | Prioritized MVP features and defined the final prototype scope.                                                                       | Issue #20                              |
+| Pan Thway Chal Ko Ko Lwin | Created the user persona based on Lab 03 evidence, updated the README, and reviewed requirement traceability before final submission. | Issues #18, #22, #23                   |
+| Mya Hninsi Phyu           | Reviewed requirement traceability before final submission.                                                                            | Issue #23                              |
+| Phoo Myat Thwin           | Wrote user stories and acceptance criteria, and updated the weekly logbook.                                                           | Issues #19, #22                        |
+
+## 2. Main Decisions
+
+* **Primary target user:** ICT students at Rangsit University.
+* **Main persona:** Nara, Year 1 ICT Student.
+* **Most important problem:** Current attendance methods do not reliably verify physical presence, allowing proxy attendance and making attendance records less trustworthy.
+* **Must-have requirements:**
+
+  * QR code attendance check-in
+  * GPS-based location verification
+  * Attendance confirmation after check-in
+  * Lecturer QR code generation
+  * Real-time attendance records
+* **Features included in MVP:**
+
+  * Student login
+  * QR code scanning
+  * GPS verification
+  * Attendance confirmation
+  * Attendance history
+  * Lecturer dashboard
+* **Features postponed:**
+
+  * LMS integration
+  * Push notifications
+  * Face recognition
+  * Advanced attendance analytics
+
+## 3. Requirement Changes / Clarifications
+
+Based on Lab 03 customer discovery findings, the team refined the project requirements by prioritizing accurate attendance verification, GPS-based location validation, and real-time attendance confirmation. Non-essential features such as LMS integration, push notifications, and face recognition were postponed to future iterations to keep the MVP focused and feasible.
+
+## 4. Problems Encountered
+
+* **Technical problem:** Determining a practical and reliable approach for GPS-based location verification while keeping the MVP simple.
+* **Team coordination problem:** Coordinating documentation updates and ensuring consistency across all project files.
+* **Evidence/requirement problem:** Translating interview and survey findings into clear, testable functional requirements and user stories.
+
+## 5. Next Actions Before Lab 05
+
+| Task                                                         | Owner                                      | Deadline      | GitHub Issue |
+| ------------------------------------------------------------ | ------------------------------------------ | ------------- | ------------ |
+| Review requirement traceability before final submission      | Mya Hninsi Phyu, Pan Thway Chal Ko Ko Lwin | Before Lab 05 | #23          |
+| Update README                                                | Pan Thway Chal Ko Ko Lwin                  | Before Lab 05 | #22          |
+| Update weekly logbook                                        | Phoo Myat Thwin                            | Before Lab 05 | #22          |
+| Prioritize MVP features and define the final prototype scope | Thun Thiri Khin                            | Before Lab 05 | #20          |
+| Write user stories and acceptance criteria                   | Phoo Myat Thwin                            | Before Lab 05 | #19          |
+| Create a user persona based on Lab 03 evidence               | Pan Thway Chal Ko Ko Lwin                  | Before Lab 05 | #18          |
+
+
