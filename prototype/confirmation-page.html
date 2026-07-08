@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AttendQR — Check-in confirmed</title>
+<style>
+  :root{
+    --blue-600:#2563eb;--blue-700:#1d4ed8;--blue-50:#eff6ff;--blue-100:#dbeafe;
+    --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);position:relative;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
+  .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
+  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
+  .nav-links .active{color:var(--blue-700);}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+  .menu-btn{display:none;width:34px;height:34px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);align-items:center;justify-content:center;font-size:17px;border:none;cursor:pointer;}
+
+  .wrap{max-width:520px;margin:0 auto;padding:70px 40px;text-align:center;}
+
+  .step-track{display:flex;justify-content:center;gap:8px;margin-bottom:32px;}
+  .step-dot{width:34px;height:4px;border-radius:2px;background:var(--blue-600);}
+
+  .check-circle{
+    width:96px;height:96px;border-radius:50%;
+    background:#dcfce7;color:#15803d;
+    display:flex;align-items:center;justify-content:center;
+    font-size:44px;margin:0 auto 24px;
+  }
+
+  .title{font-size:22px;font-weight:700;margin:0 0 8px;}
+  .sub{font-size:14px;color:var(--muted);margin:0 0 32px;}
+
+  .detail-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:6px 22px;margin-bottom:28px;text-align:left;
+  }
+  .detail-row{
+    display:flex;justify-content:space-between;
+    padding:13px 0;border-bottom:1px solid var(--line);
+    font-size:13px;
+  }
+  .detail-row:last-child{border-bottom:none;}
+  .detail-row .val{font-weight:700;}
+  .badge{
+    font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;
+    background:#dcfce7;color:#15803d;
+  }
+
+  .primary-btn{
+    width:100%;background:var(--blue-600);color:#fff;border:none;
+    border-radius:10px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;
+    margin-bottom:12px;
+  }
+  .secondary-btn{
+    width:100%;background:#fff;color:var(--blue-700);border:1px solid var(--line);
+    border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;
+  }
+
+  /* ===== Mobile responsive ===== */
+  @media (max-width:600px){
+    .nav{padding:12px 16px;}
+    .menu-btn{display:flex;}
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%;left:0;right:0;
+      flex-direction:column;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      padding:10px 20px 16px;
+      gap:14px;
+      z-index:50;
+      box-shadow:0 10px 20px rgba(15,23,42,0.08);
+    }
+    .nav-links.open{display:flex;}
+    .brand{font-size:15px;}
+    .wrap{padding:40px 20px;max-width:100%;}
+    .check-circle{width:76px;height:76px;font-size:34px;margin-bottom:20px;}
+    .title{font-size:19px;}
+    .sub{font-size:13px;margin-bottom:26px;}
+    .detail-card{padding:4px 16px;}
+    .detail-row{padding:11px 0;font-size:12.5px;}
+  }
+  @media (max-width:380px){
+    .wrap{padding:32px 14px;}
+    .detail-row{flex-wrap:wrap;gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="brand"><div class="mark">A</div>AttendQR</div>
+  <div class="nav-links">
+    <span>Home</span><span class="active">Check-in</span><span>Records</span><span>Sessions</span>
+  </div>
+  <div class="avatar">JS</div>
+  <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+</div>
+
+<div class="wrap">
+
+  <div class="step-track">
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+    <div class="step-dot"></div>
+  </div>
+
+  <div class="check-circle">✓</div>
+
+  <p class="title">You're checked in</p>
+  <p class="sub">Your attendance has been recorded for this session.</p>
+
+  <div class="detail-card">
+    <div class="detail-row"><span>Session</span><span class="val">ICT 105</span></div>
+    <div class="detail-row"><span>Room</span><span class="val">BUILDING 3/ 216</span></div>
+    <div class="detail-row"><span>Time</span><span class="val">12:05 PM</span></div>
+    <div class="detail-row"><span>Status</span><span class="badge">On time</span></div>
+  </div>
+
+  <button class="primary-btn">Back to home</button>
+  <button class="secondary-btn">View attendance history</button>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AttendQR — Generate session QR</title>
+<style>
+  :root{
+    --blue-600:#2563eb;--blue-700:#1d4ed8;--blue-50:#eff6ff;--blue-100:#dbeafe;
+    --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);position:relative;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
+  .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
+  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
+  .nav-links .active{color:var(--blue-700);}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+  .menu-btn{display:none;width:34px;height:34px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);align-items:center;justify-content:center;font-size:17px;border:none;cursor:pointer;}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:36px 40px 60px;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+
+  .page-title{font-size:22px;font-weight:700;margin:0 0 4px;grid-column:1/-1;}
+  .page-sub{font-size:13px;color:var(--muted);margin:0 0 8px;grid-column:1/-1;}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
+
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12px;font-weight:600;margin-bottom:6px;}
+  .field select,.field input{
+    width:100%;border:1px solid var(--line);border-radius:10px;
+    padding:10px 14px;font-size:13px;background:#fff;color:var(--ink);
+  }
+  .field-row{display:flex;gap:12px;}
+  .field-row .field{flex:1;}
+
+  .radius-note{
+    font-size:12px;color:var(--muted);background:var(--blue-50);
+    border-radius:10px;padding:10px 12px;margin-bottom:20px;
+  }
+
+  .generate-btn{
+    width:100%;background:var(--blue-600);color:#fff;border:none;
+    border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;
+  }
+
+  .qr-panel{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  .qr-frame{
+    width:220px;height:220px;background:#fff;border:1px solid var(--line);
+    border-radius:16px;display:flex;align-items:center;justify-content:center;
+    padding:16px;margin-bottom:18px;
+  }
+  .qr-frame svg{width:100%;height:100%;}
+
+  .timer-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--blue-50);color:var(--blue-700);
+    font-size:13px;font-weight:700;padding:7px 16px;border-radius:20px;
+    margin-bottom:16px;
+  }
+  .timer-dot{width:7px;height:7px;border-radius:50%;background:var(--blue-600);}
+
+  .qr-meta{width:100%;text-align:left;margin-bottom:16px;}
+  .meta-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;}
+  .meta-row:last-child{border-bottom:none;}
+  .meta-row .val{font-weight:700;}
+
+  .btn-row{display:flex;gap:10px;width:100%;}
+  .btn-row button{
+    flex:1;border-radius:10px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;
+  }
+  .refresh-btn{background:var(--blue-600);color:#fff;border:none;}
+  .stop-btn{background:#fff;color:#b91c1c;border:1px solid var(--line);}
+
+  .live-panel{grid-column:1/-1;}
+  .live-title{font-size:14px;font-weight:700;margin-bottom:14px;display:flex;justify-content:space-between;}
+  .live-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;}
+  .live-row:last-child{border-bottom:none;}
+  .live-avatar{width:30px;height:30px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+  .live-name{font-weight:600;flex:1;}
+  .live-time{color:var(--muted);font-size:12px;}
+
+  /* ===== Mobile responsive ===== */
+  @media (max-width:900px){
+    .wrap{grid-template-columns:1fr;}
+  }
+
+  @media (max-width:600px){
+    .nav{padding:12px 16px;}
+    .menu-btn{display:flex;}
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%;left:0;right:0;
+      flex-direction:column;
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      padding:10px 20px 16px;
+      gap:14px;
+      z-index:50;
+      box-shadow:0 10px 20px rgba(15,23,42,0.08);
+    }
+    .nav-links.open{display:flex;}
+    .wrap{padding:24px 18px 50px;}
+    .page-title{font-size:19px;}
+    .panel{padding:18px 18px;}
+    .field-row{flex-direction:column;gap:0;}
+    .qr-frame{width:180px;height:180px;}
+    .btn-row{flex-direction:column;}
+    .live-row{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="brand"><div class="mark">A</div>AttendQR</div>
+  <div class="nav-links">
+    <span>Dashboard</span><span class="active">Generate QR</span><span>Sessions</span><span>Reports</span>
+  </div>
+  <div class="avatar">JA</div>
+  <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+</div>
+
+<div class="wrap">
+  <p class="page-title">Generate session QR</p>
+  <p class="page-sub">Create a check-in code for your class. Students within range can scan to mark attendance.</p>
+
+  <div class="panel">
+    <div class="field">
+      <label>Course</label>
+      <select><option>Math 105</option><option>Design Lab</option><option>Physics</option></select>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label>Room</label>
+        <input type="text" value="Room 216">
+      </div>
+      <div class="field">
+        <label>Session length</label>
+        <select><option>30 minutes</option><option>50 minutes</option><option>90 minutes</option></select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Check-in radius</label>
+      <select><option>25 m</option><option selected>50 m</option><option>100 m</option></select>
+    </div>
+    <div class="radius-note">Students must be within the selected radius of Room 216 to check in successfully.</div>
+    <button class="generate-btn">Generate QR code</button>
+  </div>
+
+  <div class="panel qr-panel">
+    <div class="timer-pill"><span class="timer-dot"></span>Expires in 04:32</div>
+    <div class="qr-frame">
+      <svg viewBox="0 0 100 100">
+        <rect width="100" height="100" fill="#fff"/>
+        <g fill="#1d4ed8">
+          <rect x="6" y="6" width="26" height="26"/><rect x="12" y="12" width="14" height="14" fill="#fff"/><rect x="17" y="17" width="4" height="4" fill="#1d4ed8"/>
+          <rect x="68" y="6" width="26" height="26"/><rect x="74" y="12" width="14" height="14" fill="#fff"/><rect x="79" y="17" width="4" height="4" fill="#1d4ed8"/>
+          <rect x="6" y="68" width="26" height="26"/><rect x="12" y="74" width="14" height="14" fill="#fff"/><rect x="17" y="79" width="4" height="4" fill="#1d4ed8"/>
+          <rect x="40" y="6" width="6" height="6"/><rect x="52" y="6" width="6" height="6"/><rect x="40" y="18" width="6" height="6"/>
+          <rect x="60" y="40" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/><rect x="46" y="46" width="6" height="6"/>
+          <rect x="60" y="52" width="6" height="6"/><rect x="40" y="60" width="6" height="6"/><rect x="52" y="66" width="6" height="6"/>
+          <rect x="66" y="66" width="6" height="6"/><rect x="78" y="52" width="6" height="6"/><rect x="84" y="40" width="6" height="6"/>
+          <rect x="40" y="78" width="6" height="6"/><rect x="60" y="84" width="6" height="6"/><rect x="78" y="84" width="6" height="6"/>
+        </g>
+      </svg>
+    </div>
+    <div class="qr-meta">
+      <div class="meta-row"><span>Course</span><span class="val">Math 105</span></div>
+      <div class="meta-row"><span>Room</span><span class="val">Building 3/ 216</span></div>
+      <div class="meta-row"><span>Checked in</span><span class="val">27 / 35</span></div>
+    </div>
+    <div class="btn-row">
+      <button class="refresh-btn">Refresh code</button>
+      <button class="stop-btn">End session</button>
+    </div>
+  </div>
+
+  <div class="panel live-panel">
+    <div class="live-title">Live check-ins <span style="color:var(--muted);font-weight:400;">Updating in real time</span></div>
+    <div class="live-row"><div class="live-avatar">JS</div><div class="live-name">Jordan Smith</div><span class="live-time">9:02 AM</span></div>
+    <div class="live-row"><div class="live-avatar">AK</div><div class="live-name">Amara Khan</div><span class="live-time">9:01 AM</span></div>
+    <div class="live-row"><div class="live-avatar">LT</div><div class="live-name">Liam Tan</div><span class="live-time">9:00 AM</span></div>
+    <div class="live-row"><div class="live-avatar">RP</div><div class="live-name">Riya Patel</div><span class="live-time">8:59 AM</span></div>
+  </div>
+</div>
+
+</body>
+</html>
