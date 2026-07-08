@@ -119,8 +119,8 @@ ICT students at Rangsit University who use QR-code attendance systems and need a
 
 ### Diagram Links
 
-* User flow diagram:(https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/user-flow.png)
-* Use case diagram: (https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/use-case-diagram.png)
+* [User flow diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/user-flow.png)
+* [Use case diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/use-case-diagram.png)
 
 ### GitHub Contribution Evidence
 
@@ -148,7 +148,7 @@ The **QR Code Attendance System with GPS Verification** is a web-based attendanc
 
 The user flow begins with a user selecting either the **Student** or **Lecturer** role on the login screen. Students log in, scan the QR code, verify their GPS location, receive an attendance confirmation, and can view their attendance history. Lecturers log in to create attendance sessions, generate QR codes, monitor attendance records in real time, and view attendance summaries.
 
-User Flow Diagram:[diagrams/user-flow.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/user-flow.png)
+[User Flow Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/user-flow.png)
 
   
 
