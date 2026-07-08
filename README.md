@@ -156,7 +156,7 @@ User Flow Diagram:https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf
 
 All team members contributed to the same GitHub repository throughout Lab 05.
 
-- **Thun Thiri Khin** – Reviewed the product concept, wireframes, and MVP scope.
-- **Pan Thway Chal Ko Ko Lwin** – Created the interactive prototype, wireframes, and feature-requirement mapping.
-- **Mya Hninsi Phyu** – Prepared the screen inventory checklist, wireframe usability checklist, and feature-requirement mapping.
+- **Thun Thiri Khin** – Created case study brief and data file for student attendance list
+- **Pan Thway Chal Ko Ko Lwin** – Created  wireframe designs, wireframe usability checklist and feature-requirement mapping.
+- **Mya Hninsi Phyu** – Prepared the screen inventory checklist and wireframe specification
 - **Phoo Myat Thwin** – Prepared the product concept, updated the README, and completed the weekly logbook.
