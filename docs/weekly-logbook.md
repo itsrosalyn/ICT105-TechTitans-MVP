@@ -252,4 +252,61 @@ Product Concept and UI/UX Wireframe
 - Refine the interactive prototype based on team feedback.
 - Review requirement traceability and update the README with Lab 06 progress.
 
+  # Weekly Logbook - Lab 06
+
+## Group Name
+
+Tech Titans
+
+## Project Title
+
+QR Code Attendance System with GPS Verification
+
+## Date
+
+08/07/2026
+
+## Members Present
+
+| Member Name | Contribution Today | GitHub Evidence / Commit / File Updated |
+|---|---|---|
+| Thun Thiri Khin | Added the Customer Segments and Value Proposition sections, created the case study brief, developed the data structure, and updated the weekly logbook.  | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/customer-segments-value.xlsx , https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md , https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/data-structure.md , https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md |
+| Pan Thway Chal Ko Ko Lwin | Updated the project README. | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/d8d56e3d662b6b59ab746b61411c7ef080b104e9 |
+| Mya Hninsi Phyu | Created the data flow diagram, system architecture diagram, and feature-value mapping. | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/b3e32c8895a19458d47f40515daf16cfdfcc26dc , https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/3b16402ca2097b067a73beae91333ce6c168089a , https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/c233aafc99e0e58ebce28406d2a3c66824ea21b6 |
+| Phoo Myat Thwin | Created the Business Model Canvas and technical architecture documentatio | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/6d9a492f4a9c56eccecca9c85790a1a1af076a02 , https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/a09c070be9fb2db8c6e6c8e7f5d674d637073be8 |
+
+## Decisions Made Today
+
+1. Business model decision:
+  - Targeted RSU Users: Focused the system on ICT students and lecturers at Rangsit University to test the anti-proxy features locally.
+  -  Defined Key Values: Centered our value proposition on preventing cheating (proxy check-ins) and saving classroom time using automated verification.
+  -  Chose Access Channels: Decided to deliver the application through a simple mobile web browser using scanned classroom QR codes.
+
+2. Technical architecture decision:
+   - Selected Stack: Chose HTML, CSS, JavaScript, and Geolocation API for frontend check-ins.
+   -  Database Choice: Selected Firebase Firestore for real-time cloud data storage and sync.
+   -  Core Functions: Set up the system components to handle logins, QR scanning, location tracking, and dashboard reporting.
+     
+3. Data structure decision:
+   - Approved 3 Tables: Linked AttendanceLogs, Courses, and Users together using row ATT-009 as our main example.
+   - Removed Pending Status: Changed the system to a clean, simple choice: either Verified(Present) or Rejected(Absent).
+   - Matched Excel Headers: Updates our field definitions to use the exact same lowercase column names as our spreadsheet (like attendance_type and verification).
+
+4. Diagram decision:
+   - Approved Architecture Map: Fixed our system map to link web apps to QR, GPS, and Auth modules.
+   - Set Verification Steps: Maintained the process checking if QR tokens match before reading GPS locations.
+   - Mapped Pass/Fail Steps: Confirmed errors for bad locations and automatic dashboard updates for good logs.
+
+## Problems or Risks Found
+
+- GPS Accuracy Risk: Student phone GPS permissions or bad indoor network signals can cause wrong location checks.
+- QR Code Timeout: Slow internet could prevent real-time updates and block students from scanning before the QR expires.
+- System Integration: Connecting QR scanning, GPS tracking, and real-time database updates all at once is highly complex.
+ 
+## Next Actions Before Lab 07
+
+- Code the Verification Steps: Build the logic checking if QR tokens match before reading GPS locations.
+- Design UI Forms: Create the simple HTML web screens for the student scanner and the lecturer dashboard.
+- Test Database Sync: Connect the web forms to Firebase Firestore to test real-time data saving.
+
 
