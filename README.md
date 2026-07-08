@@ -136,13 +136,14 @@ The **QR Code Attendance System with GPS Verification** is a web-based attendanc
 
 | Screen | Related Requirement IDs | Wireframe File |
 |---|---|---|
-| Login / Role Selection | FR-01 | /wireframes/login-screen.png |
-| Student QR Code Check-in | FR-02, FR-03, FR-10, FR-11 | /wireframes/student-checkin.png |
-| Attendance Confirmation | FR-11 | /wireframes/attendance-confirmation.png |
-| Student Attendance History | FR-05, FR-06, FR-07, FR-08 | /wireframes/attendance-history.png |
-| Lecturer Dashboard | FR-05, FR-09, FR-12 | /wireframes/lecturer-dashboard.png |
-| Attendance Details | FR-07, FR-08 | /wireframes/attendance-details.png |
-
+| Login / Role Selection | **FR-01, FR-02** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/login-page.png |
+| Homepage / Landing | **FR-01, FR-02** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/home-page.png |
+| Student QR Code Check-in | **FR-03, FR-10** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/scanqr-page.png |
+| GPS Location Verification | **FR-03, FR-10** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/gpscheck-page.png |
+| Attendance Confirmation | **FR-11** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/confirmation-page.png |
+| Student Attendance History | **FR-05, FR-06, FR-07, FR-08** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/records-page.png |
+| Lecturer QR Code Generation | **FR-09** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/qr-generation.png |
+| Lecturer Dashboard | **FR-05, FR-06, FR-09, FR-12** | https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b7cbde5e9e0a651aee9c129dd18aa63f33ee21e6/wireframes/lecturer-dashboard.png |
 ### User Flow
 
 The user flow begins with a user selecting either the **Student** or **Lecturer** role on the login screen. Students log in, scan the QR code, verify their GPS location, receive an attendance confirmation, and can view their attendance history. Lecturers log in to create attendance sessions, generate QR codes, monitor attendance records in real time, and view attendance summaries.
