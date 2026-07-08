@@ -195,4 +195,60 @@ Based on Lab 03 customer discovery findings, the team refined the project requir
 | Write user stories and acceptance criteria                   | Phoo Myat Thwin                            | Before Lab 05 | #19          |
 | Create a user persona based on Lab 03 evidence               | Pan Thway Chal Ko Ko Lwin                  | Before Lab 05 | #18          |
 
+# Weekly Logbook - Lab 05
 
+## Group Name
+
+Tech Titans
+
+## Project Title
+
+QR Code Attendance System with GPS Verification
+
+## Lab 05 Focus
+
+Product Concept and UI/UX Wireframe
+
+## What We Completed Today
+
+- [x] Reviewed Lab 04 requirements
+- [x] Defined product concept
+- [x] Mapped features to requirements
+- [x] Created required wireframe screens
+- [x] Created user flow diagram
+- [x] Built clickable prototype draft or screen navigation plan
+- [x] Updated GitHub repository
+
+## Member Contributions
+
+| Member Name | Contribution | Evidence / Commit / Issue Link |
+|---|---|---|
+| Thun Thiri Khin | Reviewed the product concept, wireframes, and MVP scope to ensure they aligned with the project requirements. | Team collaboration |
+| Pan Thway Chal Ko Ko Lwin | Created the interactive prototype and added wireframes. Co-created the Feature-Requirement Mapping and Wireframe Specification. | Issues #28, #26 |
+| Mya Hninsi Phyu | Created the Screen Inventory Checklist and Wireframe Usability Checklist. Co-created the Feature-Requirement Mapping and Wireframe Specification. | Issues #27, #26 |
+| Phoo Myat Thwin | Prepared the Product Concept, updated the README, and completed the Lab 05 Weekly Logbook. | Issue #25 |
+
+## Decisions Made
+
+| Decision | Reason | Related Requirement |
+|---|---|---|
+| Use a role-selection login page for Students and Lecturers. | Provides a clear entry point for each user role. | FR-01 |
+| Implement QR code scanning with GPS verification for attendance. | Prevents proxy attendance and confirms students are physically present. | FR-02, FR-03, FR-10 |
+| Include a lecturer dashboard to manage attendance sessions and records. | Improves attendance management and reduces manual work. | FR-05, FR-09, FR-12 |
+| Allow students to view attendance history and attendance status. | Enables students to track their attendance records easily. | FR-06, FR-07, FR-08 |
+| Design the prototype with a consistent, responsive interface. | Ensures usability on both mobile and desktop devices. | FR-13, FR-14 |
+| Collect only essential attendance information. | Protects user privacy and follows responsible data handling practices. | FR-15 |
+
+## Problems Found
+
+- Ensuring every wireframe screen could be mapped directly to the functional requirements and user stories.
+- Designing GPS verification that is realistic while remaining feasible for the MVP.
+- Balancing essential features with the limited development time available.
+
+## Next Steps Before Lab 06
+
+- Develop the Business Model Canvas.
+- Create the Customer Segment Profile.
+- Prepare the Feature Value Mapping and Technical Architecture.
+- Refine the interactive prototype based on team feedback.
+- Review requirement traceability and update the README with Lab 06 progress.
