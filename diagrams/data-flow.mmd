@@ -1,0 +1,16 @@
+flowchart TD
+    A[Lecturer creates session] --> B[Generate dynamic QR code]
+    B --> C[(Sessions and QR Tokens Store)]
+    C --> D[Display QR code to student]
+    D --> E[Student scans QR code]
+    E --> F{QR code valid?}
+    F -->|No| G[Show error message]
+    F -->|Yes| H[Capture student GPS location]
+    H --> I{Within allowed GPS radius?}
+    I -->|No| J[Show too far message]
+    I -->|Yes| K[Save attendance record]
+    K --> L[(Attendance Database)]
+    L --> M[Calculate attendance percentage]
+    M --> N[Update attendance history]
+    N --> O[Update lecturer dashboard]
+    L --> P[Export attendance report]
