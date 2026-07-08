@@ -223,11 +223,10 @@ Product Concept and UI/UX Wireframe
 
 | Member Name | Contribution | Evidence / Commit / Issue Link |
 |---|---|---|
-| Thun Thiri Khin | Reviewed the product concept, wireframes, and MVP scope to ensure they aligned with the project requirements. | Team collaboration |
-| Pan Thway Chal Ko Ko Lwin | Created the interactive prototype and added wireframes. Co-created the Feature-Requirement Mapping and Wireframe Specification. | Issues #28, #26 |
-| Mya Hninsi Phyu | Created the Screen Inventory Checklist and Wireframe Usability Checklist. Co-created the Feature-Requirement Mapping and Wireframe Specification. | Issues #27, #26 |
-| Phoo Myat Thwin | Prepared the Product Concept, updated the README, and completed the Lab 05 Weekly Logbook. | Issue #25 |
-
+| Thun Thiri Khin | Created the case study brief and prepared the data file for the student attendance list. | [Issues #24](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/24#issue-4835082962) |
+| Pan Thway Chal Ko Ko Lwin | Created prototype,wireframe designs and co-prepared the Feature-Requirement Mapping and Wireframe Specification. | [Issues #28](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/28#issue-4835164005) [Issues #26](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/26#issue-4835132927) |
+| Mya Hninsi Phyu | Prepared the Screen Inventory Checklist and Wireframe Usability Checklist | [Issues #27](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/27#issue-4835142093)
+| Phoo Myat Thwin | Prepared the Product Concept, updated the README, and completed the Lab 05 Weekly Logbook. | [Issue #25 ](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/25#issue-4835105661)|
 ## Decisions Made
 
 | Decision | Reason | Related Requirement |
