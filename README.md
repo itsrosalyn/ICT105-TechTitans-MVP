@@ -125,3 +125,37 @@ ICT students at Rangsit University who use QR-code attendance systems and need a
 ### GitHub Contribution Evidence
 
 All members contributed to the repository through commits, issue discussions, feature implementation, documentation updates, and pull requests. Contribution evidence can be verified through the GitHub commit history and repository activity.
+
+## Lab 05: Product Concept and UI/UX Wireframe
+
+### Product Concept
+
+The **QR Code Attendance System with GPS Verification** is a web-based attendance management system designed for ICT students and lecturers at Rangsit University. The system allows lecturers to generate a unique QR code for each class session, while students scan the QR code and verify their GPS location to record attendance. This approach reduces lecture time spent on attendance, prevents proxy attendance, and provides accurate, real-time attendance records for both students and lecturers.
+
+### Requirement-Driven Screens
+
+| Screen | Related Requirement IDs | Wireframe File |
+|---|---|---|
+| Login / Role Selection | FR-01 | /wireframes/login-screen.png |
+| Student QR Code Check-in | FR-02, FR-03, FR-10, FR-11 | /wireframes/student-checkin.png |
+| Attendance Confirmation | FR-11 | /wireframes/attendance-confirmation.png |
+| Student Attendance History | FR-05, FR-06, FR-07, FR-08 | /wireframes/attendance-history.png |
+| Lecturer Dashboard | FR-05, FR-09, FR-12 | /wireframes/lecturer-dashboard.png |
+| Attendance Details | FR-07, FR-08 | /wireframes/attendance-details.png |
+
+### User Flow
+
+The user flow begins with a user selecting either the **Student** or **Lecturer** role on the login screen. Students log in, scan the QR code, verify their GPS location, receive an attendance confirmation, and can view their attendance history. Lecturers log in to create attendance sessions, generate QR codes, monitor attendance records in real time, and view attendance summaries.
+
+User Flow Diagram:
+- `/diagrams/user-flow.png`
+  
+
+### Team Contribution
+
+All team members contributed to the same GitHub repository throughout Lab 05.
+
+- **Thun Thiri Khin** – Reviewed the product concept, wireframes, and MVP scope.
+- **Pan Thway Chal Ko Ko Lwin** – Created the interactive prototype, wireframes, and feature-requirement mapping.
+- **Mya Hninsi Phyu** – Prepared the screen inventory checklist, wireframe usability checklist, and feature-requirement mapping.
+- **Phoo Myat Thwin** – Prepared the product concept, updated the README, and completed the weekly logbook.
