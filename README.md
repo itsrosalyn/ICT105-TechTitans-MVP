@@ -150,8 +150,6 @@ The user flow begins with a user selecting either the **Student** or **Lecturer*
 
 [User Flow Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/39edf21b8c10303d5bccdaa8ffe3c8238c3b69b1/diagrams/user-flow.png)
 
-  
-
 ### Team Contribution
 
 All team members contributed to the same GitHub repository throughout Lab 05.
@@ -160,3 +158,33 @@ All team members contributed to the same GitHub repository throughout Lab 05.
 - **Pan Thway Chal Ko Ko Lwin** – Created  wireframe designs, wireframe usability checklist and feature-requirement mapping.
 - **Mya Hninsi Phyu** – Prepared the screen inventory checklist and wireframe specification
 - **Phoo Myat Thwin** – Prepared the product concept, updated the README, and completed the weekly logbook.
+
+# Lab 06 Update - Business Model Canvas and Technical Architecture
+
+## Lab 06 Summary
+
+In Lab 06, our group refined the business and technical foundation of the QR Code Lecture Attendance System with GPS Verification. We connected the identified problem, system requirements, MVP features, user stories, wireframes, and technical architecture into a complete prototype plan. This work provides a clear roadmap for implementing and demonstrating the final prototype. 
+
+## Files Added or Updated
+
+- [Business Model Canvas](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/d47e7da4faaeb9ac3137d9ed6191513b11c2f66e/docs/business-model-canvas.md)
+
+- [Feature-Value Mapping](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/12d77981fd30eace3d2a2c510642af12308d5a9b/docs/feature-value-mapping.md)
+
+- [Technical Architecture](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/12d77981fd30eace3d2a2c510642af12308d5a9b/docs/technical-architecture.md)
+
+- [Data Structure](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/12d77981fd30eace3d2a2c510642af12308d5a9b/docs/data-structure.md) 
+
+- [System Architecture Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/12d77981fd30eace3d2a2c510642af12308d5a9b/diagrams/system-architecture.mmd) 
+
+- [Data Flow Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/12d77981fd30eace3d2a2c510642af12308d5a9b/diagrams/data-flow.mmd)
+
+- [Weekly Logbook](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/d36d1c5199d9c3ece81ad1e5d498dbb2fa7538ce/docs/weekly-logbook.md)
+
+## Technical Direction
+
+Our final prototype will use a database-backed web architecture built with HTML, CSS, and JavaScript. The prototype will also use the browser's Geolocation API to verify student locations during attendance check-in and a QR code library to generate and scan QR codes. 
+
+## Final Prototype Connection
+
+The outputs from Lab 06 serve as the blueprint for the final prototype. The Business Model Canvas defines the project's value proposition and stakeholders, while the Feature-Value Mapping ensures that every MVP feature delivers user and operational value. The Technical Architecture, Data Structure, System Architecture Diagram, and Data Flow Diagram provide implementation guidance for the frontend, database, and system interactions. Together, these documents ensure that every screen, user story, and functional requirement can be traced directly to the final working prototype.
