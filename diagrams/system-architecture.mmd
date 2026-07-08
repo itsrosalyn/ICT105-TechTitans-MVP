@@ -1,0 +1,33 @@
+---
+config:
+  layout: elk
+---
+flowchart TD
+    STU[Student Web App] --> WEB[Web Application]
+    LEC[Lecturer Web App] --> WEB
+
+    WEB --> AUTH[User Authentication]
+    WEB --> QR[QR Code Module]
+    WEB --> GPS[GPS Verification]
+
+    QR --> DB[(Attendance Database)]
+    GPS --> DB
+    AUTH --> DB
+
+    DB --> HISTORY[Attendance History]
+    DB --> TRACKER["Attendance Tracker - 80%"]
+    DB --> DASH[Lecturer Dashboard]
+    DB --> REPORT[Attendance Report]
+    DASH --> EXPORT[Export Attendance Report]
+
+    classDef inputLayer stroke:#818cf8,fill:#eef2ff
+    classDef appLayer stroke:#a78bfa,fill:#f5f3ff
+    classDef moduleLayer stroke:#2dd4bf,fill:#f0fdfa
+    classDef database stroke:#fb923c,fill:#fff7ed
+    classDef outputLayer stroke:#4ade80,fill:#f0fdf4
+
+    class STU,LEC inputLayer
+    class WEB appLayer
+    class AUTH,QR,GPS moduleLayer
+    class DB database
+    class HISTORY,TRACKER,DASH,REPORT,EXPORT outputLayer
