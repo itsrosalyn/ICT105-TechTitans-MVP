@@ -179,7 +179,8 @@ In Lab 06, our group refined the business and technical foundation of the QR Cod
 
 - [Data Flow Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/12d77981fd30eace3d2a2c510642af12308d5a9b/diagrams/data-flow.mmd)
 
-- [Weekly Logbook](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/d36d1c5199d9c3ece81ad1e5d498dbb2fa7538ce/docs/weekly-logbook.md)
+- [Weekly Logbook](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/20bb1dbffdc0cff54f28c675ce01a024c88bfa62/docs/weekly-logbook.md)
+
 
 ## Technical Direction
 
