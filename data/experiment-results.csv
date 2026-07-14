@@ -1,0 +1,10 @@
+tester_code,task_id,task_description,completed,time_seconds,help_needed,confusion_point,rating_clarity_1_5,notes
+T01,T1,Log in as a student,Yes,30,No,,5,Login page was easy to understand.
+T02,T2,Scan the QR code,Yes,45,No,Camera positioning,4,Needed a moment to align the QR code.
+T03,T3,Allow GPS location verification,Yes,25,No,GPS permission prompt,4,Understood after reading the prompt.
+T04,T4,Confirm attendance,Yes,15,No,,5,Confirmation message was clear.
+T05,T5,View attendance history and search for a previous record,Yes,38,No,Attendance percentage,4,Wanted more explanation of the attendance percentage.
+T06,T6,Log in as a lecturer,Yes,26,No,,5,Lecturer dashboard was easy to access.
+T07,T7,Generate a QR code,Yes,42,No,,5,QR code generation was straightforward.
+T07,T8,View the attendance dashboard,Yes,35,No,Attendance summary,4,"Dashboard was easy to understand, but suggested showing more attendance details in the summary."
+,,,,,,,,
