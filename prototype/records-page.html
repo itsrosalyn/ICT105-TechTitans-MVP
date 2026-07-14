@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AttendQR — Attendance history</title>
 <style>
       :root{
@@ -11,13 +10,12 @@
       }
       *{box-sizing:border-box;}
       body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-      .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);position:relative;}
+      .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
       .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
       .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
       .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
       .nav-links .active{color:var(--blue-700);}
       .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-  .menu-btn{display:none;width:34px;height:34px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);align-items:center;justify-content:center;font-size:17px;border:none;cursor:pointer;}
 
       .wrap{max-width:960px;margin:0 auto;padding:36px 40px 60px;}
 
@@ -61,38 +59,6 @@
       .page-btns{display:flex;gap:6px;}
       .page-btn{width:28px;height:28px;border-radius:7px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;}
       .page-btn.active{background:var(--blue-600);color:#fff;border-color:var(--blue-600);}
-
-      /* ===== Mobile responsive ===== */
-      @media (max-width:700px){
-        .nav{padding:12px 16px;}
-        .menu-btn{display:flex;}
-        .nav-links{
-          display:none;
-          position:absolute;
-          top:100%;left:0;right:0;
-          flex-direction:column;
-          background:#fff;
-          border-bottom:1px solid var(--line);
-          padding:10px 20px 16px;
-          gap:14px;
-          z-index:50;
-          box-shadow:0 10px 20px rgba(15,23,42,0.08);
-        }
-        .nav-links.open{display:flex;}
-        .wrap{padding:24px 16px 50px;}
-        .page-title{font-size:19px;}
-        .stats{grid-template-columns:1fr 1fr;gap:10px;}
-        .stat{padding:14px 14px;}
-        .stat .num{font-size:19px;}
-        .toolbar{flex-direction:column;}
-        .panel{overflow-x:auto;}
-        table{min-width:560px;}
-        .pagination{flex-direction:column;gap:10px;align-items:flex-start;}
-      }
-
-      @media (max-width:420px){
-        .stats{grid-template-columns:1fr;}
-      }
   </style>
 </head>
 <body>
@@ -100,10 +66,15 @@
     <div class="nav">
       <div class="brand"><div class="mark">A</div>AttendQR</div>
       <div class="nav-links">
-        <span>Home</span><span>Check-in</span><span class="active">Records</span><span>Sessions</span>
+        <a href="home.html">
+        <span>Home</span>
+        </a>
+        <a href="scan.html">
+        <span>Check-in</span>
+        </a>
+        <span class="active">Records</span>
       </div>
-      <div class="avatar">JS</div>
-      <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <div class="avatar">NR</div>
     </div>
 
     <div class="wrap">
