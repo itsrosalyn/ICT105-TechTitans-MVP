@@ -15,11 +15,15 @@ Rate from 1 = strongly disagree to 5 = strongly agree.
 | The form fields (like entering course codes or session times) were easy to understand. | |
 | The attendence history search and filter system allowed me to find records quickly. | |
 | The error messages (e.g., "Too Far from Class") and success pop-ups were clear. | |
+| The process for creating an attendance session and generating a QR code was straightforward. | |
+| The real-time attendance dashboard allowed me to monitor student logs accurately and efficiently. | |
 | I believe the GPS geofencing feature will effectively stop proxy check-in cheating. | |
 
 ## Open Questions
 1. How easy or difficult was it to complete the check-in process compared to traditional attendance methods?
 2. Did you experience any delays or issues while the system was verifying your GPS location?
-3. Did you experience any delays or issues while the system was verifying your GPS location?
-4. What specific features or design adjustments would make this app faster and more convenient for daily classroom use?
+3. What specific features or design adjustments would make this app faster and more convenient for daily classroom use?
+4. Did the real-time dashboard provide enough immediate detail to monitor who was attendinf your class?
+5. How confident do you feel that the location geofencing boundary accurately handles student presence?
+6. What features or metrics are missing from the dashboard summary that you would need before a real class session?
 
