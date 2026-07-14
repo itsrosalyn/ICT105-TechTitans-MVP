@@ -189,3 +189,41 @@ Our final prototype will use a database-backed web architecture built with HTML,
 ## Final Prototype Connection
 
 The outputs from Lab 06 serve as the blueprint for the final prototype. The Business Model Canvas defines the project's value proposition and stakeholders, while the Feature-Value Mapping ensures that every MVP feature delivers user and operational value. The Technical Architecture, Data Structure, System Architecture Diagram, and Data Flow Diagram provide implementation guidance for the frontend, database, and system interactions. Together, these documents ensure that every screen, user story, and functional requirement can be traced directly to the final working prototype.
+
+## Lab 07: MVP Experiment Design
+
+### Experiment Objective
+To evaluate whether the clickable QR Code Attendance System with GPS Verification helps students and lecturers complete the attendance process efficiently and accurately. The experiment aims to validate the usability, effectiveness, and feasibility of the proposed workflow before further development.
+
+### Critical Assumptions
+1. Students need a faster and more convenient attendance check-in process than manual attendance.
+2. QR code check-in with GPS verification will reduce proxy attendance and improve attendance accuracy.
+3. Students can easily complete the QR scanning, GPS verification, and attendance confirmation process without assistance.
+
+### MVP Experiment Type
+Simple Web Prototype (HTML, CSS, and JavaScript)
+
+A clickable web prototype was selected because it allows students and lecturers to experience the complete attendance workflow—including login, QR code generation, QR code scanning, GPS verification, attendance confirmation, attendance history, and the lecturer dashboard—without requiring a fully implemented backend database.
+
+### Success Metrics
+* At least 80% of participants successfully complete the attendance check-in workflow.
+* Average usability rating of 4.0/5 or higher.
+* Average interest level of 4.0/5 or higher.
+* At least 80% of participants can complete the main tasks without assistance.
+* User feedback identifies only minor usability issues and confirms that the workflow is easy to understand.
+
+### Files Added in Lab 07
+- [/docs/mvp-experiment-plan.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/397e1c08579790b7774762ebe0179d38c94f016d/docs/mvp-experiment-plan.md)
+- [/docs/critical-assumptions.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/397e1c08579790b7774762ebe0179d38c94f016d/docs/critical-assumptions.md)
+- [/docs/experiment-script.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/397e1c08579790b7774762ebe0179d38c94f016d/docs/experiment-script.md)
+- [/docs/success-metrics.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/397e1c08579790b7774762ebe0179d38c94f016d/docs/success-metrics.md)
+- [/docs/feedback-form.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/397e1c08579790b7774762ebe0179d38c94f016d/docs/feedback-form.md)
+- [/docs/weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e393be4a177456aa43e9cbbd1dbea9f621935027/docs/weekly-logbook.md)
+- [/prototype/mvp-demo-link.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e393be4a177456aa43e9cbbd1dbea9f621935027/prototype/mvp-demo-link.md)
+- [/data/experiment-results.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e393be4a177456aa43e9cbbd1dbea9f621935027/data/experiment-results.csv)
+- [/screenshots](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/e393be4a177456aa43e9cbbd1dbea9f621935027/screenshots)
+
+
+### Connection to Final Prototype
+EThe MVP experiment will provide evidence on whether the proposed attendance workflow is easy to use and addresses the identified user problems. Feedback from students and lecturers will be used to improve the QR code scanning process, GPS verification, attendance history, dashboard, and overall user interface before developing the final prototype. The experiment results will also help determine whether the current design should be continued or revised based on user validation.
+
