@@ -10,14 +10,14 @@ Rate from 1 = strongly disagree to 5 = strongly agree.
 
 | Question | Rating 1-5 |
 |---|---:|
-| I understood how to choose my role from the landing/login screen. | |
-| I was able to complete the QR check-in and GPS verification without help. | |
-| The form fields (like entering course codes or session times) were easy to understand. | |
-| The attendence history search and filter system allowed me to find records quickly. | |
-| The error messages (e.g., "Too Far from Class") and success pop-ups were clear. | |
-| The process for creating an attendance session and generating a QR code was straightforward. | |
-| The real-time attendance dashboard allowed me to monitor student logs accurately and efficiently. | |
-| I believe the GPS geofencing feature will effectively stop proxy check-in cheating. | |
+| I understood how to choose my role from the landing/login screen. | 5 |
+| I was able to complete the QR check-in and GPS verification without help. | 4 |
+| The form fields (like entering course codes or session times) were easy to understand. | 5 |
+| The attendence history search and filter system allowed me to find records quickly. | 4 |
+| The error messages (e.g., "Too Far from Class") and success pop-ups were clear. | 5 |
+| The process for creating an attendance session and generating a QR code was straightforward. | 5 |
+| The real-time attendance dashboard allowed me to monitor student logs accurately and efficiently. | 4 |
+| I believe the GPS geofencing feature will effectively stop proxy check-in cheating. | 4 |
 
 ## Open Questions
 1. How easy or difficult was it to complete the check-in process compared to traditional attendance methods?
