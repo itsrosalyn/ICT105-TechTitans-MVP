@@ -1,0 +1,8 @@
+tester_code,tester_type,campus_role,experience_with_attendance_system,reason_selected,
+T01,Student,Undergraduate,Uses QR-code attendance in university classes,Primary target user who can evaluate the student login process,
+T02,Student,Undergraduate,Experienced QR-code attendance and digital check-in procedures,Can evaluate QR code scanning usability and speed,
+T03,Student,International Student,Uses university attendance systems as an international student,Can identify clarity and usability issues for diverse student users,
+T04,Student,Undergraduate,Experienced attendance confirmation and attendance recording processes,Can evaluate whether attendance confirmation is clear and understandable,
+T05,Student,Undergraduate,Uses QR-code attendance and checks attendance records regularly,Can evaluate attendance history and record search features,
+T06,Lecturer,Lecturer,Manages attendance records using QR codes and manual verification methods,Can evaluate lecturer login and attendance management functions,
+T07,Lecturer,Lecturer,Responsible for creating attendance sessions and monitoring attendance records,Can evaluate QR generation and attendance dashboard functionality,
