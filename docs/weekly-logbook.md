@@ -226,7 +226,7 @@ Product Concept and UI/UX Wireframe
 | Thun Thiri Khin | Created the case study brief and prepared the data file for the student attendance list. | [Issues #24](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/24#issue-4835082962) |
 | Pan Thway Chal Ko Ko Lwin | Created prototype,wireframe designs and co-prepared the Feature-Requirement Mapping and Wireframe Specification. | [Issues #28](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/28#issue-4835164005) [Issues #26](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/26#issue-4835132927) |
 | Mya Hninsi Phyu | Prepared the Screen Inventory Checklist and Wireframe Usability Checklist | [Issues #27](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/27#issue-4835142093)
-| Phoo Myat Thwin | Prepared the Product Concept, updated the README, and completed the Lab 05 Weekly Logbook. | [Issue #25 ](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/25#issue-4835105661)|
+| Phoo Myat Thwin | Prepared the Product Concept, updated the README, and completed the Lab 05 Weekly Logbook. | [Issue #25](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/25#issue-4835105661)|
 ## Decisions Made
 
 | Decision | Reason | Related Requirement |
@@ -270,10 +270,10 @@ QR Code Attendance System with GPS Verification
 
 | Member Name | Contribution Today | GitHub Evidence / Commit / File Updated |
 |---|---|---|
-| Thun Thiri Khin | Added the Customer Segments and Value Proposition sections, created the case study brief, developed the data structure, and updated the weekly logbook.  | Customer Segments Value: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/customer-segments-value.xlsx , Case Study Brief: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md , Data Structure: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/data-structure.md , Weekly Logbook: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md |
-| Pan Thway Chal Ko Ko Lwin | Updated the project README. | README: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/d8d56e3d662b6b59ab746b61411c7ef080b104e9 |
-| Mya Hninsi Phyu | Created the data flow diagram, system architecture diagram, and feature-value mapping. | Data Flow Diagram: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/b3e32c8895a19458d47f40515daf16cfdfcc26dc , System Architecture Diagram: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/3b16402ca2097b067a73beae91333ce6c168089a , Feature-Value Mapping: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/c233aafc99e0e58ebce28406d2a3c66824ea21b6 |
-| Phoo Myat Thwin | Created the Business Model Canvas and technical architecture documentation | Business Model Canvas: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/6d9a492f4a9c56eccecca9c85790a1a1af076a02 , Technical Architecture Documentation: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/a09c070be9fb2db8c6e6c8e7f5d674d637073be8 |
+| Thun Thiri Khin | Added the Customer Segments and Value Proposition sections, created the case study brief, developed the data structure, and updated the weekly logbook.  | [Customer Segments Value](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/customer-segments-value.xlsx) , [Case Study Brief](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md) , [Data Structure](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/data-structure.md) , [Weekly Logbook](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md) |
+| Pan Thway Chal Ko Ko Lwin | Updated the project README. | [README](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/d8d56e3d662b6b59ab746b61411c7ef080b104e9) |
+| Mya Hninsi Phyu | Created the data flow diagram, system architecture diagram, and feature-value mapping. | [Data Flow Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/b3e32c8895a19458d47f40515daf16cfdfcc26dc) , [System Architecture Diagram](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/3b16402ca2097b067a73beae91333ce6c168089a) , [Feature-Value Mapping](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/c233aafc99e0e58ebce28406d2a3c66824ea21b6) |
+| Phoo Myat Thwin | Created the Business Model Canvas and technical architecture documentation | [Business Model Canvas](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/6d9a492f4a9c56eccecca9c85790a1a1af076a02) , [Technical Architecture Documentation](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/commit/a09c070be9fb2db8c6e6c8e7f5d674d637073be8) |
 
 ## Decisions Made Today
 
@@ -308,5 +308,47 @@ QR Code Attendance System with GPS Verification
 - Code the Verification Steps: Build the logic checking if QR tokens match before reading GPS locations.
 - Design UI Forms: Create the simple HTML web screens for the student scanner and the lecturer dashboard.
 - Test Database Sync: Connect the web forms to Firebase Firestore to test real-time data saving.
+
+# Weekly Logbook - Lab 07
+
+## Group Information
+- Group name: Tech Titans
+- Project title: QR code attendance system with GPS verification
+- Date: 14/07/2026
+- Repository link: https://github.com/itsrosalyn/ICT105-TechTitans-MVP.git
+
+## What We Completed Today
+- [x] Reviewed requirements, user stories, MVP features, architecture, and wireframes
+- [x] Identified critical assumptions
+- [x] Selected MVP experiment type
+- [x] Defined test users and success metrics
+- [x] Prepared experiment script and feedback form
+- [x] Updated GitHub repository and README
+
+## Member Contributions
+| Member Name | Contribution | Evidence/Commit/Issue Link |
+|---|---|---|
+| Thun Thiri Khin | Created feedback-form document, success-metrics and added feedback-form data | [Issues #36](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/36) |
+| Pan Thway Chal Ko Ko Lwin | Added sample-test-users data, Created mvp-demo-link, prototype link and screenshots | [Issues #37](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/37) |
+| Mya Hninsi Phyu | Created critical-assumptions, experiment-results, update README and weekly logbook | [Issues #34](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/34)
+| Phoo Myat Thwin | Create experiment-script, mvp-experiment-plan.md and added experiment-flow diagram | [Issue #35](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/35)|
+
+## Key Decisions
+| Decision                                                                              | Reason                                                                                        | Evidence/Requirement Link   |
+| ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------- |
+| Selected a **simple web prototype (HTML/CSS/JavaScript)** as the MVP experiment type. | It allows users to interact with the attendance workflow before full implementation.          | [docs/mvp-experiment-plan.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/54be93ccc7946f326048b9625570e3f98b2688ce/docs/mvp-experiment-plan.md) |
+| Developed a **clickable prototype** covering the main attendance workflow.            | Enables usability testing of the complete user journey from login to attendance confirmation. | [prototype/mvp-demo-link.md]() |
+| Selected **ICT students and lecturers** as MVP test users.                            | They are the primary target users and can provide relevant feedback.                          | [data/sample-test-users.cvs](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/681ae75a46afbf5a9f0dbd259c8dccdb0566312b/data/sample-test-users.csv)              |
+| Defined measurable success metrics and a feedback form for usability testing.         | Provides evidence to evaluate whether the MVP meets user needs.                               | [data/experiment-results.cvs](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/681ae75a46afbf5a9f0dbd259c8dccdb0566312b/data/experiment-results.csv), [data/feedback-form.cvs](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/681ae75a46afbf5a9f0dbd259c8dccdb0566312b/data/feedback-form-template.csv), [docs/success-metrics.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/681ae75a46afbf5a9f0dbd259c8dccdb0566312b/docs/success-metrics.md)      |
+
+
+## Problems and Next Action
+| Problem                                                     | Next Action                                                                                                           | Responsible Member        |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| QR code scanning feature is not fully implemented.          | Add sample QR code data and implement JavaScript logic to simulate QR code scanning in the prototype.                 | Pan Thway Chal Ko Ko Lwin |
+| GPS location verification is not fully implemented.         | Add sample classroom location data and implement JavaScript location verification for the prototype.                  | Phoo Myat Thwin           |
+| User validation has not been completed.                     | Conduct usability testing with ICT students and lecturers using the clickable prototype and collect feedback.         | Thun Thiri Khin           |
+| Validation findings have not been applied to the prototype. | Analyze validation results, create GitHub issues, and improve the prototype and documentation based on user feedback. | Mya Hninsi Phyu           |
+
 
 
