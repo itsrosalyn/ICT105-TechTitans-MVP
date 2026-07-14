@@ -1,4 +1,4 @@
 segment_id,segment-name,need,value_expected,possible_channel
 CS01,Student,Fast and effortless check-in during a busy lecture without waiting in lines.,Instant proof of presence so they can focus on learning instead of manual paper sign-in sheets.,Mobile Web Browser/QR Code Scanner
-CS02,Lecturer,An automated way to verify attendance and immediately block proxy cheating (students signing in for absent friends).,"Accurate, reral-time data on who is physically in the room, saving valuable teaching time.",Lecturer Dashboard/Web Interface
-CS03,Admin/Coordinator,Centralized and secure storage of school-wide attendance logs to monitor the university's rules.,Easy tracking of the mandatory 80% attendance rule to identify at-risk students automatically.	Admin Control Panel/Backend Database
+CS02,Lecturer,An automated way to verify attendance and immediately block proxy cheating (students signing in for absent friends).,"Accurate, real-time data on who is physically in the room, saving valuable teaching time.",Lecturer Dashboard/Web Interface
+CS03,Admin/Coordinator,Centralized and secure storage of school-wide attendance logs to monitor the university's rules.,Easy tracking of the mandatory 80% attendance rule to identify at-risk students automatically.,Admin Control Panel/Backend Database
