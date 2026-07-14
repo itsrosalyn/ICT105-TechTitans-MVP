@@ -1,0 +1,8 @@
+tester_code,understood_purpose_1_5,completed_task_1_5,form_clear_1_5,search_useful_1_5,status_clear_1_5,would_use_1_5,most_useful_feature,confusing_part,suggested_improvement
+T01,5,5,5,4,5,5,Login page layout,None,None(Login page was easy to undrstand)
+T02,5,4,4,4,4,4,QR scanning speed,Camera positioning,Needed a moment to align the QR code
+T03,5,4,5,4,5,4,Geofence verification,GPS permission prompt,Provide a guide on GPS location permissions
+T04,5,5,5,4,5,5,Attendance confirmation screen,None,None(Confirmation message was clear)
+T05,4,4,4,4,4,4,History filtering,Attendance percentage metric,Add a tool-tip explanation of the attendance percentage
+T06,5,5,5,5,5,5,Lecturer landing flow,None,Dashboard login was seamless
+T07,5,4,5,4,4,5,QR code generation,Attendance summary charts,Show more detailed student lists in the summary dashboard
