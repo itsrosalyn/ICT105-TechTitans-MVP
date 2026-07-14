@@ -11,10 +11,10 @@ ATT-009,Present,ICT-205,2nd Year Student,ICT Lab,1/7/2026,Student,Verified,Corre
 ATT-010,Absent,ICT-205,2nd Year Student,Bus Stop,24/6/2026,System,Rejected,Scanned OR code from outside classroom; blocked by GPS boundaries.
 ATT-011,Present,ICT-111,1st Year Student,Lecture Hall,24/6/2026,Student,Verified,Received instant feedback showing check-in was successful.
 ATT-012,Present,ICT-321,3rd Year Student,Auditorium,24/6/2026,Student,Verified,Scanned the QR code from the very back row easily.
-ATT-013,Absent,ICT-202,2nd Year Student	Cafeteria,24/6/2026,System,Rejected,GPS telemetry failed; user was at cafeteria during lecture.
+ATT-013,Absent,ICT-202,2nd Year Student,Cafeteria,24/6/2026,System,Rejected,GPS telemetry failed; user was at cafeteria during lecture.
 ATT-014,Present,ICT-201,2nd Year Student,ICT Lab,24/6/2026,Student,Verified	Selected the right section and scanned flawlessly.
 ATT-015,Absent,ICT-105,1st Year Student,Lecture Hall,17/6/2026,Student,Rejected	Physical paper sheet signature rejected due to absence.
-ATT-016,Present,ICT-311,3rd Year Student,Auditorium ,17/6/2026,Student,Verified,Attendance secured via dynamic timed QR code rotation.
+ATT-016,Present,ICT-311,3rd Year Student,Auditorium,17/6/2026,Student,Verified,Attendance secured via dynamic timed QR code rotation.
 ATT-017,Present,ICT-203,2nd Year Student,ICT Lab,17/6/2026,Student,Verified	Confirmed presence as digital roster synced instantly.
 ATT-018,Present,ICT-110,Course Coordinator,Staff Office,17/6/2026,Lecturer,Verified	Lecturer dashboard updated to display active student counts.
 ATT-019,Present,ICT-106,Senior Lecturer,Auditorium 2,17/6/2026,Lecturer,Verified,Digital roster replaces slow manual paper sheets.
