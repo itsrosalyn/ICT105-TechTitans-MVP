@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AttendQR — Log in</title>
 <style>
   :root{
@@ -27,7 +26,6 @@
     grid-template-columns:1fr 1fr;
   }
 
-  /* left brand panel */
   .brand-panel{
     background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
     color:#fff;
@@ -62,8 +60,7 @@
   .qr-frame svg{width:100%;height:100%;}
 
   .brand-foot{font-size:12px;color:var(--blue-100);}
-
-  /* right form panel */
+  
   .form-panel{
     display:flex;
     align-items:center;
@@ -175,16 +172,6 @@
     body{grid-template-columns:1fr;}
     .brand-panel{display:none;}
   }
-
-  @media (max-width:480px){
-    .form-panel{padding:32px 20px;}
-    .form-wrap{max-width:100%;}
-    .form-title{font-size:20px;}
-    .role-toggle button{padding:10px 6px;font-size:12.5px;}
-    .field input{padding:10px 12px;font-size:13.5px;}
-    .row-between{flex-wrap:wrap;gap:8px;}
-    .qr-login{padding:11px 12px;}
-  }
 </style>
 </head>
 <body>
@@ -277,6 +264,21 @@
 </div>
 
 <script>
+const DEFAULT_USERNAME = "rosalyn@rsu.ac.th";
+const DEFAULT_PASSWORD = "123456";
+
+document.querySelector('.login-btn').addEventListener('click', function(e){
+  e.preventDefault();
+  const username = document.getElementById('id-input').value;
+  const password = document.querySelector('input[type="password"]').value;
+
+  if(username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD){
+    window.location.href = "home.html";
+  } else {
+    alert("Invalid username or password.");
+  }
+});
+
 function setRole(role, btn){
   document.querySelectorAll('.role-toggle button').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
