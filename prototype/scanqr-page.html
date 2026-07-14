@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AttendQR — Scan to check in</title>
 <style>
   :root{
@@ -11,13 +10,12 @@
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);position:relative;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
   .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
   .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
   .nav-links .active{color:var(--blue-700);}
   .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-  .menu-btn{display:none;width:34px;height:34px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);align-items:center;justify-content:center;font-size:17px;border:none;cursor:pointer;}
 
   .wrap{max-width:520px;margin:0 auto;padding:48px 40px 60px;text-align:center;}
 
@@ -54,6 +52,7 @@
     position:absolute;top:50%;left:50%;
     width:62%;height:62%;
     transform:translate(-50%,-50%);
+    pointer-events:none;
   }
   .corner{
     position:absolute;width:26px;height:26px;
@@ -81,6 +80,7 @@
     font-size:12px;
     font-weight:600;
     opacity:0.85;
+    pointer-events:none;
   }
   .flash-btn{
     position:absolute;top:14px;right:14px;
@@ -89,6 +89,24 @@
     color:#fff;
     display:flex;align-items:center;justify-content:center;
     font-size:14px;
+  }
+
+  #qr-reader{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+  }
+  #qr-reader video{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover;
+  }
+  #qr-reader__dashboard, #qr-reader__header_message, #qr-reader__status_span{
+    display:none !important;
+  }
+  #qr-reader__scan_region{
+    border:none !important;
   }
 
   .session-card{
@@ -108,33 +126,6 @@
     border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:10px;
   }
   .cancel-link{font-size:12px;color:var(--muted);text-decoration:none;}
-
-  /* ===== Mobile responsive ===== */
-  @media (max-width:600px){
-    .nav{padding:12px 16px;}
-    .menu-btn{display:flex;}
-    .nav-links{
-      display:none;
-      position:absolute;
-      top:100%;left:0;right:0;
-      flex-direction:column;
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      padding:10px 20px 16px;
-      gap:14px;
-      z-index:50;
-      box-shadow:0 10px 20px rgba(15,23,42,0.08);
-    }
-    .nav-links.open{display:flex;}
-    .wrap{padding:32px 18px 50px;max-width:100%;}
-    .title{font-size:18px;}
-    .sub{font-size:13px;}
-    .camera{border-radius:16px;}
-    .session-card{padding:11px 14px;}
-  }
-  @media (max-width:380px){
-    .wrap{padding:26px 14px 40px;}
-  }
 </style>
 </head>
 <body>
@@ -142,10 +133,15 @@
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
   <div class="nav-links">
-    <span>Home</span><span class="active">Check-in</span><span>Records</span><span>Sessions</span>
+    <a href="home.html">
+    <span>Home</span>
+    </a>
+    <span class="active">Check-in</span>
+    <a href="records.html">
+    <span>Records</span>
+    </a>
   </div>
-  <div class="avatar">JS</div>
-  <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <div class="avatar">NR</div>
 </div>
 
 <div class="wrap">
@@ -159,9 +155,9 @@
   <p class="title">Scan to check in</p>
   <p class="sub">Point your camera at the QR code shown by your lecturer.</p>
 
-  <a href="attendance-gps-verification.html" style="text-decoration:none;">
   <div class="camera">
     <div class="camera-feed"></div>
+    <div id="qr-reader"></div>
     <div class="flash-btn">⚡</div>
     <div class="scan-frame">
       <div class="corner tl"></div>
@@ -172,7 +168,6 @@
     </div>
     <div class="camera-hint">Align the QR code within the frame</div>
   </div>
-  </a>
 
   <div class="session-card">
     <div class="session-icon">M</div>
@@ -183,9 +178,39 @@
   </div>
 
   <button class="manual-btn">Enter code manually</button>
-  <div><a href="attendance-homepage-web.html" class="cancel-link">Cancel and go back</a></div>
+  <div><a href="home.html" class="cancel-link">Cancel and go back</a></div>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script>
+const html5QrCode = new Html5Qrcode("qr-reader");
+
+function onScanSuccess(decodedText, decodedResult){
+  html5QrCode.stop().then(() => {
+    
+    window.location.href = "gps.html";
+  }).catch(err => {
+    console.error("Failed to stop scanner:", err);
+    window.location.href = "gps.html";
+  });
+}
+
+function onScanFailure(error){}
+
+html5QrCode.start(
+  { facingMode: "environment" },
+  {
+    fps: 10,
+    qrbox: { width: 250, height: 250 }
+  },
+  onScanSuccess,
+  onScanFailure
+).catch(err => {
+  console.error("Unable to start QR scanner:", err);
+  document.querySelector('.camera-hint').textContent = "Camera access denied or unavailable.";
+});
+</script>
 
 </body>
 </html>
