@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AttendQR — Generate session QR</title>
 <style>
   :root{
@@ -11,13 +10,12 @@
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);position:relative;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
   .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
   .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
   .nav-links .active{color:var(--blue-700);}
   .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-  .menu-btn{display:none;width:34px;height:34px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);align-items:center;justify-content:center;font-size:17px;border:none;cursor:pointer;}
 
   .wrap{max-width:1000px;margin:0 auto;padding:36px 40px 60px;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
 
@@ -80,36 +78,6 @@
   .live-avatar{width:30px;height:30px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
   .live-name{font-weight:600;flex:1;}
   .live-time{color:var(--muted);font-size:12px;}
-
-  /* ===== Mobile responsive ===== */
-  @media (max-width:900px){
-    .wrap{grid-template-columns:1fr;}
-  }
-
-  @media (max-width:600px){
-    .nav{padding:12px 16px;}
-    .menu-btn{display:flex;}
-    .nav-links{
-      display:none;
-      position:absolute;
-      top:100%;left:0;right:0;
-      flex-direction:column;
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      padding:10px 20px 16px;
-      gap:14px;
-      z-index:50;
-      box-shadow:0 10px 20px rgba(15,23,42,0.08);
-    }
-    .nav-links.open{display:flex;}
-    .wrap{padding:24px 18px 50px;}
-    .page-title{font-size:19px;}
-    .panel{padding:18px 18px;}
-    .field-row{flex-direction:column;gap:0;}
-    .qr-frame{width:180px;height:180px;}
-    .btn-row{flex-direction:column;}
-    .live-row{flex-wrap:wrap;}
-  }
 </style>
 </head>
 <body>
@@ -117,10 +85,12 @@
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
   <div class="nav-links">
-    <span>Dashboard</span><span class="active">Generate QR</span><span>Sessions</span><span>Reports</span>
+    <a href="lecturer-dashboard.html">
+    <span>Dashboard</span>
+    </a>
+    <span class="active">Generate QR</span>
   </div>
   <div class="avatar">JA</div>
-  <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
 </div>
 
 <div class="wrap">
