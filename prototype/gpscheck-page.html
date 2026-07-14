@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AttendQR — GPS verification</title>
 <style>
   :root{
@@ -11,13 +10,12 @@
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);position:relative;}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
   .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
   .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
   .nav-links .active{color:var(--blue-700);}
   .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-  .menu-btn{display:none;width:34px;height:34px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);align-items:center;justify-content:center;font-size:17px;border:none;cursor:pointer;}
 
   .wrap{max-width:620px;margin:0 auto;padding:64px 40px;text-align:center;}
 
@@ -102,37 +100,6 @@
     width:100%;background:#fff;color:var(--blue-700);border:1px solid var(--line);
     border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;
   }
-
-  /* ===== Mobile responsive ===== */
-  @media (max-width:600px){
-    .nav{padding:12px 16px;}
-    .menu-btn{display:flex;}
-    .nav-links{
-      display:none;
-      position:absolute;
-      top:100%;left:0;right:0;
-      flex-direction:column;
-      background:#fff;
-      border-bottom:1px solid var(--line);
-      padding:10px 20px 16px;
-      gap:14px;
-      z-index:50;
-      box-shadow:0 10px 20px rgba(15,23,42,0.08);
-    }
-    .nav-links.open{display:flex;}
-    .wrap{padding:36px 18px;max-width:100%;}
-    .map-frame{height:220px;border-radius:16px;}
-    .radius-ring{width:120px;height:120px;}
-    .radius-ring.inner{width:46px;height:46px;}
-    .title{font-size:18px;}
-    .sub{font-size:13px;max-width:100%;}
-    .detail-card{padding:4px 16px;}
-    .status-pill{font-size:12px;padding:7px 14px;}
-  }
-  @media (max-width:380px){
-    .map-frame{height:190px;}
-    .room-label{font-size:11px;padding:5px 10px;}
-  }
 </style>
 </head>
 <body>
@@ -140,10 +107,15 @@
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
   <div class="nav-links">
-    <span>Home</span><span class="active">Check-in</span><span>Records</span><span>Sessions</span>
+    <a href="home.html">
+    <span>Home</span>
+    </a>
+    <span class="active">Check-in</span>
+    <a href="records.html">
+    <span>Records</span>
+    </a>
   </div>
-  <div class="avatar">JS</div>
-  <button class="menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <div class="avatar">NR</div>
 </div>
 
 <div class="wrap">
@@ -172,7 +144,9 @@
     <div class="detail-row"><span>Allowed radius</span><span class="val">50 m</span></div>
   </div>
 
+  <a href="confirmation.html">
   <button class="continue-btn">Confirm check-in</button>
+  </a>
   <button class="retry-btn">Retry location check</button>
 
 </div>
