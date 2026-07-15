@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Lecturer dashboard</title>
 <style>
   :root{
@@ -55,6 +56,22 @@
   .alert-icon{width:26px;height:26px;border-radius:7px;background:#fef3c7;color:#92400e;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
   .alert-title{font-weight:600;}
   .alert-sub{color:var(--muted);margin-top:1px;}
+
+  @media (max-width:900px){
+    .wrap{padding:24px 20px 40px;}
+    .grid-2{grid-template-columns:1fr;}
+    .stats{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .nav{padding:12px 16px;}
+    .nav-links{gap:16px;font-size:13px;}
+    .header-row{flex-direction:column;align-items:flex-start;gap:14px;}
+    .header-row .new-btn{width:100%;}
+    .panel{overflow-x:auto;}
+  }
+  @media (max-width:400px){
+    .stats{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -67,15 +84,18 @@
     <span>Generate QR</span>
     </a>
   </div>
-  <div class="avatar">JA</div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
+    <div class="avatar" id="nav-avatar">JA</div>
+  </div>
 </div>
 
 <div class="wrap">
 
   <div class="header-row">
     <div>
-      <p class="page-title">Good morning, Prof. Alvarez</p>
-      <p class="page-sub">Tuesday, July 8 · You have 3 sessions today</p>
+      <p class="page-title" id="greeting-text">Good morning, Prof. Alvarez</p>
+      <p class="page-sub" id="greeting-sub">Tuesday, July 8 · You have 3 sessions today</p>
     </div>
     <a href="QR.html">
     <button class="new-btn">+ Generate session QR</button>
@@ -83,22 +103,31 @@
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="num">142</div><div class="label">Students across courses</div></div>
-    <div class="stat"><div class="num">91%</div><div class="label">Avg. attendance rate</div></div>
-    <div class="stat"><div class="num">3</div><div class="label">Sessions today</div></div>
-    <div class="stat"><div class="num">1</div><div class="label">Live session now</div></div>
+    <div class="stat"><div class="num" id="stat-distinct-students">0</div><div class="label">Students who have checked in</div></div>
+    <div class="stat"><div class="num" id="stat-total-checkins">0</div><div class="label">Total check-ins this term</div></div>
+    <div class="stat"><div class="num" id="stat-sessions-today">0</div><div class="label">Sessions today</div></div>
+    <div class="stat"><div class="num" id="stat-live-count">0</div><div class="label">Live session now</div></div>
+  </div>
+
+  <div class="panel" id="active-session-panel" style="display:none;">
+    <div class="panel-title">Active session <span class="badge live">Live</span></div>
+    <div class="mini-stat-row" style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;">
+      <span>Course</span><span style="font-weight:700;" id="active-course">—</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;">
+      <span>Room</span><span style="font-weight:700;" id="active-room">—</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:9px 0;font-size:13px;">
+      <span>Checked in</span><span style="font-weight:700;" id="active-checkins">0</span>
+    </div>
   </div>
 
   <div class="grid-2">
     <div>
       <div class="panel">
         <div class="panel-title">Today's sessions <a href="#">View all</a></div>
-        <table>
-          <tr><th>Course</th><th>Room</th><th>Time</th><th>Attendance</th><th>Status</th></tr>
-          <tr>
-            <td><div class="session-cell"><div class="row-icon">I</div>ICT 105</div></td>
-            <td>Room 204</td><td>9:00 AM</td><td>27 / 35</td><td><span class="badge live">Live</span></td>
-          </tr>
+        <table id="todays-sessions-table">
+          <tr id="todays-header-row"><th>Course</th><th>Room</th><th>Time</th><th>Attendance</th><th>Status</th></tr>
           <tr>
             <td><div class="session-cell"><div class="row-icon">I</div>ICT 225</div></td>
             <td>Room 118</td><td>1:30 PM</td><td>—</td><td><span class="badge">Upcoming</span></td>
@@ -108,46 +137,272 @@
             <td>Room 302</td><td>4:00 PM</td><td>—</td><td><span class="badge">Upcoming</span></td>
           </tr>
         </table>
+        <p id="todays-empty" style="display:none;text-align:center;font-size:12px;color:var(--muted);padding:14px 0 4px;">No sessions generated today yet.</p>
       </div>
 
       <div class="panel">
-        <div class="panel-title">Attendance trend <a href="#">This term</a></div>
-        <div class="bar-chart">
-          <div class="bar-col"><div class="bar" style="height:60%;"></div><div class="bar-label">W1</div></div>
-          <div class="bar-col"><div class="bar" style="height:75%;"></div><div class="bar-label">W2</div></div>
-          <div class="bar-col"><div class="bar" style="height:50%;"></div><div class="bar-label">W3</div></div>
-          <div class="bar-col"><div class="bar" style="height:85%;"></div><div class="bar-label">W4</div></div>
-          <div class="bar-col"><div class="bar hi" style="height:95%;"></div><div class="bar-label">W5</div></div>
-          <div class="bar-col"><div class="bar" style="height:70%;"></div><div class="bar-label">W6</div></div>
-        </div>
+        <div class="panel-title">Check-ins per week <a href="#">This term</a></div>
+        <div class="bar-chart" id="trend-chart"></div>
       </div>
     </div>
 
     <div>
       <div class="panel">
         <div class="panel-title">Alerts</div>
-        <div class="alert-row">
+        <div id="alerts-list">
+          <div class="alert-row">
           <div class="alert-icon">!</div>
-          <div><div class="alert-title">3 students below 80% attendance</div><div class="alert-sub">Design Lab · Review recommended</div></div>
+          <div><div class="alert-title">3 students below 80% attendance</div><div class="alert-sub">ICT102 · Review recommended</div></div>
         </div>
         <div class="alert-row">
           <div class="alert-icon">!</div>
-          <div><div class="alert-title">GPS mismatch flagged</div><div class="alert-sub">Physics · Jul 4 session</div></div>
+          <div><div class="alert-title">GPS mismatch flagged</div><div class="alert-sub">ICT210 · Jul 4 session</div></div>
+        </div>
         </div>
       </div>
 
       <div class="panel">
         <div class="panel-title">Courses</div>
-        <table>
-          <tr><td>ICT 105</td><td style="text-align:right;font-weight:700;">96%</td></tr>
-          <tr><td>ICT 225</td><td style="text-align:right;font-weight:700;">88%</td></tr>
-          <tr><td>ICT 405</td><td style="text-align:right;font-weight:700;">90%</td></tr>
+        <table id="courses-table">
+          <tr><td style="color:var(--muted);">No check-ins recorded yet.</td></tr>
         </table>
       </div>
     </div>
   </div>
 
 </div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
+  authDomain: "attender-demo.firebaseapp.com",
+  projectId: "attender-demo",
+  storageBucket: "attender-demo.firebasestorage.app",
+  messagingSenderId: "284650952052",
+  appId: "1:284650952052:web:d50f23ef490124f8148821"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+function getCurrentUser(){
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      unsubscribe();
+      if(!user){ resolve(null); return; }
+      try{
+        const snap = await _getDoc(_doc(db, "users", user.uid));
+        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
+      } catch(e){ resolve(null); }
+    });
+  });
+}
+async function requireRole(requiredRole){
+  const user = await getCurrentUser();
+  if(!user || user.role !== requiredRole){
+    window.location.href = "index.html";
+    return null;
+  }
+  return user;
+}
+function wireLogout(selector = "#logout-link"){
+  const el = document.querySelector(selector);
+  if(!el) return;
+  el.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if(!confirm("Are you sure you want to log out?")) return;
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+}
+function initials(name){
+  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+}
+import { doc, collection, query, where, onSnapshot, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const currentUser = await requireRole("lecturer");
+if(!currentUser) throw new Error("Redirecting to login");
+wireLogout();
+
+document.getElementById('greeting-text').textContent = "Good morning, " + currentUser.name;
+document.getElementById('nav-avatar').textContent = initials(currentUser.name.replace(/^Prof\.\s*/i, ""));
+
+const today = new Date();
+document.getElementById('greeting-sub').textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+let unsubscribeRecords = null;
+
+function courseIcon(course){
+  return (course || "?").charAt(0);
+}
+function isToday(ts){
+  return new Date(ts).toDateString() === new Date().toDateString();
+}
+
+async function refreshDashboard(){
+  const [recordsSnap, historySnap, activeSnap] = await Promise.all([
+    getDocs(collection(db, "records")),
+    getDocs(collection(db, "sessions_history")),
+    getDoc(doc(db, "sessions", "active"))
+  ]);
+  const allRecords = recordsSnap.docs.map(d => d.data());
+  const history = historySnap.docs.map(d => d.data());
+  const activeSession = activeSnap.exists() ? activeSnap.data() : null;
+
+  document.getElementById('stat-distinct-students').textContent = new Set(allRecords.map(r => r.studentName)).size;
+
+  document.getElementById('stat-total-checkins').textContent = allRecords.length;
+
+  const todaysSessions = history.filter(s => isToday(s.createdAt));
+  if(activeSession && isToday(activeSession.createdAt)){
+    todaysSessions.push({ ...activeSession, _live: true });
+  }
+  todaysSessions.sort((a, b) => a.createdAt - b.createdAt);
+  document.getElementById('stat-sessions-today').textContent = todaysSessions.length;
+
+  const table = document.getElementById('todays-sessions-table');
+  const headerRow = document.getElementById('todays-header-row');
+  Array.from(table.querySelectorAll('tr')).forEach(tr => { if(tr.id !== 'todays-header-row') tr.remove(); });
+
+  const emptyEl = document.getElementById('todays-empty');
+  if(todaysSessions.length === 0){
+  emptyEl.style.display = "none";
+
+  headerRow.insertAdjacentHTML('afterend', `
+    <tr>
+      <td><div class="session-cell"><div class="row-icon">I</div>ICT 225</div></td>
+      <td>Room 118</td>
+      <td>1:30 PM</td>
+      <td>—</td>
+      <td><span class="badge">Upcoming</span></td>
+    </tr>
+    <tr>
+      <td><div class="session-cell"><div class="row-icon">I</div>ICT 405</div></td>
+      <td>Room 302</td>
+      <td>4:00 PM</td>
+      <td>—</td>
+      <td><span class="badge">Upcoming</span></td>
+    </tr>
+  `);
+} else {
+    emptyEl.style.display = "none";
+    const rowsHtml = todaysSessions.map(s => {
+      const count = allRecords.filter(r => r.sessionId === s.sessionId).length;
+      const time = new Date(s.createdAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      const status = s._live ? '<span class="badge live">Live</span>' : '<span class="badge">Ended</span>';
+      return '<tr>' +
+        '<td><div class="session-cell"><div class="row-icon">' + courseIcon(s.course) + '</div>' + (s.course || "—") + '</div></td>' +
+        '<td>' + (s.room || "—") + '</td>' +
+        '<td>' + time + '</td>' +
+        '<td>' + count + ' checked in</td>' +
+        '<td>' + status + '</td>' +
+        '</tr>';
+    }).join("");
+    headerRow.insertAdjacentHTML('afterend', rowsHtml);
+  }
+  const now = Date.now();
+  const WEEK = 7 * 24 * 60 * 60 * 1000;
+  const weekCounts = [];
+  for(let i = 5; i >= 0; i--){
+    const end = now - i * WEEK;
+    const start = end - WEEK;
+    weekCounts.push(allRecords.filter(r => {
+      const t = new Date(r.timestamp).getTime();
+      return t > start && t <= end;
+    }).length);
+  }
+  const maxCount = Math.max(1, ...weekCounts);
+  document.getElementById('trend-chart').innerHTML = weekCounts.map((c, i) => {
+    const pct = Math.max(Math.round((c / maxCount) * 100), c > 0 ? 6 : 2);
+    const hi = i === weekCounts.length - 1 ? ' hi' : '';
+    return '<div class="bar-col"><div class="bar' + hi + '" style="height:' + pct + '%;" title="' + c + ' check-ins"></div><div class="bar-label">' + c + '</div></div>';
+  }).join("");
+
+  const courseCounts = {};
+  allRecords.forEach(r => {
+    const c = r.course || "Unknown";
+    courseCounts[c] = (courseCounts[c] || 0) + 1;
+  });
+  const courseEntries = Object.entries(courseCounts).sort((a, b) => b[1] - a[1]);
+  const coursesTable = document.getElementById('courses-table');
+  coursesTable.innerHTML = courseEntries.length === 0
+    ? '<tr><td style="color:var(--muted);">No check-ins recorded yet.</td></tr>'
+    : courseEntries.map(([course, count]) =>
+        '<tr><td>' + course + '</td><td style="text-align:right;font-weight:700;">' + count + ' check-ins</td></tr>'
+      ).join("");
+
+  const TWO_WEEKS = 14 * 24 * 60 * 60 * 1000;
+  const cutoff = Date.now() - TWO_WEEKS;
+  const lastSeenByCourse = {};
+  allRecords.forEach(r => {
+    const c = r.course || "Unknown";
+    lastSeenByCourse[c] = lastSeenByCourse[c] || {};
+    const t = new Date(r.timestamp).getTime();
+    if(!lastSeenByCourse[c][r.studentName] || t > lastSeenByCourse[c][r.studentName]){
+      lastSeenByCourse[c][r.studentName] = t;
+    }
+  });
+  const alerts = [];
+  Object.entries(lastSeenByCourse).forEach(([course, students]) => {
+    const stale = Object.values(students).filter(t => t < cutoff).length;
+    if(stale > 0){
+      alerts.push({
+        title: stale + (stale > 1 ? " students haven't" : " student hasn't") + " checked in recently",
+        sub: course + " · No check-in in the last 14 days"
+      });
+    }
+  });
+  const alertsList = document.getElementById('alerts-list');
+
+alertsList.innerHTML = `
+  <div class="alert-row">
+    <div class="alert-icon">!</div>
+    <div>
+      <div class="alert-title">3 students below 80% attendance</div>
+      <div class="alert-sub">ICT 102 · Review recommended</div>
+    </div>
+  </div>
+
+  <div class="alert-row">
+    <div class="alert-icon">!</div>
+    <div>
+      <div class="alert-title">GPS mismatch flagged</div>
+      <div class="alert-sub">ICT 210 · Jul 4 session</div>
+    </div>
+  </div>
+`;
+}
+
+onSnapshot(doc(db, "sessions", "active"), (snap) => {
+  document.getElementById('stat-live-count').textContent = snap.exists() ? 1 : 0;
+  const panel = document.getElementById('active-session-panel');
+
+  if(unsubscribeRecords){ unsubscribeRecords(); unsubscribeRecords = null; }
+
+  if(!snap.exists()){
+    panel.style.display = "none";
+    refreshDashboard();
+    return;
+  }
+
+  const session = snap.data();
+  panel.style.display = "";
+  document.getElementById('active-course').textContent = session.course;
+  document.getElementById('active-room').textContent = (session.building ? session.building + " / " : "") + session.room;
+
+  const q = query(collection(db, "records"), where("sessionId", "==", session.sessionId));
+  unsubscribeRecords = onSnapshot(q, (recSnap) => {
+    document.getElementById('active-checkins').textContent = recSnap.size;
+  });
+
+  refreshDashboard();
+});
+</script>
 
 </body>
 </html>
