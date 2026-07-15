@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Log in</title>
 <style>
   :root{
@@ -168,9 +169,45 @@
   }
   .signup a{color:var(--blue-600);font-weight:600;text-decoration:none;}
 
+  .mode-toggle{
+    display:flex;
+    border-bottom:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .mode-toggle button{
+    flex:1;
+    border:none;background:transparent;
+    font-family:inherit;font-size:14px;font-weight:700;
+    color:var(--muted);
+    padding:10px 4px 12px;
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+    margin-bottom:-1px;
+  }
+  .mode-toggle button.active{
+    color:var(--blue-700);
+    border-bottom-color:var(--blue-600);
+  }
+
+  .field .hint{font-size:11px;color:var(--muted);margin-top:5px;}
+  .field input.invalid{border-color:#dc2626;}
+
+  .form-error{
+    display:none;
+    font-size:12px;color:#b91c1c;background:#fee2e2;
+    border-radius:8px;padding:10px 12px;margin-bottom:16px;
+  }
+  .form-error.show{display:block;}
+
+  .login-btn:disabled{opacity:.6;cursor:not-allowed;}
+
   @media (max-width:800px){
     body{grid-template-columns:1fr;}
     .brand-panel{display:none;}
+    .form-panel{padding:28px 20px;}
+  }
+  @media (max-width:420px){
+    .form-wrap{max-width:100%;}
   }
 </style>
 </head>
@@ -222,76 +259,244 @@
 
 <div class="form-panel">
   <div class="form-wrap">
-    <p class="form-title">Welcome back</p>
-    <p class="form-sub">Log in to check in and view your attendance.</p>
 
-    <div class="role-toggle">
-      <button class="active" onclick="setRole('student', this)">Student</button>
-      <button onclick="setRole('lecturer', this)">Lecturer</button>
+    <div class="mode-toggle">
+      <button class="active" id="tab-login" onclick="setMode('login')">Log in</button>
+      <button id="tab-signup" onclick="setMode('signup')">Sign up</button>
     </div>
 
-    <div class="field">
-      <label id="id-label">Email or student ID</label>
-      <input type="text" id="id-input" placeholder="jordan@school.edu">
-    </div>
-    <div class="field">
-      <label>Password</label>
-      <input type="password" placeholder="••••••••">
-    </div>
+    <div id="panel-login">
+      <p class="form-title">Welcome back</p>
+      <p class="form-sub">Log in to check in and view your attendance.</p>
 
-    <div class="row-between">
-      <div class="remember">
-        <input type="checkbox" style="width:auto;">
-        Remember me
+      <div class="form-error" id="login-error"></div>
+
+      <div class="field">
+        <label>School email</label>
+        <input type="text" id="login-email" placeholder="jordan@rsu.ac.th">
       </div>
-      <a href="#" class="forgot">Forgot password?</a>
-    </div>
-
-    <button class="login-btn">Log in</button>
-
-    <div class="divider">OR</div>
-
-    <div class="qr-login">
-      <div class="icon">▦</div>
-      <div>
-        <div class="title">Log in with QR code</div>
-        <div class="sub">Scan the code shown on your kiosk or ID card</div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="login-password" placeholder="••••••••">
       </div>
+
+      <div class="row-between">
+        <div class="remember">
+          <input type="checkbox" style="width:auto;">
+          Remember me
+        </div>
+        <a href="#" class="forgot">Forgot password?</a>
+      </div>
+
+      <button class="login-btn" id="login-btn">Log in</button>
+
+      <div class="divider">OR</div>
+
+      <div class="qr-login">
+        <div class="icon">▦</div>
+        <div>
+          <div class="title">Log in with QR code</div>
+          <div class="sub">Scan the code shown on your kiosk or ID card</div>
+        </div>
+      </div>
+
+      <p class="signup">Don't have an account? <a href="#" onclick="setMode('signup');return false;">Sign up</a></p>
     </div>
 
-    <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+    <div id="panel-signup" style="display:none;">
+      <p class="form-title">Create your account</p>
+      <p class="form-sub">Sign up with your school email to get started.</p>
+
+      <div class="form-error" id="signup-error"></div>
+
+      <div class="role-toggle">
+        <button class="active" id="signup-role-student" onclick="setSignupRole('student')">Student</button>
+        <button id="signup-role-lecturer" onclick="setSignupRole('lecturer')">Lecturer</button>
+      </div>
+
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" id="signup-name" placeholder="Jordan Smith">
+      </div>
+      <div class="field">
+        <label>School email</label>
+        <input type="text" id="signup-email" placeholder="jordan@rsu.ac.th">
+        <div class="hint">Must be a valid @rsu.ac.th address</div>
+      </div>
+      <div class="field">
+        <label id="signup-id-label">Student ID</label>
+        <input type="text" id="signup-id" placeholder="64123456">
+        <div class="hint" id="signup-id-hint">8 digits, e.g. 64123456</div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="signup-password" placeholder="At least 6 characters">
+      </div>
+      <div class="field">
+        <label>Confirm password</label>
+        <input type="password" id="signup-confirm" placeholder="Re-enter password">
+      </div>
+
+      <button class="login-btn" id="signup-btn">Create account</button>
+
+      <p class="signup">Already have an account? <a href="#" onclick="setMode('login');return false;">Log in</a></p>
+    </div>
+
   </div>
 </div>
 
-<script>
-const DEFAULT_USERNAME = "rosalyn@rsu.ac.th";
-const DEFAULT_PASSWORD = "123456";
+<script type="module">
 
-document.querySelector('.login-btn').addEventListener('click', function(e){
-  e.preventDefault();
-  const username = document.getElementById('id-input').value;
-  const password = document.querySelector('input[type="password"]').value;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-  if(username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD){
-    window.location.href = "home.html";
+const firebaseConfig = {
+  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
+  authDomain: "attender-demo.firebaseapp.com",
+  projectId: "attender-demo",
+  storageBucket: "attender-demo.firebasestorage.app",
+  messagingSenderId: "284650952052",
+  appId: "1:284650952052:web:d50f23ef490124f8148821"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const EMAIL_DOMAIN = "rsu.ac.th";
+const EMAIL_RE = new RegExp("^[^\\s@]+@" + EMAIL_DOMAIN.replace(".", "\\.") + "$", "i");
+const STUDENT_ID_RE = /^\d{8}$/;
+const STAFF_ID_RE = /^T\d{4}$/i;
+
+let signupRole = "student";
+
+window.setMode = function(mode){
+  const isLogin = mode === "login";
+  document.getElementById('panel-login').style.display = isLogin ? "" : "none";
+  document.getElementById('panel-signup').style.display = isLogin ? "none" : "";
+  document.getElementById('tab-login').classList.toggle('active', isLogin);
+  document.getElementById('tab-signup').classList.toggle('active', !isLogin);
+};
+
+window.setSignupRole = function(role){
+  signupRole = role;
+  document.getElementById('signup-role-student').classList.toggle('active', role === 'student');
+  document.getElementById('signup-role-lecturer').classList.toggle('active', role === 'lecturer');
+  const label = document.getElementById('signup-id-label');
+  const input = document.getElementById('signup-id');
+  const hint = document.getElementById('signup-id-hint');
+  if(role === 'student'){
+    label.textContent = 'Student ID';
+    input.placeholder = '64123456';
+    hint.textContent = '8 digits, e.g. 64123456';
   } else {
-    alert("Invalid username or password.");
+    label.textContent = 'Staff ID';
+    input.placeholder = 'T1023';
+    hint.textContent = 'Letter T followed by 4 digits, e.g. T1023';
+  }
+};
+
+function showError(elId, msg){
+  const el = document.getElementById(elId);
+  el.textContent = msg;
+  el.classList.add('show');
+}
+function clearError(elId){
+  document.getElementById(elId).classList.remove('show');
+}
+
+async function routeByRole(uid){
+  const snap = await getDoc(doc(db, "users", uid));
+  if(!snap.exists()){
+    showError('login-error', "We couldn't find your profile. Please sign up again.");
+    return;
+  }
+  const profile = snap.data();
+  window.location.href = (profile.role === "lecturer") ? "lecturer-dashboard.html" : "home.html";
+}
+
+document.getElementById('login-btn').addEventListener('click', async function(e){
+  e.preventDefault();
+  clearError('login-error');
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+
+  if(!email || !password){
+    showError('login-error', "Enter your email and password.");
+    return;
+  }
+
+  const btn = document.getElementById('login-btn');
+  btn.disabled = true; btn.textContent = "Logging in…";
+  try{
+    const cred = await signInWithEmailAndPassword(auth, email, password);
+    await routeByRole(cred.user.uid);
+  } catch(err){
+    showError('login-error', "Invalid email or password.");
+  } finally{
+    btn.disabled = false; btn.textContent = "Log in";
   }
 });
 
-function setRole(role, btn){
-  document.querySelectorAll('.role-toggle button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const label = document.getElementById('id-label');
-  const input = document.getElementById('id-input');
-  if(role === 'student'){
-    label.textContent = 'Email or student ID';
-    input.placeholder = 'jordan@school.edu';
-  } else {
-    label.textContent = 'Email or staff ID';
-    input.placeholder = 'j.alvarez@school.edu';
+document.getElementById('signup-btn').addEventListener('click', async function(e){
+  e.preventDefault();
+  clearError('signup-error');
+
+  const name = document.getElementById('signup-name').value.trim();
+  const email = document.getElementById('signup-email').value.trim();
+  const schoolId = document.getElementById('signup-id').value.trim().toUpperCase();
+  const password = document.getElementById('signup-password').value;
+  const confirm = document.getElementById('signup-confirm').value;
+
+  if(!name || !email || !schoolId || !password || !confirm){
+    showError('signup-error', "Please fill in all fields.");
+    return;
   }
-}
+  if(!EMAIL_RE.test(email)){
+    showError('signup-error', "Email must be a valid @" + EMAIL_DOMAIN + " address.");
+    return;
+  }
+  const idRe = signupRole === "student" ? STUDENT_ID_RE : STAFF_ID_RE;
+  const idFormatMsg = signupRole === "student"
+    ? "Student ID must be 8 digits (e.g. 64123456)."
+    : "Staff ID must be the letter T followed by 4 digits (e.g. T1023).";
+  if(!idRe.test(schoolId)){
+    showError('signup-error', idFormatMsg);
+    return;
+  }
+  if(password.length < 6){
+    showError('signup-error', "Password must be at least 6 characters.");
+    return;
+  }
+  if(password !== confirm){
+    showError('signup-error', "Passwords don't match.");
+    return;
+  }
+
+  const btn = document.getElementById('signup-btn');
+  btn.disabled = true; btn.textContent = "Creating account…";
+  try{
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    await setDoc(doc(db, "users", cred.user.uid), {
+      name,
+      email,
+      role: signupRole,
+      schoolId,
+      createdAt: new Date().toISOString()
+    });
+    window.location.href = (signupRole === "lecturer") ? "lecturer-dashboard.html" : "home.html";
+  } catch(err){
+    if(err.code === "auth/email-already-in-use"){
+      showError('signup-error', "An account with that email already exists. Try logging in instead.");
+    } else if(err.code === "auth/invalid-email"){
+      showError('signup-error', "That email address looks invalid.");
+    } else {
+      showError('signup-error', "Couldn't create your account: " + err.message);
+    }
+  } finally{
+    btn.disabled = false; btn.textContent = "Create account";
+  }
+});
 </script>
 
 </body>
