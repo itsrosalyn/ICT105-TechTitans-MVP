@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Home</title>
 <style>
   :root{
@@ -161,9 +162,24 @@
   .mini-stat-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;}
   .mini-stat-row:last-child{border-bottom:none;}
   .mini-stat-row .val{font-weight:700;}
+
+  @media (max-width:900px){
+    .wrap{grid-template-columns:1fr;padding:24px 20px 40px;}
+  }
+  @media (max-width:640px){
+    .nav{padding:12px 16px;}
+    .nav-links{gap:18px;font-size:13px;}
+    .hero{flex-direction:column;text-align:center;padding:24px;gap:20px;}
+    .qr-frame{width:120px;height:120px;}
+    .stats{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:400px){
+    .stats{grid-template-columns:1fr;}
+    .nav-links{gap:12px;}
+  }
 </style>
 </head>
-<body>
+<body style="visibility:hidden">
 
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
@@ -178,8 +194,9 @@
     
   </div>
   <div class="nav-right">
+    <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
     <div class="icon-btn">⚙</div>
-    <div class="avatar">NR</div>
+    <div class="avatar" id="nav-avatar">JS</div>
   </div>
 </div>
 
@@ -187,8 +204,8 @@
 
   <div class="left">
     <div>
-      <p class="greeting">Good morning, Nara</p>
-      <p class="greeting-sub">Tuesday, July 8 · Math 101 starts in 15 min</p>
+      <p class="greeting" id="greeting-text">Good morning, Jordan</p>
+      <p class="greeting-sub" id="greeting-sub">Tuesday, July 8 · Math 101 starts in 15 min</p>
     </div>
 
     <div class="hero">
@@ -234,13 +251,14 @@
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="num">96%</div><div class="label">Attendance rate</div></div>
-      <div class="stat"><div class="num">18</div><div class="label">Sessions this term</div></div>
-      <div class="stat"><div class="num">2</div><div class="label">Late arrivals</div></div>
+      <div class="stat"><div class="num" id="stat-rate">96%</div><div class="label">Attendance rate</div></div>
+      <div class="stat"><div class="num" id="stat-sessions">18</div><div class="label">Sessions this term</div></div>
+      <div class="stat"><div class="num" id="stat-late">2</div><div class="label">Late arrivals</div></div>
     </div>
 
     <div class="panel">
-      <div class="panel-title">Recent check-ins <a href="#">See all</a></div>
+      <div class="panel-title">Recent check-ins <a href="records.html">See all</a></div>
+      <div id="recent-checkins-list">
       <div class="row-item">
         <div class="row-icon">I</div>
         <div class="row-text">
@@ -264,6 +282,7 @@
           <div class="row-sub">Jul 4, 10:58 AM</div>
         </div>
         <span class="badge">On time</span>
+      </div>
       </div>
     </div>
   </div>
@@ -297,13 +316,117 @@
 
     <div class="panel">
       <div class="panel-title">This term</div>
-      <div class="mini-stat-row"><span>Sessions attended</span><span class="val">18 / 20</span></div>
-      <div class="mini-stat-row"><span>On-time rate</span><span class="val">89%</span></div>
-      <div class="mini-stat-row"><span>Absences</span><span class="val">2</span></div>
+      <div class="mini-stat-row"><span>Sessions attended</span><span class="val" id="mini-attended">18 / 20</span></div>
+      <div class="mini-stat-row"><span>On-time rate</span><span class="val" id="mini-ontime">89%</span></div>
+      <div class="mini-stat-row"><span>Absences</span><span class="val" id="mini-absences">2</span></div>
     </div>
   </div>
 
 </div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
+  authDomain: "attender-demo.firebaseapp.com",
+  projectId: "attender-demo",
+  storageBucket: "attender-demo.firebasestorage.app",
+  messagingSenderId: "284650952052",
+  appId: "1:284650952052:web:d50f23ef490124f8148821"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+function getCurrentUser(){
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      unsubscribe();
+      if(!user){ resolve(null); return; }
+      try{
+        const snap = await _getDoc(_doc(db, "users", user.uid));
+        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
+      } catch(e){ resolve(null); }
+    });
+  });
+}
+async function requireRole(requiredRole){
+  const user = await getCurrentUser();
+  if(!user || user.role !== requiredRole){
+    window.location.href = "index.html";
+    return null;
+  }
+  return user;
+}
+function wireLogout(selector = "#logout-link"){
+  const el = document.querySelector(selector);
+  if(!el) return;
+  el.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if(!confirm("Are you sure you want to log out?")) return;
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+}
+function initials(name){
+  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+}
+import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const currentUser = await requireRole("student");
+if(!currentUser) throw new Error("Redirecting to login");
+wireLogout();
+
+const firstName = currentUser.name.split(" ")[0];
+document.getElementById('greeting-text').textContent = "Good morning, " + firstName;
+document.getElementById('nav-avatar').textContent = initials(currentUser.name);
+
+const today = new Date();
+document.getElementById('greeting-sub').textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+const q = query(collection(db, "records"), where("studentName", "==", currentUser.name));
+const snap = await getDocs(q);
+const myRecords = snap.docs.map(d => d.data()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+const BASE_TOTAL_POSSIBLE = 20, BASE_ATTENDED = 18, BASE_ONTIME = 16, BASE_LATE = 2;
+const realOnTime = myRecords.filter(r => r.status === "On time").length;
+const realLate = myRecords.filter(r => r.status === "Late").length;
+
+const totalPossible = BASE_TOTAL_POSSIBLE + myRecords.length;
+const attended = BASE_ATTENDED + myRecords.length;
+const onTime = BASE_ONTIME + realOnTime;
+const late = BASE_LATE + realLate;
+const absent = totalPossible - attended;
+
+document.getElementById('stat-rate').textContent = Math.round((attended / totalPossible) * 100) + "%";
+document.getElementById('stat-sessions').textContent = attended;
+document.getElementById('stat-late').textContent = late;
+
+document.getElementById('mini-attended').textContent = attended + " / " + totalPossible;
+document.getElementById('mini-ontime').textContent = Math.round((onTime / attended) * 100) + "%";
+document.getElementById('mini-absences').textContent = absent;
+
+if(myRecords.length){
+  const listEl = document.getElementById('recent-checkins-list');
+  const rowsHtml = myRecords.slice(0, 5).map(r => {
+    const icon = (r.course || "?").charAt(0);
+    const badge = r.status === "Late" ? '<span class="badge late">Late</span>' : '<span class="badge">On time</span>';
+    return '<div class="row-item">' +
+      '<div class="row-icon">' + icon + '</div>' +
+      '<div class="row-text"><div class="row-title">' + (r.course || "—") + '</div>' +
+      '<div class="row-sub">' + (r.date || "—") + ', ' + (r.time || "—") + '</div></div>' +
+      badge +
+      '</div>';
+  }).join("");
+  listEl.insertAdjacentHTML('afterbegin', rowsHtml);
+}
+
+document.body.style.visibility = "visible";
+</script>
 
 </body>
 </html>
