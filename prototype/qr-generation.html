@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Generate session QR</title>
 <style>
   :root{
@@ -38,6 +39,14 @@
     border-radius:10px;padding:10px 12px;margin-bottom:20px;
   }
 
+  .form-error{
+    display:none;
+    font-size:12px;color:#b91c1c;background:#fee2e2;
+    border-radius:8px;padding:10px 12px;margin-bottom:16px;
+    grid-column:1/-1;
+  }
+  .form-error.show{display:block;}
+
   .generate-btn{
     width:100%;background:var(--blue-600);color:#fff;border:none;
     border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;
@@ -45,7 +54,7 @@
 
   .qr-panel{display:flex;flex-direction:column;align-items:center;text-align:center;}
   .qr-frame{
-    width:220px;height:220px;background:#fff;border:1px solid var(--line);
+    width:280px;height:280px;background:#fff;border:1px solid var(--line);
     border-radius:16px;display:flex;align-items:center;justify-content:center;
     padding:16px;margin-bottom:18px;
   }
@@ -78,6 +87,16 @@
   .live-avatar{width:30px;height:30px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
   .live-name{font-weight:600;flex:1;}
   .live-time{color:var(--muted);font-size:12px;}
+
+  @media (max-width:900px){
+    .wrap{grid-template-columns:1fr;padding:24px 20px 40px;}
+  }
+  @media (max-width:640px){
+    .nav{padding:12px 16px;}
+    .nav-links{gap:16px;font-size:13px;}
+    .field-row{flex-direction:column;gap:0;}
+    .qr-frame{width:220px;height:220px;}
+  }
 </style>
 </head>
 <body>
@@ -90,72 +109,268 @@
     </a>
     <span class="active">Generate QR</span>
   </div>
-  <div class="avatar">JA</div>
+  <div style="display:flex;align-items:center;gap:14px;">
+    <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
+    <div class="avatar" id="nav-avatar">JA</div>
+  </div>
 </div>
 
 <div class="wrap">
   <p class="page-title">Generate session QR</p>
   <p class="page-sub">Create a check-in code for your class. Students within range can scan to mark attendance.</p>
+  <div class="form-error" id="qr-error"></div>
 
   <div class="panel">
     <div class="field">
       <label>Course</label>
-      <select><option>Math 105</option><option>Design Lab</option><option>Physics</option></select>
+      <select id="course-select">
+        <option value="ICT 101">ICT 101</option>
+        <option value="ICT 102">ICT 102</option>
+        <option value="ICT 103">ICT 103</option>
+         <option value="ICT 110">ICT 110</option>
+          <option value="ICT 113">ICT 113</option>
+           <option value="ICT 202">ICT 202</option>
+            <option value="ICT 209">ICT 209</option>
+             <option value="ICT 210">ICT 210</option>
+              <option value="ICT 211">ICT 211</option>
+               <option value="ICT 212">ICT 212</option>
+      </select>
     </div>
     <div class="field-row">
       <div class="field">
         <label>Room</label>
-        <input type="text" value="Room 216">
+        <input type="text" id="room-input" value="Room 216">
       </div>
       <div class="field">
         <label>Session length</label>
-        <select><option>30 minutes</option><option>50 minutes</option><option>90 minutes</option></select>
+        <select id="length-select"><option value="30">30 minutes</option><option value="50">50 minutes</option><option value="90">90 minutes</option></select>
       </div>
     </div>
     <div class="field">
       <label>Check-in radius</label>
-      <select><option>25 m</option><option selected>50 m</option><option>100 m</option></select>
+      <select id="radius-select"><option value="25">25 m</option><option value="50" selected>50 m</option><option value="100">100 m</option></select>
     </div>
-    <div class="radius-note">Students must be within the selected radius of Room 216 to check in successfully.</div>
-    <button class="generate-btn">Generate QR code</button>
+    <div class="radius-note">Students must be within the selected radius of the room to check in successfully.</div>
+    <button class="generate-btn" id="generate-btn">Generate QR code</button>
   </div>
 
   <div class="panel qr-panel">
-    <div class="timer-pill"><span class="timer-dot"></span>Expires in 04:32</div>
-    <div class="qr-frame">
-      <svg viewBox="0 0 100 100">
-        <rect width="100" height="100" fill="#fff"/>
-        <g fill="#1d4ed8">
-          <rect x="6" y="6" width="26" height="26"/><rect x="12" y="12" width="14" height="14" fill="#fff"/><rect x="17" y="17" width="4" height="4" fill="#1d4ed8"/>
-          <rect x="68" y="6" width="26" height="26"/><rect x="74" y="12" width="14" height="14" fill="#fff"/><rect x="79" y="17" width="4" height="4" fill="#1d4ed8"/>
-          <rect x="6" y="68" width="26" height="26"/><rect x="12" y="74" width="14" height="14" fill="#fff"/><rect x="17" y="79" width="4" height="4" fill="#1d4ed8"/>
-          <rect x="40" y="6" width="6" height="6"/><rect x="52" y="6" width="6" height="6"/><rect x="40" y="18" width="6" height="6"/>
-          <rect x="60" y="40" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/><rect x="46" y="46" width="6" height="6"/>
-          <rect x="60" y="52" width="6" height="6"/><rect x="40" y="60" width="6" height="6"/><rect x="52" y="66" width="6" height="6"/>
-          <rect x="66" y="66" width="6" height="6"/><rect x="78" y="52" width="6" height="6"/><rect x="84" y="40" width="6" height="6"/>
-          <rect x="40" y="78" width="6" height="6"/><rect x="60" y="84" width="6" height="6"/><rect x="78" y="84" width="6" height="6"/>
-        </g>
-      </svg>
+    <div class="timer-pill" id="timer-pill"><span class="timer-dot"></span>No active session</div>
+    <div class="qr-frame" id="qr-frame">
+      <span style="color:var(--muted);font-size:12px;">Generate a QR to display it here</span>
     </div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:16px;" id="session-code-display"></div>
     <div class="qr-meta">
-      <div class="meta-row"><span>Course</span><span class="val">Math 105</span></div>
-      <div class="meta-row"><span>Room</span><span class="val">Building 3/ 216</span></div>
-      <div class="meta-row"><span>Checked in</span><span class="val">27 / 35</span></div>
+      <div class="meta-row"><span>Course</span><span class="val" id="qr-course">—</span></div>
+      <div class="meta-row"><span>Room</span><span class="val" id="qr-room">—</span></div>
+      <div class="meta-row"><span>Checked in</span><span class="val" id="checkin-count">0</span></div>
     </div>
     <div class="btn-row">
-      <button class="refresh-btn">Refresh code</button>
-      <button class="stop-btn">End session</button>
+      <button class="refresh-btn" id="refresh-btn">Refresh code</button>
+      <button class="stop-btn" id="stop-btn">End session</button>
     </div>
   </div>
 
   <div class="panel live-panel">
     <div class="live-title">Live check-ins <span style="color:var(--muted);font-weight:400;">Updating in real time</span></div>
-    <div class="live-row"><div class="live-avatar">JS</div><div class="live-name">Jordan Smith</div><span class="live-time">9:02 AM</span></div>
-    <div class="live-row"><div class="live-avatar">AK</div><div class="live-name">Amara Khan</div><span class="live-time">9:01 AM</span></div>
-    <div class="live-row"><div class="live-avatar">LT</div><div class="live-name">Liam Tan</div><span class="live-time">9:00 AM</span></div>
-    <div class="live-row"><div class="live-avatar">RP</div><div class="live-name">Riya Patel</div><span class="live-time">8:59 AM</span></div>
+    <div id="live-list">
+      <div class="live-row" style="color:var(--muted);">Generate a QR code to start seeing live check-ins.</div>
+    </div>
   </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
+  authDomain: "attender-demo.firebaseapp.com",
+  projectId: "attender-demo",
+  storageBucket: "attender-demo.firebasestorage.app",
+  messagingSenderId: "284650952052",
+  appId: "1:284650952052:web:d50f23ef490124f8148821"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+function getCurrentUser(){
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      unsubscribe();
+      if(!user){ resolve(null); return; }
+      try{
+        const snap = await _getDoc(_doc(db, "users", user.uid));
+        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
+      } catch(e){ resolve(null); }
+    });
+  });
+}
+async function requireRole(requiredRole){
+  const user = await getCurrentUser();
+  if(!user || user.role !== requiredRole){
+    window.location.href = "index.html";
+    return null;
+  }
+  return user;
+}
+function wireLogout(selector = "#logout-link"){
+  const el = document.querySelector(selector);
+  if(!el) return;
+  el.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if(!confirm("Are you sure you want to log out?")) return;
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+}
+function initials(name){
+  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+}
+import { doc, setDoc, getDoc, deleteDoc, collection, query, where, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const sessionRef = doc(db, "sessions", "active");
+
+const currentUser = await requireRole("lecturer");
+if(!currentUser) throw new Error("Redirecting to login");
+wireLogout();
+document.getElementById('nav-avatar').textContent = initials(currentUser.name.replace(/^Prof\.\s*/i, ""));
+
+let activeSessionId = null;
+let unsubscribeRecords = null;
+
+function genCode(len = 6){
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let s = "";
+  for(let i = 0; i < len; i++) s += chars[Math.floor(Math.random() * chars.length)];
+  return s;
+}
+
+function showQrError(msg){
+  const el = document.getElementById('qr-error');
+  el.textContent = msg;
+  el.classList.add('show');
+}
+function clearQrError(){
+  document.getElementById('qr-error').classList.remove('show');
+}
+function friendlyFirebaseError(err){
+  if(err && err.code === "permission-denied"){
+    return "Firestore blocked this write (permission-denied). Check your Firestore security rules.";
+  }
+  if(err && err.message && err.message.includes("not-found")){
+    return "Firestore isn't enabled for this project yet. Enable it in the Firebase console (Build → Firestore Database).";
+  }
+  return "Couldn't generate the QR code: " + (err && err.message ? err.message : err);
+}
+
+function renderQR(session){
+  const frame = document.getElementById('qr-frame');
+  frame.innerHTML = "";
+  new QRCode(frame, {
+    text: JSON.stringify({ sessionId: session.sessionId, course: session.course, room: session.room, building: session.building }),
+    width: 248,
+    height: 248,
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  document.getElementById('session-code-display').textContent = "Session code (for manual entry): " + session.sessionId;
+  document.getElementById('qr-course').textContent = session.course;
+  document.getElementById('qr-room').textContent = (session.building ? session.building + " / " : "") + session.room;
+  document.getElementById('timer-pill').innerHTML = '<span class="timer-dot"></span>Active · ' + session.lengthMin + ' min session';
+}
+
+function updateLiveList(records){
+  const listEl = document.getElementById('live-list');
+  document.getElementById('checkin-count').textContent = records.length + " checked in";
+
+  if(records.length === 0){
+    listEl.innerHTML = '<div class="live-row" style="color:var(--muted);">No check-ins yet for this session.</div>';
+    return;
+  }
+  listEl.innerHTML = records.slice().reverse().map(r => {
+    const initials = r.studentName.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
+    return '<div class="live-row"><div class="live-avatar">' + initials + '</div><div class="live-name">' + r.studentName + '</div><span class="live-time">' + r.time + '</span></div>';
+  }).join("");
+}
+
+function watchRecords(sessionId){
+  if(unsubscribeRecords) unsubscribeRecords();
+  const q = query(collection(db, "records"), where("sessionId", "==", sessionId));
+  unsubscribeRecords = onSnapshot(q, (snap) => {
+    updateLiveList(snap.docs.map(d => d.data()));
+  });
+}
+
+async function generateSession(){
+  clearQrError();
+  const course = document.getElementById('course-select').value;
+  const room = document.getElementById('room-input').value.trim() || "Room";
+  const lengthMin = parseInt(document.getElementById('length-select').value, 10);
+  const radius = document.getElementById('radius-select').value;
+  const building = "Building 3";
+
+  const sessionId = genCode();
+  const now = Date.now();
+  const session = { sessionId, course, room, building, radius, lengthMin, createdAt: now, expiresAt: now + lengthMin * 60000 };
+
+  const btn = document.getElementById('generate-btn');
+  const refreshBtn = document.getElementById('refresh-btn');
+  btn.disabled = true; refreshBtn.disabled = true;
+
+  try{
+    await setDoc(sessionRef, session);
+    activeSessionId = sessionId;
+    renderQR(session);
+    watchRecords(sessionId);
+  } catch(err){
+    console.error("generateSession failed:", err);
+    showQrError(friendlyFirebaseError(err));
+  } finally{
+    btn.disabled = false; refreshBtn.disabled = false;
+  }
+}
+
+document.getElementById('generate-btn').addEventListener('click', generateSession);
+document.getElementById('refresh-btn').addEventListener('click', generateSession);
+
+document.getElementById('stop-btn').addEventListener('click', async () => {
+  if(!activeSessionId) return;
+  clearQrError();
+  try{
+    await deleteDoc(sessionRef);
+  } catch(err){
+    console.error("Ending session failed:", err);
+    showQrError(friendlyFirebaseError(err));
+    return;
+  }
+  activeSessionId = null;
+  if(unsubscribeRecords) unsubscribeRecords();
+
+  document.getElementById('qr-frame').innerHTML = '<span style="color:var(--muted);font-size:12px;">Generate a QR to display it here</span>';
+  document.getElementById('session-code-display').textContent = "";
+  document.getElementById('timer-pill').innerHTML = 'No active session';
+  document.getElementById('qr-course').textContent = "—";
+  document.getElementById('qr-room').textContent = "—";
+  document.getElementById('checkin-count').textContent = "0";
+  document.getElementById('live-list').innerHTML = '<div class="live-row" style="color:var(--muted);">Generate a QR code to start seeing live check-ins.</div>';
+});
+
+try{
+  const existing = await getDoc(sessionRef);
+  if(existing.exists()){
+    const session = existing.data();
+    activeSessionId = session.sessionId;
+    renderQR(session);
+    watchRecords(session.sessionId);
+  }
+} catch(err){
+  console.error("Loading existing session failed:", err);
+  showQrError(friendlyFirebaseError(err));
+}
+</script>
 
 </body>
 </html>
