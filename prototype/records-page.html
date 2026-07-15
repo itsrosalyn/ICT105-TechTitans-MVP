@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Attendance history</title>
 <style>
       :root{
@@ -59,6 +60,21 @@
       .page-btns{display:flex;gap:6px;}
       .page-btn{width:28px;height:28px;border-radius:7px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;}
       .page-btn.active{background:var(--blue-600);color:#fff;border-color:var(--blue-600);}
+
+      @media (max-width:900px){
+        .wrap{padding:24px 20px 40px;}
+        .stats{grid-template-columns:1fr 1fr;}
+      }
+      @media (max-width:640px){
+        .nav{padding:12px 16px;}
+        .nav-links{gap:16px;font-size:13px;}
+        .toolbar{flex-wrap:wrap;}
+        .panel{overflow-x:auto;}
+        table{min-width:640px;}
+      }
+      @media (max-width:400px){
+        .stats{grid-template-columns:1fr;}
+      }
   </style>
 </head>
 <body>
@@ -74,7 +90,10 @@
         </a>
         <span class="active">Records</span>
       </div>
-      <div class="avatar">NR</div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
+        <div class="avatar" id="nav-avatar">JS</div>
+      </div>
     </div>
 
     <div class="wrap">
@@ -82,21 +101,32 @@
       <p class="page-sub">All your recorded check-ins this term.</p>
 
       <div class="stats">
-        <div class="stat"><div class="num">18</div><div class="label">Total sessions</div></div>
-        <div class="stat"><div class="num">16</div><div class="label">On time</div></div>
-        <div class="stat"><div class="num">2</div><div class="label">Late</div></div>
-        <div class="stat"><div class="num">0</div><div class="label">Absent</div></div>
+        <div class="stat"><div class="num" id="stat-total">18</div><div class="label">Total sessions</div></div>
+        <div class="stat"><div class="num" id="stat-ontime">16</div><div class="label">On time</div></div>
+        <div class="stat"><div class="num" id="stat-late">2</div><div class="label">Late</div></div>
+        <div class="stat"><div class="num" id="stat-absent">0</div><div class="label">Absent</div></div>
       </div>
 
       <div class="toolbar">
-        <input type="text" placeholder="Search by session or date">
-        <select><option>All courses</option><option>ICT 105</option><option>ICT 225</option><option>ICT 415</option></select>
-        <select><option>All statuses</option><option>On time</option><option>Late</option><option>Absent</option></select>
+        <input type="text" id="search-input" placeholder="Search by session or date">
+        <select id="course-filter"><option value="">All courses</option>
+          <option value="ICT 101">ICT 101</option>
+         <option value="ICT 102">ICT 102</option>
+           <option value="ICT 103">ICT 103</option>
+          <option value="ICT 110">ICT 110</option>
+            <option value="ICT 113">ICT 113</option>
+           <option value="ICT 202">ICT 202</option>
+            <option value="ICT 209">ICT 209</option>
+             <option value="ICT 210">ICT 210</option>
+              <option value="ICT 211">ICT 211</option>
+               <option value="ICT 212">ICT 212</option>
+        </select>
+        <select id="status-filter"><option value="">All statuses</option><option>On time</option><option>Late</option><option>Absent</option></select>
       </div>
 
       <div class="panel">
-        <table>
-          <tr>
+        <table id="records-table">
+          <tr id="header-row">
             <th>Session</th><th>Date</th><th>Time</th><th>Location</th><th>Status</th>
           </tr>
           <tr>
@@ -120,6 +150,7 @@
             <td>Jul 2, 2026</td><td>1:32 PM</td><td>Room 118</td><td><span class="badge">On time</span></td>
           </tr>
         </table>
+        <p id="no-results" style="display:none;text-align:center;font-size:13px;color:var(--muted);padding:24px;">No records match your search.</p>
       </div>
 
       <div class="pagination">
@@ -132,6 +163,138 @@
         </div>
       </div>
     </div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
+  authDomain: "attender-demo.firebaseapp.com",
+  projectId: "attender-demo",
+  storageBucket: "attender-demo.firebasestorage.app",
+  messagingSenderId: "284650952052",
+  appId: "1:284650952052:web:d50f23ef490124f8148821"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+function getCurrentUser(){
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      unsubscribe();
+      if(!user){ resolve(null); return; }
+      try{
+        const snap = await _getDoc(_doc(db, "users", user.uid));
+        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
+      } catch(e){ resolve(null); }
+    });
+  });
+}
+async function requireRole(requiredRole){
+  const user = await getCurrentUser();
+  if(!user || user.role !== requiredRole){
+    window.location.href = "index.html";
+    return null;
+  }
+  return user;
+}
+function wireLogout(selector = "#logout-link"){
+  const el = document.querySelector(selector);
+  if(!el) return;
+  el.addEventListener('click', async (e) => {
+    e.preventDefault();
+    if(!confirm("Are you sure you want to log out?")) return;
+    await signOut(auth);
+    window.location.href = "index.html";
+  });
+}
+function initials(name){
+  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+}
+import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const currentUser = await requireRole("student");
+if(!currentUser) throw new Error("Redirecting to login");
+wireLogout();
+document.getElementById('nav-avatar').textContent = initials(currentUser.name);
+
+const q = query(collection(db, "records"), where("studentName", "==", currentUser.name));
+const snap = await getDocs(q);
+const myRecords = snap.docs.map(d => d.data()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+function badgeFor(status){
+  if(status === "Late") return '<span class="badge late">Late</span>';
+  if(status === "Absent") return '<span class="badge absent">Absent</span>';
+  return '<span class="badge">On time</span>';
+}
+
+if(myRecords.length){
+  const headerRow = document.getElementById('header-row');
+  const rowsHtml = myRecords.map(r => {
+    const icon = (r.course || "?").charAt(0);
+    const location = ((r.building ? r.building + " / " : "") + (r.room || "")).trim() || "—";
+    return '<tr>' +
+      '<td><div class="session-cell"><div class="row-icon">' + icon + '</div>' + (r.course || "—") + '</div></td>' +
+      '<td>' + (r.date || "—") + '</td>' +
+      '<td>' + (r.time || "—") + '</td>' +
+      '<td>' + location + '</td>' +
+      '<td>' + badgeFor(r.status) + '</td>' +
+      '</tr>';
+  }).join("");
+  headerRow.insertAdjacentHTML('afterend', rowsHtml);
+
+  const onTimeCount = myRecords.filter(r => r.status === "On time").length;
+  const lateCount = myRecords.filter(r => r.status === "Late").length;
+  document.getElementById('stat-total').textContent = 18 + myRecords.length;
+  document.getElementById('stat-ontime').textContent = 16 + onTimeCount;
+  document.getElementById('stat-late').textContent = 2 + lateCount;
+}
+
+const searchInput = document.getElementById('search-input');
+const courseFilter = document.getElementById('course-filter');
+const statusFilter = document.getElementById('status-filter');
+const table = document.getElementById('records-table');
+const noResults = document.getElementById('no-results');
+
+function applyFilters(){
+  const term = searchInput.value.trim().toLowerCase();
+  const course = courseFilter.value;
+  const status = statusFilter.value;
+
+  const rows = Array.from(table.querySelectorAll('tr')).filter(tr => tr.id !== 'header-row');
+  let visibleCount = 0;
+
+  rows.forEach(tr => {
+    const rowText = tr.textContent.toLowerCase();
+    const rowCourseCell = tr.querySelector('.session-cell');
+    const rowCourse = rowCourseCell ? rowCourseCell.textContent.trim().slice(1) : "";
+    const rowStatusEl = tr.querySelector('.badge');
+    const rowStatus = rowStatusEl ? rowStatusEl.textContent.trim() : "";
+
+    const matchesTerm = !term || rowText.includes(term);
+    const matchesCourse = !course || rowCourse === course;
+    const matchesStatus = !status || rowStatus === status ||
+      (status === "Late" && rowStatusEl && rowStatusEl.classList.contains('late')) ||
+      (status === "Absent" && rowStatusEl && rowStatusEl.classList.contains('absent')) ||
+      (status === "On time" && rowStatusEl && !rowStatusEl.classList.contains('late') && !rowStatusEl.classList.contains('absent'));
+
+    const show = matchesTerm && matchesCourse && matchesStatus;
+    tr.style.display = show ? "" : "none";
+    if(show) visibleCount++;
+  });
+
+  noResults.style.display = visibleCount === 0 ? "" : "none";
+  table.style.display = visibleCount === 0 ? "none" : "";
+}
+
+searchInput.addEventListener('input', applyFilters);
+courseFilter.addEventListener('change', applyFilters);
+statusFilter.addEventListener('change', applyFilters);
+</script>
 
     </body>
     </html>
