@@ -41,7 +41,7 @@ refinement:
 | Issue Title | Assigned Member | Requirement ID |
 |---|---|---|
 | Issues #44 Lab 08 Improve prototype feature based on validation evidence | Pan Thway Chal Ko Ko Lwin | FR-03, FR-10 |
-| Issues #43 Lab 08 Update README | Pan Thway Chal Ko Ko Lwin | FR-01, FR-02, FR-05, FR-06, FR-07, FR-08, FR-09, FR-10, FR-11, FR-12 |
+| Issues #45 Lab 08 Update README | Pan Thway Chal Ko Ko Lwin | FR-01, FR-02, FR-05, FR-06, FR-07, FR-08, FR-09, FR-10, FR-11, FR-12 |
 | Issues #43 Lab 08 Update weekly logbook | Thun Thiri Khin | FR-01, FR-02, FR-05, FR-06, FR-07, FR-08, FR-09, FR-10, FR-11, FR-12 |
 | Issues #42 Lab 08 Write mvp-decision.md| Thun Thiri Khin | FR-01, FR-02, FR-03, FR-05, FR-06, FR-07, FR-08, FR-09, FR-10, FR-11, FR-12 |
 | Issues #41 Lab 08 Write analytics-insights.md | Phoo Myat Thwin | FR-12 |
