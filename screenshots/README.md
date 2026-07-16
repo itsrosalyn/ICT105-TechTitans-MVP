@@ -2,12 +2,12 @@
 
 Place screenshots of your MVP experiment here, such as:
 
-- [login-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/login-page.png)
-- [home-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/home-page.png)
-- [scanqr-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/scanqr-page.png)
-- [gpscheck-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/gpscheck-page.png)
-- [confirmation-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/confirmation-page.png)
-- [records-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/records-page.png)
-- [lecturer-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/lecturer-dashboard.png)
-- [qr-generation.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e588615677b98f1bc8d36ebaa7a9d08571484f5f/screenshots/qr-generation.png)
+- [login-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/login-page.png)
+- [home-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/home-page.png)
+- [scanqr-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/scanqr-page.png)
+- [gpscheck-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/gpscheck-page.png)
+- [confirmation-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/confirmation-page.png)
+- [records-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/records-page.png)
+- [lecturer-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/lecturer-dashboard.png)
+- [qr-generation.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/qr-generation.png)
 
