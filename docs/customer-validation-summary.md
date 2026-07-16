@@ -67,8 +67,8 @@ The team conducted moderated usability testing using a clickable web prototype. 
 |---|---:|---|
 | Total test users | 7 | Five students and two lecturers tested the prototype. |
 | Task success rate | 100% (7/7) | Every participant successfully completed the assigned task. |
-| Average feedback score | 4.7 / 5 | Users found the prototype easy to understand and use. |
-| Average interest level | 4.9 / 5 | Participants showed strong interest in using the system. |
+| Average feedback score | 4.43 / 5 | Users found the prototype easy to understand and use. |
+| Average interest level | 4.43 / 5 | Participants showed strong interest in using the system. |
 | Most common confusion point | QR scanning and GPS verification | Users understood the workflow but noted that these features were only simulated in the prototype. |
 
 ---
