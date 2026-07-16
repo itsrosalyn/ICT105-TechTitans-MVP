@@ -1,8 +1,0 @@
-TestID,TestDate,TestUserID,UserRole,DeviceType,PrototypeVersion,TaskName,TaskCompleted,CompletionTimeSeconds,EaseOfUseScore,UsefulnessScore,ConfusionPoint,MostUsefulFeature,WouldUseAgain,InterestLevel,RequirementID,MVPDecisionSignal,Notes
-T001,20-07-26,TU-01,Student,Mobile,v1,Log in as a student,Yes,20,5,5,None,Login Screen,Yes,5,"FR-01, FR-02",Validated,Login process was simple and easy to understand.
-T002,20-07-26,TU-02,Student,Mobile,v1,"Complete check-in workflow (QR page, GPS page, confirmation)",Yes,60,4,5,QR scanner and GPS are prototype only,Check-in Workflow,Yes,5,"FR-02, FR-03, FR-10, FR-11",Partial,"Workflow is easy to follow, but QR scanning and GPS verification are simulated."
-T003,20-07-26,TU-03,Student,Laptop,v1,View attendance history and attendance details,Yes,35,5,5,None,Attendance History,Yes,5,"FR-05, FR-06, FR-07",Validated,Attendance history and details are easy to understand.
-T004,21-07-26,TU-04,Student,Mobile,v1,Review attendance percentage,Yes,22,5,5,None,Attendance Tracker,Yes,4,FR-08,Validated,Attendance percentage is clearly displayed and easy to understand.
-T005,21-07-26,TU-05,Student,Mobile,v1,Navigate through the complete student workflow,Yes,45,4,5,QR scanning unavailable,Navigation Flow,Yes,5,FR-02,Partial,Navigation is intuitive despite prototype-only functionality.
-T006,22-07-26,TU-06,Lecturer,Laptop,v1,Log in as a lecturer,Yes,18,5,5,None,Lecturer Login,Yes,5,FR-01,Validated,Lecturer login provides quick access to management features.
-T007,22-07-26,TU-07,Lecturer,Laptop,v1,Generate QR code and view attendance dashboard,Yes,45,5,5,None,QR Code Generation & Dashboard,Yes,5,"FR-09, FR-12",Validated,QR code generation and dashboard are intuitive and easy to use for managing attendance.
