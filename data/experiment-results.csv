@@ -6,5 +6,5 @@ T04,T4,Confirm attendance,Yes,15,No,,5,Confirmation message was clear.
 T05,T5,View attendance history and search for a previous record,Yes,38,No,Attendance percentage,4,Wanted more explanation of the attendance percentage.
 T06,T6,Log in as a lecturer,Yes,26,No,,5,Lecturer dashboard was easy to access.
 T07,T7,Generate a QR code,Yes,42,No,,5,QR code generation was straightforward.
-T07,T8,View the attendance dashboard,Yes,35,No,Attendance summary,4,"Dashboard was easy to understand, but suggested showing more attendance details in the summary."
+T08,T8,View the attendance dashboard,Yes,35,No,Attendance summary,4,"Dashboard was easy to understand, but suggested showing more attendance details in the summary."
 ,,,,,,,,
