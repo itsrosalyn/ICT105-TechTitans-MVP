@@ -350,5 +350,39 @@ QR Code Attendance System with GPS Verification
 | User validation has not been completed.                     | Conduct usability testing with ICT students and lecturers using the clickable prototype and collect feedback.         | Thun Thiri Khin           |
 | Validation findings have not been applied to the prototype. | Analyze validation results, create GitHub issues, and improve the prototype and documentation based on user feedback. | Mya Hninsi Phyu           |
 
+# Weekly Logbook - Lab 08
+
+## Group Information
+- Group name: Tech Titans
+- Project title: QR Code Attendance System with GPS Verification
+- Repository link: https://github.com/itsrosalyn/ICT105-TechTitans-MVP
+- Lab date: 15/07/2026
+
+## Work Completed Today
+- [x] Reviewed Lab 07 MVP experiment plan
+- [x] Prepared validation dataset structure
+- [x] Created or updated analytics sheet
+- [x] Wrote customer validation summary
+- [x] Wrote analytics insights
+- [x] Wrote MVP decision
+- [x] Updated README
+- [x] Created GitHub issues for prototype improvements
+
+## Member Contributions
+| Member Name | Contribution | GitHub Evidence |
+|---|---|---|
+| Pan Thway Chal Ko Ko Lwin | Formulated active development strategies for the next sprint iteratiin to upgrade the prototype. Updated the project's central landing documentation. | [Improve Prototype](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/prototype), [README]()  |
+| Thun Thiri Khin | Documented internal group logs and compiled the formal strategic pathway report deciding the developmental direction of the NVP. | [Weekly Logbook](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/edit/main/docs/weekly-logbook.md), [MVP Decision](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/mvp-decision.md) |
+| Phoo Myat Thwin | Analyzed qualitative user feedback and structured quantitive metrics to draw clear behavorial dashboard insights. | [Analytics Insights](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/analytics-insights.md), [Customer Validation Summary](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/customer-validation-summary.md) |
+| Mya Hninsi Phyu | Gathered raw data logs from the 7 user testing sessions, performed data cleaning, and formatted the results into structured tracking matrices. | [Validation Results](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/validation-results.csv), [Validation Result Flow](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/diagrams/validation-result-flow.mmd)|
+
+## Problems Found
+- **Validation & Technical Problem (FR-03 & FR-10):** While the interactive UI achieved a 100% task success rate, testing data revealed that users felt limited by the simulated elements. Specifically, the QR code scanner and the GPS validation panels were mock-ups/screenshots rather than functional utilities, which restricted live testing fidelity.
+- **Documentation Alignment:** Data needed to be unified across the customer summary files, analytics insights worksheets, and the main system metrics log to ensure alignment on which exact parameters required iteration.
+
+## Next Actions
+1. Write the core front-end scripts using camera-decoding libraries and the browser HTML5 Geolocation API to resolve FR-03 and FR-10.
+2. Publish this Weekly Logbook to the repository and ensure all project status parameters match.
+3. Finalize the analytical review documents on GitHub and perform a review check on the newly integrated functional modules.
 
 
