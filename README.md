@@ -223,7 +223,49 @@ A clickable web prototype was selected because it allows students and lecturers 
 - [/data/experiment-results.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e393be4a177456aa43e9cbbd1dbea9f621935027/data/experiment-results.csv)
 - [/screenshots](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/e393be4a177456aa43e9cbbd1dbea9f621935027/screenshots)
 
-
 ### Connection to Final Prototype
 EThe MVP experiment will provide evidence on whether the proposed attendance workflow is easy to use and addresses the identified user problems. Feedback from students and lecturers will be used to improve the QR code scanning process, GPS verification, attendance history, dashboard, and overall user interface before developing the final prototype. The experiment results will also help determine whether the current design should be continued or revised based on user validation.
 
+# README Update - Lab 08
+
+## Lab 08: Customer Validation and Analytics Sheet
+
+### Validation Objective
+
+Our team conducted moderated usability testing to validate whether students can successfully navigate the automated QR code check-in flow and GPS location verification parameters without external assistance. Additionally, we tested whether lecturers can seamlessly generate session QR codes and monitor attendance metrics via the admin dashboard backend to effectively mitigate proxy attendance cheating.
+
+### Prototype Version Tested
+- Version: v1
+- Link: [Prototype Link](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/prototype)
+- Screenshots:
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/login-page.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/home-page.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/scanqr-page.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/gpscheck-page.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/confirmation-page.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/records-page.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/lecturer-dashboard.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/qr-generation.png" width="100%" />
+<img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/lab08-powerbi-dashboard.png" width="100%" />
+
+### Analytics Summary
+| Metric | Result |
+|---|---:|
+| Total test users | 7 (5 Students / 2 Lecturers) |
+| Task success rate | 100% (7/7 Users Successfully Completed Tasks) |
+| Average feedback score | 4.43 / 5 (Ease of Use Score) |
+| Average interest level | 4.43 / 5 (High adoption interest) |
+| Main confusion point | QR code scanning and GPS verification pages were only simulated |
+
+### MVP Decision
+
+Continue with Minor Revisions: The core navigation paths, role selection structures, and dashboard visibility achieved high success ratings and interest levels. However, because the QR scanning engine and physical GPS coordinates checking were only simulated in this prototype phase, the team will transition these modules from static screens into live-coded functional APIs (using ⁠html5-qrcode⁠ and HTML5 Geolocation API) before the next lab evaluation.
+
+### Files Added
+- [/data/validation-results.xlsx](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/validation-results-analytics.xlsx)
+- [/data/validation-results.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/validation-results.csv)
+- [/docs/customer-validation-summary.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/customer-validation-summary.md)
+- [/docs/analytics-insights.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/analytics-insights.md)
+- [/docs/mvp-decision.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/mvp-decision.md)
+- [/screenshots/validation-test-screens.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/screenshots)
+- [/docs/weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/weekly-logbook.md)
