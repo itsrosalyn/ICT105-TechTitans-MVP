@@ -1,0 +1,8 @@
+Data_Field,Example_Value,Purpose,Personal_Data,Sensitive_Data,Visibility,Keep_Remove_Replace,Responsible_Action
+"Student Name","John","Used to identify the student checking in and display their name on the live lecturer attendance roster".,"Yes","No","Admin only,'"Keep","Restrict visibility to authorized staff and the student themselves."
+"Student ID","6601023","Unique institutional identifier used to log and bind the attendance record to the correct academic profiles.","Yes","No","Admin only","Keep,Encrypt the database field at rest to prevent student profile scraping."
+"Student Geolocation","13.7563,100.5018","Captures coordinates to verify the student is physically inside the classroom boundaries during scanning.","Yes","Yes","Admin only","Replace","Use instantly for proximity validation in the code; do not log permanent location history."
+"Lecturer Name","Prof. Herison","Identifies the host creator of the tracking session and logs who authorized the attendance window.","Yes","No","Public","Keep","No high-level privacy restriction needed as instructor names are public schedule data."
+"Lecturer ID","6588421","Unique institutional identifier used to verify the user has authorization rules to open a new tracking session.","Yes","No","Admin only","Keep","Restrict axxess control so students cannot view or intercept staff ID tokens."
+"Course Code","ICT 105","Identifies which specific class session the QR check-in token belongs to.","No","No","Public","Keep","No privacy restrictions needed as course schedules are public institutional data."
+"Room Location","Room 3-216","Specifies the target classroom location where the active check-in radius is centered.","No","No","Public","Keep","No specific privacy restrictions required for room numbers."
