@@ -385,4 +385,53 @@ QR Code Attendance System with GPS Verification
 2. Publish this Weekly Logbook to the repository and ensure all project status parameters match.
 3. Finalize the analytical review documents on GitHub and perform a review check on the newly integrated functional modules.
 
+# Weekly Logbook - Lab 09
+
+## Group Name
+Tech Titans
+
+## Date
+19 July 2026
+
+## Members Present
+- Thun Thiri Khin
+- Pan Thway Chal Ko Ko Lwin
+- Mya Hninsi Phyu
+- Phoo Myat Thwin
+
+## Work Completed Today
+- **Data inventory:** Identified and documented the attendance data collected and created the data inventory.
+- **Privacy review:** Reviewed user privacy, data protection, and prepared the privacy documentation and data handling policy.
+- **Ethical review:** Reviewed ethical considerations and completed the legal and ethical checklist.
+- **IP review:** Reviewed third-party assets and documented their usage with proper attribution.
+- **Security review:** Identified basic security risks and prepared the security risk checklist.
+- **Risk register:** Documented project risks, their impact, likelihood, and mitigation strategies.
+- **Requirements update note:** Reviewed the system requirements and confirmed that no changes were required after the responsible IT review.
+
+## Member Contributions
+
+| Member | Contribution | GitHub Evidence |
+|---|---|---|
+| **Thun Thiri Khin** | Prepared the IP and third-party assets documentation, including the third-party assets register and data inventory. | GitHub commits (IP documentation & data files) |
+| **Pan Thway Chal Ko Ko Lwin** | Prepared the security risk assessment, risk register, and risk register dataset. | GitHub commits (Security & Risk) |
+| **Mya Hninsi Phyu** | Prepared the legal, ethical, privacy, and data handling documentation. | GitHub commits (Privacy & Ethics) |
+| **Phoo Myat Thwin** | Prepared the user consent statement and updated the README and weekly logbook. | GitHub commits (Documentation updates) |
+
+## Decisions Made
+- The current prototype satisfies the responsible IT requirements for the MVP.
+- Only the minimum attendance data (Student ID, attendance time, and GPS location during check-in) should be collected.
+- GPS data should only be used for attendance verification and should not be tracked continuously.
+- All third-party assets must be properly attributed before the final submission.
+- No changes are required to the current system requirements after the Lab 09 review.
+
+## Issues / Blockers
+- QR code scanning and GPS verification are still simulated in the prototype.
+- Firebase integration and real-time data synchronization will be completed during implementation.
+- Time constraints limited testing of additional security features.
+
+## Next Action Before Lab 10
+- Implement the remaining prototype functionality.
+- Replace simulated QR code scanning and GPS verification with working features.
+- Complete Firebase integration and database connectivity.
+- Verify all responsible IT documentation before the final submission.
 
