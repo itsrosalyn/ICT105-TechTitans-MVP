@@ -269,3 +269,29 @@ Continue with Minor Revisions: The core navigation paths, role selection structu
 - [/docs/mvp-decision.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/mvp-decision.md)
 - [/screenshots/validation-test-screens.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/screenshots)
 - [/docs/weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/weekly-logbook.md)
+
+  ## Lab 09 - Responsible IT Check
+
+### Responsible Design Summary
+During Lab 09, our team reviewed the prototype from a responsible IT perspective by evaluating privacy, ethics, intellectual property, and basic security. We identified potential risks related to attendance data privacy, GPS location verification, QR code misuse, and unauthorized access. Appropriate documentation and mitigation strategies were prepared to ensure the prototype follows responsible IT practices while collecting only the minimum data required for attendance verification.
+
+### Files Added
+- [/docs/legal-ethical-checklist.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/legal-ethical-checklist.md)
+- [/docs/privacy-and-data-protection.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/privacy-and-data-protection.md)
+- [/docs/data-handling-policy.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/data-handling-policy.md)
+- [/docs/ip-and-third-party-assets.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/ip-and-third-party-assets.md)
+- [/docs/security-risk-check.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/security-risk-check.md)
+- [/docs/risk-register.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/risk-register.md)
+- [/docs/user-consent-statement.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/user-consent-statement.md)
+
+### Requirement Update
+No changes were made to `system-requirements.md` after the Lab 09 review. The team concluded that the existing functional requirements remain appropriate, and the identified improvements relate to implementation rather than changes to the system requirements.
+
+### Team Contributions
+
+| Member | Contribution |
+|---|---|
+| **Thun Thiri Khin** | Prepared the intellectual property and third-party assets documentation and ensured proper management of external assets and project data. |
+| **Pan Thway Chal Ko Ko Lwin** | Conducted the security and risk assessment by preparing the security review and identifying potential risks and mitigation strategies for the prototype. |
+| **Mya Hninsi Phyu** | Prepared the legal, ethical, and privacy documentation to ensure the prototype follows responsible IT practices and data protection principles. |
+| **Phoo Myat Thwin** | Updated the project README, prepared the user consent statement, and completed the Lab 09 weekly logbook. |
