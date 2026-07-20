@@ -295,3 +295,39 @@ No changes were made to `system-requirements.md` after the Lab 09 review. The te
 | **Pan Thway Chal Ko Ko Lwin** | Conducted the security and risk assessment by preparing the security review and identifying potential risks and mitigation strategies for the prototype. |
 | **Mya Hninsi Phyu** | Prepared the legal, ethical, and privacy documentation to ensure the prototype follows responsible IT practices and data protection principles. |
 | **Phoo Myat Thwin** | Updated the project README, prepared the user consent statement, and completed the Lab 09 weekly logbook. |
+
+# README Update Template - Lab 10
+
+## Lab 10 - MVP Implementation Sprint 1
+
+### Sprint Goal
+Our goal in Lab 10 is to begin building the first working version of the prototype based on the approved requirements, wireframes, architecture, and responsible-design checks.
+
+### Implementation Approach
+- Platform/tools:
+- Backend status:
+- Data storage/simulation:
+- Prototype link or folder:
+
+### Features Implemented in Sprint 1
+
+| Feature | Requirement ID | Status | Evidence |
+|---|---|---|---|
+| Homepage | FR-01 | | |
+| Input form | FR-03 | | |
+| Record list | FR-05 | | |
+| Search/filter | FR-06 | | |
+| Detail view | FR-07 | | |
+| Status tracking | FR-08 | | |
+| Admin view | FR-09 | | |
+| Dashboard | FR-12 | | |
+
+### Screenshots
+- Homepage:
+- Input form:
+- Record list:
+- Detail view:
+- Admin/status view:
+
+### Team Contribution
+All group members contributed to the same GitHub repository/page.
