@@ -1,0 +1,33 @@
+---
+config:
+  layout: elk
+---
+flowchart LR
+    A[Lab 04 Requirements] --> B[Lab 05 Wireframes]
+    B --> C[Lab 06 Technical Architecture]
+    C --> D[Lab 09 Responsible IT Check]
+    D --> E[Lab 10 MVP Implementation]
+
+    E --> F[Student Login]
+    E --> G[QR Code Check-in]
+    E --> H[GPS Verification]
+    E --> I[Attendance Confirmation]
+    E --> J[Attendance History]
+    E --> K[Lecturer Dashboard]
+
+    F --> L[Final QR Code Attendance System]
+    G --> L
+    H --> L
+    I --> L
+    J --> L
+    K --> L
+
+    classDef planning stroke:#818cf8,fill:#eef2ff
+    classDef implementation stroke:#4ade80,fill:#f0fdf4
+    classDef features stroke:#38bdf8,fill:#f0f9ff
+    classDef final stroke:#a78bfa,fill:#f5f3ff
+
+    class A,B,C,D planning
+    class E implementation
+    class F,G,H,I,J,K features
+    class L final
