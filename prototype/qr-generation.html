@@ -4,102 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Generate session QR</title>
-<style>
-  :root{
-    --blue-600:#2563eb;--blue-700:#1d4ed8;--blue-50:#eff6ff;--blue-100:#dbeafe;
-    --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;
-  }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
-  .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
-  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
-  .nav-links .active{color:var(--blue-700);}
-  .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-
-  .wrap{max-width:1000px;margin:0 auto;padding:36px 40px 60px;display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-
-  .page-title{font-size:22px;font-weight:700;margin:0 0 4px;grid-column:1/-1;}
-  .page-sub{font-size:13px;color:var(--muted);margin:0 0 8px;grid-column:1/-1;}
-
-  .panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
-
-  .field{margin-bottom:16px;}
-  .field label{display:block;font-size:12px;font-weight:600;margin-bottom:6px;}
-  .field select,.field input{
-    width:100%;border:1px solid var(--line);border-radius:10px;
-    padding:10px 14px;font-size:13px;background:#fff;color:var(--ink);
-  }
-  .field-row{display:flex;gap:12px;}
-  .field-row .field{flex:1;}
-
-  .radius-note{
-    font-size:12px;color:var(--muted);background:var(--blue-50);
-    border-radius:10px;padding:10px 12px;margin-bottom:20px;
-  }
-
-  .form-error{
-    display:none;
-    font-size:12px;color:#b91c1c;background:#fee2e2;
-    border-radius:8px;padding:10px 12px;margin-bottom:16px;
-    grid-column:1/-1;
-  }
-  .form-error.show{display:block;}
-
-  .generate-btn{
-    width:100%;background:var(--blue-600);color:#fff;border:none;
-    border-radius:10px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;
-  }
-
-  .qr-panel{display:flex;flex-direction:column;align-items:center;text-align:center;}
-  .qr-frame{
-    width:280px;height:280px;background:#fff;border:1px solid var(--line);
-    border-radius:16px;display:flex;align-items:center;justify-content:center;
-    padding:16px;margin-bottom:18px;
-  }
-  .qr-frame svg{width:100%;height:100%;}
-
-  .timer-pill{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--blue-50);color:var(--blue-700);
-    font-size:13px;font-weight:700;padding:7px 16px;border-radius:20px;
-    margin-bottom:16px;
-  }
-  .timer-dot{width:7px;height:7px;border-radius:50%;background:var(--blue-600);}
-
-  .qr-meta{width:100%;text-align:left;margin-bottom:16px;}
-  .meta-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;}
-  .meta-row:last-child{border-bottom:none;}
-  .meta-row .val{font-weight:700;}
-
-  .btn-row{display:flex;gap:10px;width:100%;}
-  .btn-row button{
-    flex:1;border-radius:10px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;
-  }
-  .refresh-btn{background:var(--blue-600);color:#fff;border:none;}
-  .stop-btn{background:#fff;color:#b91c1c;border:1px solid var(--line);}
-
-  .live-panel{grid-column:1/-1;}
-  .live-title{font-size:14px;font-weight:700;margin-bottom:14px;display:flex;justify-content:space-between;}
-  .live-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px;}
-  .live-row:last-child{border-bottom:none;}
-  .live-avatar{width:30px;height:30px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
-  .live-name{font-weight:600;flex:1;}
-  .live-time{color:var(--muted);font-size:12px;}
-
-  @media (max-width:900px){
-    .wrap{grid-template-columns:1fr;padding:24px 20px 40px;}
-  }
-  @media (max-width:640px){
-    .nav{padding:12px 16px;}
-    .nav-links{gap:16px;font-size:13px;}
-    .field-row{flex-direction:column;gap:0;}
-    .qr-frame{width:220px;height:220px;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-qr" style="visibility:hidden">
 
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
@@ -111,7 +18,16 @@
   </div>
   <div style="display:flex;align-items:center;gap:14px;">
     <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
-    <div class="avatar" id="nav-avatar">JA</div>
+    <div class="profile-menu-wrap">
+      <div class="avatar" id="nav-avatar" style="cursor:pointer;">JA</div>
+      <div class="profile-dropdown" id="profile-dropdown">
+        <div class="profile-dropdown-header"><img class="profile-avatar-img" id="profile-avatar-img" alt="Profile picture"></div>
+        <div class="profile-field"><span class="profile-label" id="profile-id-label">Staff ID</span><span class="profile-value" id="profile-id">—</span></div>
+        <div class="profile-field"><span class="profile-label">Full name</span><span class="profile-value" id="profile-name">—</span></div>
+        <div class="profile-field"><span class="profile-label">Email</span><span class="profile-value" id="profile-email">—</span></div>
+        <div class="profile-status" id="profile-status">—</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -139,7 +55,7 @@
     <div class="field-row">
       <div class="field">
         <label>Room</label>
-        <input type="text" id="room-input" value="Room 216">
+        <input type="text" id="room-input" value="3-216" placeholder="e.g. 3-216">
       </div>
       <div class="field">
         <label>Session length</label>
@@ -164,6 +80,7 @@
       <div class="meta-row"><span>Course</span><span class="val" id="qr-course">—</span></div>
       <div class="meta-row"><span>Room</span><span class="val" id="qr-room">—</span></div>
       <div class="meta-row"><span>Checked in</span><span class="val" id="checkin-count">0</span></div>
+      <div class="meta-row"><span>GPS anchor</span><span class="val" id="qr-gps" style="font-weight:600;">—</span></div>
     </div>
     <div class="btn-row">
       <button class="refresh-btn" id="refresh-btn">Refresh code</button>
@@ -180,196 +97,8 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
-  authDomain: "attender-demo.firebaseapp.com",
-  projectId: "attender-demo",
-  storageBucket: "attender-demo.firebasestorage.app",
-  messagingSenderId: "284650952052",
-  appId: "1:284650952052:web:d50f23ef490124f8148821"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-function getCurrentUser(){
-  return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      unsubscribe();
-      if(!user){ resolve(null); return; }
-      try{
-        const snap = await _getDoc(_doc(db, "users", user.uid));
-        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
-      } catch(e){ resolve(null); }
-    });
-  });
-}
-async function requireRole(requiredRole){
-  const user = await getCurrentUser();
-  if(!user || user.role !== requiredRole){
-    window.location.href = "index.html";
-    return null;
-  }
-  return user;
-}
-function wireLogout(selector = "#logout-link"){
-  const el = document.querySelector(selector);
-  if(!el) return;
-  el.addEventListener('click', async (e) => {
-    e.preventDefault();
-    if(!confirm("Are you sure you want to log out?")) return;
-    await signOut(auth);
-    window.location.href = "index.html";
-  });
-}
-function initials(name){
-  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-}
-import { doc, setDoc, getDoc, deleteDoc, collection, query, where, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const sessionRef = doc(db, "sessions", "active");
-
-const currentUser = await requireRole("lecturer");
-if(!currentUser) throw new Error("Redirecting to login");
-wireLogout();
-document.getElementById('nav-avatar').textContent = initials(currentUser.name.replace(/^Prof\.\s*/i, ""));
-
-let activeSessionId = null;
-let unsubscribeRecords = null;
-
-function genCode(len = 6){
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let s = "";
-  for(let i = 0; i < len; i++) s += chars[Math.floor(Math.random() * chars.length)];
-  return s;
-}
-
-function showQrError(msg){
-  const el = document.getElementById('qr-error');
-  el.textContent = msg;
-  el.classList.add('show');
-}
-function clearQrError(){
-  document.getElementById('qr-error').classList.remove('show');
-}
-function friendlyFirebaseError(err){
-  if(err && err.code === "permission-denied"){
-    return "Firestore blocked this write (permission-denied). Check your Firestore security rules.";
-  }
-  if(err && err.message && err.message.includes("not-found")){
-    return "Firestore isn't enabled for this project yet. Enable it in the Firebase console (Build → Firestore Database).";
-  }
-  return "Couldn't generate the QR code: " + (err && err.message ? err.message : err);
-}
-
-function renderQR(session){
-  const frame = document.getElementById('qr-frame');
-  frame.innerHTML = "";
-  new QRCode(frame, {
-    text: JSON.stringify({ sessionId: session.sessionId, course: session.course, room: session.room, building: session.building }),
-    width: 248,
-    height: 248,
-    correctLevel: QRCode.CorrectLevel.H
-  });
-  document.getElementById('session-code-display').textContent = "Session code (for manual entry): " + session.sessionId;
-  document.getElementById('qr-course').textContent = session.course;
-  document.getElementById('qr-room').textContent = (session.building ? session.building + " / " : "") + session.room;
-  document.getElementById('timer-pill').innerHTML = '<span class="timer-dot"></span>Active · ' + session.lengthMin + ' min session';
-}
-
-function updateLiveList(records){
-  const listEl = document.getElementById('live-list');
-  document.getElementById('checkin-count').textContent = records.length + " checked in";
-
-  if(records.length === 0){
-    listEl.innerHTML = '<div class="live-row" style="color:var(--muted);">No check-ins yet for this session.</div>';
-    return;
-  }
-  listEl.innerHTML = records.slice().reverse().map(r => {
-    const initials = r.studentName.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
-    return '<div class="live-row"><div class="live-avatar">' + initials + '</div><div class="live-name">' + r.studentName + '</div><span class="live-time">' + r.time + '</span></div>';
-  }).join("");
-}
-
-function watchRecords(sessionId){
-  if(unsubscribeRecords) unsubscribeRecords();
-  const q = query(collection(db, "records"), where("sessionId", "==", sessionId));
-  unsubscribeRecords = onSnapshot(q, (snap) => {
-    updateLiveList(snap.docs.map(d => d.data()));
-  });
-}
-
-async function generateSession(){
-  clearQrError();
-  const course = document.getElementById('course-select').value;
-  const room = document.getElementById('room-input').value.trim() || "Room";
-  const lengthMin = parseInt(document.getElementById('length-select').value, 10);
-  const radius = document.getElementById('radius-select').value;
-  const building = "Building 3";
-
-  const sessionId = genCode();
-  const now = Date.now();
-  const session = { sessionId, course, room, building, radius, lengthMin, createdAt: now, expiresAt: now + lengthMin * 60000 };
-
-  const btn = document.getElementById('generate-btn');
-  const refreshBtn = document.getElementById('refresh-btn');
-  btn.disabled = true; refreshBtn.disabled = true;
-
-  try{
-    await setDoc(sessionRef, session);
-    activeSessionId = sessionId;
-    renderQR(session);
-    watchRecords(sessionId);
-  } catch(err){
-    console.error("generateSession failed:", err);
-    showQrError(friendlyFirebaseError(err));
-  } finally{
-    btn.disabled = false; refreshBtn.disabled = false;
-  }
-}
-
-document.getElementById('generate-btn').addEventListener('click', generateSession);
-document.getElementById('refresh-btn').addEventListener('click', generateSession);
-
-document.getElementById('stop-btn').addEventListener('click', async () => {
-  if(!activeSessionId) return;
-  clearQrError();
-  try{
-    await deleteDoc(sessionRef);
-  } catch(err){
-    console.error("Ending session failed:", err);
-    showQrError(friendlyFirebaseError(err));
-    return;
-  }
-  activeSessionId = null;
-  if(unsubscribeRecords) unsubscribeRecords();
-
-  document.getElementById('qr-frame').innerHTML = '<span style="color:var(--muted);font-size:12px;">Generate a QR to display it here</span>';
-  document.getElementById('session-code-display').textContent = "";
-  document.getElementById('timer-pill').innerHTML = 'No active session';
-  document.getElementById('qr-course').textContent = "—";
-  document.getElementById('qr-room').textContent = "—";
-  document.getElementById('checkin-count').textContent = "0";
-  document.getElementById('live-list').innerHTML = '<div class="live-row" style="color:var(--muted);">Generate a QR code to start seeing live check-ins.</div>';
-});
-
-try{
-  const existing = await getDoc(sessionRef);
-  if(existing.exists()){
-    const session = existing.data();
-    activeSessionId = session.sessionId;
-    renderQR(session);
-    watchRecords(session.sessionId);
-  }
-} catch(err){
-  console.error("Loading existing session failed:", err);
-  showQrError(friendlyFirebaseError(err));
-}
+import { initQrPage } from "./shared.js";
+initQrPage();
 </script>
 
 </body>
