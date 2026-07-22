@@ -435,3 +435,52 @@ Tech Titans
 - Complete Firebase integration and database connectivity.
 - Verify all responsible IT documentation before the final submission.
 
+  # Weekly Logbook - Lab 10
+
+## Lab Topic
+
+MVP Implementation Sprint 1
+
+## What We Built Today
+
+- Student mobile check-in and QR scanning workflow (AttendQR interface).
+- Lecturer display and system flow with Firebase entry tracking.
+- Privacy governance integration including data inventory documentation and user consent statement.
+
+## Requirement IDs Addressed
+
+- **FR-14:** Mobile-friendly/responsive design
+- **FR-15:** Privacy and responsible data handling
+- **FR-16:** Final prototype traceability
+
+## Contribution by Members
+
+| Member | Contribution | Evidence |
+|---|---|---|
+| **Pan Thway Chal Ko Ko Lwin** | Updated prototype design files and captured updated UI screenshots. | [Prototype Link](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/prototype) , [UI Screenshots](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/screenshots) |
+| **Thun Thiri Khin** | Documented overall feature implementation status and compiled the team's weekly logbook. | [Feature Implementation Status](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/feature-implementation-status.md) , [Weekly Logbook](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/edit/main/docs/weekly-logbook.md) |
+| **Phoo Myat Thwin** | Defined QR attendance status categories, generated sample attendance record data, mapped the implementation flow diagram, and drafted implementation plan.| [QR Attendance Sample Records](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/qr-attendance-sample-records.csv) , [QR Attendance Status Categories](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/qr-attendance-status-categories.csv) , [Implementation Flow](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/diagrams/implementation-flow.mmd) , [Implementation Plan Template]() |
+| **Mya Hninsi Phyu** | Updated project repository README.md and revised Case Study Brief. | [README](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/README.md) , [Case Study Brief](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/case-study-brief.md) |
+
+## Screenshots Added
+
+- **Home page**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/home-page.png" width="100%" />
+- **Input-form**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/login-page.png" width="100%" />
+- **Record-list**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/records-page.png" width="100%" />
+- **Detail view**
+  <img width="1280" height="727" alt="Firebase data" src="https://github.com/user-attachments/assets/980f35cb-f369-4ed7-b728-7ae88f62b334" />
+- **Admin view**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/lecturer-dashboard.png" width="100%" />
+
+## Problems Faced
+
+- Fine-tuning the GPS location accuracy radius (FR-10) to prevent students inside Room 3-216 from being falsely flagged for blocked by low mobile GPS precision.
+
+## Plan for Next Lab
+
+- Finalize and complete working draft for FR-07.
+- Complete end-to-end integration test documentation test and conduct final accuracy testing for GPS geo-fencing.
+
