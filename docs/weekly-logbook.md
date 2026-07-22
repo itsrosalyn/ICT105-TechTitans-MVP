@@ -412,10 +412,10 @@ Tech Titans
 
 | Member | Contribution | GitHub Evidence |
 |---|---|---|
-| **Thun Thiri Khin** | Prepared the IP and third-party assets documentation, including the third-party assets register and data inventory. | GitHub commits (IP documentation & data files) |
-| **Pan Thway Chal Ko Ko Lwin** | Prepared the security risk assessment, risk register, and risk register dataset. | GitHub commits (Security & Risk) |
-| **Mya Hninsi Phyu** | Prepared the legal, ethical, privacy, and data handling documentation. | GitHub commits (Privacy & Ethics) |
-| **Phoo Myat Thwin** | Prepared the user consent statement and updated the README and weekly logbook. | GitHub commits (Documentation updates) |
+| **Thun Thiri Khin** | Prepared the IP and third-party assets documentation, including the third-party assets register and data inventory. | [Issue 49](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/49#issue-4904045579) |
+| **Pan Thway Chal Ko Ko Lwin** | Prepared the security risk assessment, risk register, and risk register dataset. |[Issue 48](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/48#issue-4904032014) |
+| **Mya Hninsi Phyu** | Prepared the legal, ethical, privacy, and data handling documentation. | [Issue 47](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/47#issue-4904021694) |
+| **Phoo Myat Thwin** | Prepared the user consent statement and updated the README and weekly logbook. | [Issue 46](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/46#issue-4904008211) |
 
 ## Decisions Made
 - The current prototype satisfies the responsible IT requirements for the MVP.
