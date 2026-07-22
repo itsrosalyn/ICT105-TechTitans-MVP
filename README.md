@@ -270,7 +270,7 @@ Continue with Minor Revisions: The core navigation paths, role selection structu
 - [/screenshots/validation-test-screens.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/main/screenshots)
 - [/docs/weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/weekly-logbook.md)
 
-  ## Lab 09 - Responsible IT Check
+## Lab 09 - Responsible IT Check
 
 ### Responsible Design Summary
 During Lab 09, our team reviewed the prototype from a responsible IT perspective by evaluating privacy, ethics, intellectual property, and basic security. We identified potential risks related to attendance data privacy, GPS location verification, QR code misuse, and unauthorized access. Appropriate documentation and mitigation strategies were prepared to ensure the prototype follows responsible IT practices while collecting only the minimum data required for attendance verification.
@@ -285,7 +285,7 @@ During Lab 09, our team reviewed the prototype from a responsible IT perspective
 - [/docs/user-consent-statement.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9c0b1b81cc64b572a3f647ad923304157f5e6c3d/docs/user-consent-statement.md)
 
 ### Requirement Update
-No changes were made to `system-requirements.md` after the Lab 09 review. The team concluded that the existing functional requirements remain appropriate, and the identified improvements relate to implementation rather than changes to the system requirements.
+No changes were made to [system-requirements.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/docs/system-requirements.md) after the Lab 09 review. The team concluded that the existing functional requirements remain appropriate, and the identified improvements relate to implementation rather than changes to the system requirements.
 
 ### Team Contributions
 
@@ -304,30 +304,34 @@ No changes were made to `system-requirements.md` after the Lab 09 review. The te
 Our goal in Lab 10 is to begin building the first working version of the prototype based on the approved requirements, wireframes, architecture, and responsible-design checks.
 
 ### Implementation Approach
-- Platform/tools:
-- Backend status:
-- Data storage/simulation:
-- Prototype link or folder:
+- **Platform/tools:** HTML, CSS, JavaScript, Firebase, QR Code library, Geolocation API
+- **Backend status:** Firebase backend implemented for authentication and attendance data management
+- **Data storage/simulation:** Firebase Firestore (real-time attendance records and user data)
+- **Prototype link or folder:** GitHub Repository: https://github.com/itsrosalyn/ICT105-TechTitans-MVP
 
-### Features Implemented in Sprint 1
+| Feature                             | Requirement ID | Status        | Evidence                                               |
+| ----------------------------------- | -------------- | ------------- | ------------------------------------------------------ |
+| Homepage / Login                    | FR-01          | ✅ Implemented | [/prototype/index.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/index.html), [/prototype/home-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/home-page.html) |
+| QR Code Check-in & GPS Verification | FR-03          | ✅ Implemented | [/prototype/scanqr-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/scanqr-page.html), [/prototype/gpscheck-page,html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/gpscheck-page.html)|
+| Attendance History                  | FR-05          | ✅ Implemented | [prototype/records-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/records-page.html)                       |
+| Attendance Search / Filter          | FR-06          | ✅ Implemented | [prototype/records-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/records-page.html)     |
+| Attendance Details                  | FR-07          | ✅ Implemented | [prototype/records-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/records-page.html) |
+| Attendance Status Tracking       | FR-08          | ✅ Implemented |[prototype/confirmation-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/confirmation-page.html)  |
+| Lecturer Attendance Management      | FR-09          | ✅ Implemented | [prototype/qr-generation.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/qr-generation.html)     |
+| Lecturer Dashboard                  | FR-12          | ✅ Implemented | [prototype/lecturer-dashboard.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/lecturer-dashboard.html)|
 
-| Feature | Requirement ID | Status | Evidence |
-|---|---|---|---|
-| Homepage | FR-01 | | |
-| Input form | FR-03 | | |
-| Record list | FR-05 | | |
-| Search/filter | FR-06 | | |
-| Detail view | FR-07 | | |
-| Status tracking | FR-08 | | |
-| Admin view | FR-09 | | |
-| Dashboard | FR-12 | | |
 
 ### Screenshots
-- Homepage:
-- Input form:
-- Record list:
-- Detail view:
-- Admin/status view:
+- **Home page**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/home-page.png" width="100%" />
+- **Input-form**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/login-page.png" width="100%" />
+- **Record-list**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/records-page.png" width="100%" />
+- **Detail view**
+  <img width="1280" height="727" alt="Firebase data" src="https://github.com/user-attachments/assets/980f35cb-f369-4ed7-b728-7ae88f62b334" />
+- **Admin view**
+  <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/lecturer-dashboard.png" width="100%" />
 
 ### Team Contribution
 All group members contributed to the same GitHub repository/page.
