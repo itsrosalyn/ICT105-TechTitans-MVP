@@ -19,7 +19,7 @@ Use this file to prove that your prototype implementation is connected to system
 | FR-12 | Dashboard or summary view | Lecturer Class Summary Screen | Completed | <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/lecturer-dashboard.png" width="100%" /> | None |
 | FR-13 | UI consistency | Shared Navigation Bar & Color Theme (CSS Stylesheet) | Completed | [UI Consistency](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/prototype/styles.css) | None |
 | FR-14 | Mobile-friendly/responsive design | Student Mobile Viewport Layout | Completed | <img width="746" height="1280" alt="Mobile View" src="https://github.com/user-attachments/assets/a5fac736-0d48-49ae-ab7e-f66c8bb572d0" /> | None |
-| FR-15 | Privacy and responsible data handling | Real-time GPS validation without logging raw coordinate history | Completed | [User Connt Statement](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/user-consent-statement.md) , [Data Inventory](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/data-inventory.csv)| None |
+| FR-15 | Privacy and responsible data handling | Real-time GPS validation without logging raw coordinate history | Completed | [User Consent Statement](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/docs/user-consent-statement.md) , [Data Inventory](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/data/data-inventory.csv)| None |
 | FR-16 | Final prototype traceability | Full System Flow (Lecturer Display->Student Scan->Firebase Entry | Completed | <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/privacy-security-review.png" width="100%" /> | None |
 
 ## Summary
