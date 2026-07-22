@@ -3,429 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AttendQR — Home</title>
-<style>
-  :root{
-    --blue-600:#2563eb;
-    --blue-700:#1d4ed8;
-    --blue-50:#eff6ff;
-    --blue-100:#dbeafe;
-    --ink:#0f172a;
-    --muted:#64748b;
-    --line:#e2e8f0;
-    --bg:#f8fafc;
-    --card:#ffffff;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--bg);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-    color:var(--ink);
-  }
-
-  .nav{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:14px 40px;
-    background:#fff;
-    border-bottom:1px solid var(--line);
-  }
-  .brand{
-    display:flex;align-items:center;gap:10px;
-    font-weight:700;font-size:16px;
-  }
-  .brand .mark{
-    width:28px;height:28px;border-radius:8px;
-    background:var(--blue-600);color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:14px;font-weight:700;
-  }
-  .nav-links{
-    display:flex;gap:32px;
-    font-size:14px;font-weight:600;color:var(--muted);
-  }
-  .nav-links .active{color:var(--blue-700);}
-  .nav-right{display:flex;align-items:center;gap:16px;}
-  .icon-btn{
-    width:34px;height:34px;border-radius:9px;
-    background:var(--blue-50);color:var(--blue-700);
-    display:flex;align-items:center;justify-content:center;
-    font-size:14px;
-  }
-  .avatar{
-    width:34px;height:34px;border-radius:50%;
-    background:var(--blue-100);color:var(--blue-700);
-    display:flex;align-items:center;justify-content:center;
-    font-size:12px;font-weight:700;
-  }
-
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:36px 40px 60px;
-    display:grid;
-    grid-template-columns:1.15fr 1fr;
-    gap:28px;
-  }
-
-  .greeting{font-size:24px;font-weight:700;margin:0 0 4px;}
-  .greeting-sub{font-size:14px;color:var(--muted);margin:0 0 24px;}
-
-  .left{display:flex;flex-direction:column;gap:20px;}
-
-  .hero{
-    background:linear-gradient(135deg,var(--blue-600),var(--blue-700));
-    border-radius:20px;
-    padding:32px;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    gap:32px;
-  }
-  .hero-copy{flex:1;}
-  .hero-eyebrow{
-    font-size:11px;font-weight:700;letter-spacing:.05em;
-    text-transform:uppercase;color:var(--blue-100);margin-bottom:10px;
-  }
-  .hero-title{font-size:22px;font-weight:700;margin:0 0 8px;}
-  .hero-sub{font-size:13px;color:var(--blue-100);margin:0 0 20px;max-width:340px;}
-  .scan-btn{
-    background:#fff;color:var(--blue-700);border:none;
-    border-radius:10px;padding:12px 22px;font-size:14px;font-weight:700;
-    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
-  }
-  .qr-frame{
-    width:140px;height:140px;flex-shrink:0;
-    background:#fff;border-radius:16px;
-    display:flex;align-items:center;justify-content:center;padding:12px;
-  }
-  .qr-frame svg{width:100%;height:100%;}
-
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .stat{
-    background:#fff;border:1px solid var(--line);
-    border-radius:14px;padding:16px 18px;
-  }
-  .stat .num{font-size:24px;font-weight:700;color:var(--blue-700);}
-  .stat .label{font-size:12px;color:var(--muted);margin-top:4px;}
-
-  .panel{
-    background:#fff;border:1px solid var(--line);
-    border-radius:16px;padding:20px 22px;
-  }
-  .panel-title{
-    display:flex;justify-content:space-between;align-items:center;
-    font-size:14px;font-weight:700;margin-bottom:14px;
-  }
-  .panel-title a{font-size:12px;font-weight:600;color:var(--blue-600);text-decoration:none;}
-
-  .row-item{
-    display:flex;align-items:center;gap:14px;
-    padding:12px 0;border-bottom:1px solid var(--line);
-  }
-  .row-item:last-child{border-bottom:none;}
-  .row-icon{
-    width:38px;height:38px;border-radius:10px;
-    background:var(--blue-50);color:var(--blue-700);
-    display:flex;align-items:center;justify-content:center;
-    font-size:13px;font-weight:700;flex-shrink:0;
-  }
-  .row-text{flex:1;}
-  .row-title{font-size:13px;font-weight:600;}
-  .row-sub{font-size:12px;color:var(--muted);margin-top:2px;}
-  .badge{
-    font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;
-    background:#dcfce7;color:#15803d;
-  }
-  .badge.late{background:#fef3c7;color:#92400e;}
-
-  .right{display:flex;flex-direction:column;gap:20px;}
-
-  .schedule-item{
-    display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);
-  }
-  .schedule-item:last-child{border-bottom:none;}
-  .time-col{
-    font-size:12px;font-weight:700;color:var(--blue-700);
-    width:60px;flex-shrink:0;
-  }
-  .schedule-title{font-size:13px;font-weight:600;}
-  .schedule-sub{font-size:12px;color:var(--muted);margin-top:2px;}
-  .schedule-tag{
-    font-size:10px;font-weight:700;color:var(--blue-700);
-    background:var(--blue-50);padding:2px 8px;border-radius:6px;
-    display:inline-block;margin-top:6px;
-  }
-
-  .mini-stat-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;}
-  .mini-stat-row:last-child{border-bottom:none;}
-  .mini-stat-row .val{font-weight:700;}
-
-  @media (max-width:900px){
-    .wrap{grid-template-columns:1fr;padding:24px 20px 40px;}
-  }
-  @media (max-width:640px){
-    .nav{padding:12px 16px;}
-    .nav-links{gap:18px;font-size:13px;}
-    .hero{flex-direction:column;text-align:center;padding:24px;gap:20px;}
-    .qr-frame{width:120px;height:120px;}
-    .stats{grid-template-columns:1fr 1fr;}
-  }
-  @media (max-width:400px){
-    .stats{grid-template-columns:1fr;}
-    .nav-links{gap:12px;}
-  }
-</style>
+<title>AttendQR — Log in</title>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body style="visibility:hidden">
+<body class="page-index">
 
-<div class="nav">
+<div class="brand-panel">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
-  <div class="nav-links">
-    <span class="active">Home</span>
-    <a href="scan.html">
-    <span>Check-in</span>
-    </a>
-    <a href="records.html">
-    <span>Records</span>
-    </a>
-    
+
+  <div class="brand-copy">
+    <div class="brand-eyebrow">Attendance, simplified</div>
+    <p class="brand-title">Check in in seconds with a QR code.</p>
+    <p class="brand-sub">Track sessions, view your attendance history, and never fill out a paper sheet again.</p>
   </div>
-  <div class="nav-right">
-    <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
-    <div class="icon-btn">⚙</div>
-    <div class="avatar" id="nav-avatar">JS</div>
+
+  <div class="qr-frame">
+    <svg viewBox="0 0 100 100">
+      <rect width="100" height="100" fill="#fff"/>
+      <g fill="#1d4ed8">
+        <rect x="6" y="6" width="26" height="26"/>
+        <rect x="12" y="12" width="14" height="14" fill="#fff"/>
+        <rect x="17" y="17" width="4" height="4" fill="#1d4ed8"/>
+        <rect x="68" y="6" width="26" height="26"/>
+        <rect x="74" y="12" width="14" height="14" fill="#fff"/>
+        <rect x="79" y="17" width="4" height="4" fill="#1d4ed8"/>
+        <rect x="6" y="68" width="26" height="26"/>
+        <rect x="12" y="74" width="14" height="14" fill="#fff"/>
+        <rect x="17" y="79" width="4" height="4" fill="#1d4ed8"/>
+        <rect x="40" y="6" width="6" height="6"/>
+        <rect x="52" y="6" width="6" height="6"/>
+        <rect x="40" y="18" width="6" height="6"/>
+        <rect x="60" y="40" width="6" height="6"/>
+        <rect x="40" y="40" width="6" height="6"/>
+        <rect x="46" y="46" width="6" height="6"/>
+        <rect x="60" y="52" width="6" height="6"/>
+        <rect x="40" y="60" width="6" height="6"/>
+        <rect x="52" y="66" width="6" height="6"/>
+        <rect x="66" y="66" width="6" height="6"/>
+        <rect x="78" y="52" width="6" height="6"/>
+        <rect x="84" y="40" width="6" height="6"/>
+        <rect x="40" y="78" width="6" height="6"/>
+        <rect x="60" y="84" width="6" height="6"/>
+        <rect x="78" y="84" width="6" height="6"/>
+      </g>
+    </svg>
   </div>
+
+  <div class="brand-foot">© 2026 AttendQR. All rights reserved.</div>
 </div>
 
-<div class="wrap">
+<div class="form-panel">
+  <div class="form-wrap">
 
-  <div class="left">
-    <div>
-      <p class="greeting" id="greeting-text">Good morning, Jordan</p>
-      <p class="greeting-sub" id="greeting-sub">Tuesday, July 8 · Math 101 starts in 15 min</p>
+    <div class="mode-toggle">
+      <button class="active" id="tab-login" onclick="setMode('login')">Log in</button>
+      <button id="tab-signup" onclick="setMode('signup')">Sign up</button>
     </div>
 
-    <div class="hero">
-      <div class="hero-copy">
-        <div class="hero-eyebrow">Today's session</div>
-        <p class="hero-title">Scan to check in</p>
-        <p class="hero-sub">Point your camera at the room code, or use the desktop scanner to check in from this page.</p>
-        <a href="scan.html">
-        <button class="scan-btn">Open scanner</button>
-        </a>
+    <div id="panel-login">
+      <p class="form-title">Welcome back</p>
+      <p class="form-sub">Log in to check in and view your attendance.</p>
+
+      <div class="form-error" id="login-error"></div>
+
+      <div class="field">
+        <label>School email</label>
+        <input type="text" id="login-email" placeholder="jordan@rsu.ac.th">
       </div>
-      <div class="qr-frame">
-        <svg viewBox="0 0 100 100">
-          <rect width="100" height="100" fill="#fff"/>
-          <g fill="#1d4ed8">
-            <rect x="6" y="6" width="26" height="26"/>
-            <rect x="12" y="12" width="14" height="14" fill="#fff"/>
-            <rect x="17" y="17" width="4" height="4" fill="#1d4ed8"/>
-            <rect x="68" y="6" width="26" height="26"/>
-            <rect x="74" y="12" width="14" height="14" fill="#fff"/>
-            <rect x="79" y="17" width="4" height="4" fill="#1d4ed8"/>
-            <rect x="6" y="68" width="26" height="26"/>
-            <rect x="12" y="74" width="14" height="14" fill="#fff"/>
-            <rect x="17" y="79" width="4" height="4" fill="#1d4ed8"/>
-            <rect x="40" y="6" width="6" height="6"/>
-            <rect x="52" y="6" width="6" height="6"/>
-            <rect x="40" y="18" width="6" height="6"/>
-            <rect x="60" y="40" width="6" height="6"/>
-            <rect x="40" y="40" width="6" height="6"/>
-            <rect x="46" y="46" width="6" height="6"/>
-            <rect x="60" y="52" width="6" height="6"/>
-            <rect x="40" y="60" width="6" height="6"/>
-            <rect x="52" y="66" width="6" height="6"/>
-            <rect x="66" y="66" width="6" height="6"/>
-            <rect x="78" y="52" width="6" height="6"/>
-            <rect x="84" y="40" width="6" height="6"/>
-            <rect x="40" y="78" width="6" height="6"/>
-            <rect x="60" y="84" width="6" height="6"/>
-            <rect x="78" y="84" width="6" height="6"/>
-          </g>
-        </svg>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="login-password" placeholder="••••••••">
       </div>
-    </div>
 
-    <div class="stats">
-      <div class="stat"><div class="num" id="stat-rate">96%</div><div class="label">Attendance rate</div></div>
-      <div class="stat"><div class="num" id="stat-sessions">18</div><div class="label">Sessions this term</div></div>
-      <div class="stat"><div class="num" id="stat-late">2</div><div class="label">Late arrivals</div></div>
-    </div>
-
-    <div class="panel">
-      <div class="panel-title">Recent check-ins <a href="records.html">See all</a></div>
-      <div id="recent-checkins-list">
-      <div class="row-item">
-        <div class="row-icon">I</div>
-        <div class="row-text">
-          <div class="row-title">ICT 105</div>
-          <div class="row-sub">Yesterday, 9:02 AM</div>
+      <div class="row-between">
+        <div class="remember">
+          <input type="checkbox" style="width:auto;">
+          Remember me
         </div>
-        <span class="badge">On time</span>
+        <a href="#" class="forgot">Forgot password?</a>
       </div>
-      <div class="row-item">
-        <div class="row-icon">I</div>
-        <div class="row-text">
-          <div class="row-title">ICT 225</div>
-          <div class="row-sub">Jul 6, 1:47 PM</div>
-        </div>
-        <span class="badge late">5 min late</span>
-      </div>
-      <div class="row-item">
-        <div class="row-icon">I</div>
-        <div class="row-text">
-          <div class="row-title">ICT 415</div>
-          <div class="row-sub">Jul 4, 10:58 AM</div>
-        </div>
-        <span class="badge">On time</span>
-      </div>
-      </div>
+
+      <button class="login-btn" id="login-btn">Log in</button>
+
+      <p class="signup">Don't have an account? <a href="#" onclick="setMode('signup');return false;">Sign up</a></p>
     </div>
+
+    <div id="panel-signup" style="display:none;">
+      <p class="form-title">Create your account</p>
+      <p class="form-sub">Sign up with your school email to get started.</p>
+
+      <div class="form-error" id="signup-error"></div>
+
+      <div class="role-toggle">
+        <button class="active" id="signup-role-student" onclick="setSignupRole('student')">Student</button>
+        <button id="signup-role-lecturer" onclick="setSignupRole('lecturer')">Lecturer</button>
+      </div>
+
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" id="signup-name" placeholder="Jordan Smith">
+      </div>
+      <div class="field">
+        <label>School email</label>
+        <input type="text" id="signup-email" placeholder="jordan@rsu.ac.th">
+        <div class="hint">Must be a valid @rsu.ac.th address</div>
+      </div>
+      <div class="field">
+        <label id="signup-id-label">Student ID</label>
+        <input type="text" id="signup-id" placeholder="6412345">
+        <div class="hint" id="signup-id-hint">7 digits, e.g. 6412345</div>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="signup-password" placeholder="At least 6 characters">
+      </div>
+      <div class="field">
+        <label>Confirm password</label>
+        <input type="password" id="signup-confirm" placeholder="Re-enter password">
+      </div>
+
+      <button class="login-btn" id="signup-btn">Create account</button>
+
+      <p class="signup">Already have an account? <a href="#" onclick="setMode('login');return false;">Log in</a></p>
+    </div>
+
   </div>
-
-  <div class="right">
-    <div class="panel">
-      <div class="panel-title">Today's schedule <a href="#">Full calendar</a></div>
-      <div class="schedule-item">
-        <div class="time-col">9:00 AM</div>
-        <div>
-          <div class="schedule-title">ICT 105</div>
-          <div class="schedule-sub">Room 216 · Prof. Herison</div>
-          <span class="schedule-tag">Starts in 15 min</span>
-        </div>
-      </div>
-      <div class="schedule-item">
-        <div class="time-col">1:30 PM</div>
-        <div>
-          <div class="schedule-title">ICT 225</div>
-          <div class="schedule-sub">Room 118 · Prof. Todsanai</div>
-        </div>
-      </div>
-      <div class="schedule-item">
-        <div class="time-col">4:00 PM</div>
-        <div>
-          <div class="schedule-title">ICT 415</div>
-          <div class="schedule-sub">Room 302 · Prof. Prashaya</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="panel-title">This term</div>
-      <div class="mini-stat-row"><span>Sessions attended</span><span class="val" id="mini-attended">18 / 20</span></div>
-      <div class="mini-stat-row"><span>On-time rate</span><span class="val" id="mini-ontime">89%</span></div>
-      <div class="mini-stat-row"><span>Absences</span><span class="val" id="mini-absences">2</span></div>
-    </div>
-  </div>
-
 </div>
 
 <script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
-  authDomain: "attender-demo.firebaseapp.com",
-  projectId: "attender-demo",
-  storageBucket: "attender-demo.firebasestorage.app",
-  messagingSenderId: "284650952052",
-  appId: "1:284650952052:web:d50f23ef490124f8148821"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-function getCurrentUser(){
-  return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      unsubscribe();
-      if(!user){ resolve(null); return; }
-      try{
-        const snap = await _getDoc(_doc(db, "users", user.uid));
-        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
-      } catch(e){ resolve(null); }
-    });
-  });
-}
-async function requireRole(requiredRole){
-  const user = await getCurrentUser();
-  if(!user || user.role !== requiredRole){
-    window.location.href = "index.html";
-    return null;
-  }
-  return user;
-}
-function wireLogout(selector = "#logout-link"){
-  const el = document.querySelector(selector);
-  if(!el) return;
-  el.addEventListener('click', async (e) => {
-    e.preventDefault();
-    if(!confirm("Are you sure you want to log out?")) return;
-    await signOut(auth);
-    window.location.href = "index.html";
-  });
-}
-function initials(name){
-  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-}
-import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const currentUser = await requireRole("student");
-if(!currentUser) throw new Error("Redirecting to login");
-wireLogout();
-
-const firstName = currentUser.name.split(" ")[0];
-document.getElementById('greeting-text').textContent = "Good morning, " + firstName;
-document.getElementById('nav-avatar').textContent = initials(currentUser.name);
-
-const today = new Date();
-document.getElementById('greeting-sub').textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-
-const q = query(collection(db, "records"), where("studentName", "==", currentUser.name));
-const snap = await getDocs(q);
-const myRecords = snap.docs.map(d => d.data()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-const BASE_TOTAL_POSSIBLE = 20, BASE_ATTENDED = 18, BASE_ONTIME = 16, BASE_LATE = 2;
-const realOnTime = myRecords.filter(r => r.status === "On time").length;
-const realLate = myRecords.filter(r => r.status === "Late").length;
-
-const totalPossible = BASE_TOTAL_POSSIBLE + myRecords.length;
-const attended = BASE_ATTENDED + myRecords.length;
-const onTime = BASE_ONTIME + realOnTime;
-const late = BASE_LATE + realLate;
-const absent = totalPossible - attended;
-
-document.getElementById('stat-rate').textContent = Math.round((attended / totalPossible) * 100) + "%";
-document.getElementById('stat-sessions').textContent = attended;
-document.getElementById('stat-late').textContent = late;
-
-document.getElementById('mini-attended').textContent = attended + " / " + totalPossible;
-document.getElementById('mini-ontime').textContent = Math.round((onTime / attended) * 100) + "%";
-document.getElementById('mini-absences').textContent = absent;
-
-if(myRecords.length){
-  const listEl = document.getElementById('recent-checkins-list');
-  const rowsHtml = myRecords.slice(0, 5).map(r => {
-    const icon = (r.course || "?").charAt(0);
-    const badge = r.status === "Late" ? '<span class="badge late">Late</span>' : '<span class="badge">On time</span>';
-    return '<div class="row-item">' +
-      '<div class="row-icon">' + icon + '</div>' +
-      '<div class="row-text"><div class="row-title">' + (r.course || "—") + '</div>' +
-      '<div class="row-sub">' + (r.date || "—") + ', ' + (r.time || "—") + '</div></div>' +
-      badge +
-      '</div>';
-  }).join("");
-  listEl.insertAdjacentHTML('afterbegin', rowsHtml);
-}
-
-document.body.style.visibility = "visible";
+import { initLoginPage } from "./shared.js";
+initLoginPage();
 </script>
 
 </body>
