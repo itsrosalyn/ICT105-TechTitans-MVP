@@ -4,128 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — GPS verification</title>
-<style>
-  :root{
-    --blue-600:#2563eb;--blue-700:#1d4ed8;--blue-50:#eff6ff;--blue-100:#dbeafe;
-    --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;
-  }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
-  .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
-  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
-  .nav-links .active{color:var(--blue-700);}
-  .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-
-  .wrap{max-width:620px;margin:0 auto;padding:64px 40px;text-align:center;}
-
-  .step-track{display:flex;justify-content:center;gap:8px;margin-bottom:32px;}
-  .step-dot{width:34px;height:4px;border-radius:2px;background:var(--line);}
-  .step-dot.done{background:var(--blue-600);}
-  .step-dot.active{background:var(--blue-600);}
-
-  .map-frame{
-    width:100%;height:280px;border-radius:20px;
-    background:
-      linear-gradient(var(--blue-50),var(--blue-50)),
-      repeating-linear-gradient(0deg,rgba(37,99,235,0.06) 0 1px,transparent 1px 32px),
-      repeating-linear-gradient(90deg,rgba(37,99,235,0.06) 0 1px,transparent 1px 32px);
-    border:1px solid var(--line);
-    position:relative;
-    margin-bottom:24px;
-    overflow:hidden;
-  }
-  .radius-ring{
-    position:absolute;top:50%;left:50%;
-    width:160px;height:160px;border-radius:50%;
-    border:2px dashed var(--blue-600);
-    transform:translate(-50%,-50%);
-    background:rgba(37,99,235,0.06);
-  }
-  .radius-ring.inner{
-    width:60px;height:60px;
-    border:none;background:var(--blue-600);
-  }
-  .radius-ring.inner::after{
-    content:"";
-    position:absolute;inset:0;
-    border-radius:50%;
-    background:var(--blue-600);
-    animation:none;
-  }
-  .pin{
-    position:absolute;top:50%;left:50%;
-    width:14px;height:14px;
-    background:var(--blue-700);
-    border:3px solid #fff;
-    border-radius:50%;
-    transform:translate(-50%,-50%);
-    box-shadow:0 2px 6px rgba(29,78,216,0.4);
-  }
-  .room-label{
-    position:absolute;top:18px;left:18px;
-    background:#fff;border:1px solid var(--line);
-    border-radius:8px;padding:6px 12px;font-size:12px;font-weight:600;
-  }
-
-  .status-pill{
-    display:inline-flex;align-items:center;gap:8px;
-    background:#dcfce7;color:#15803d;
-    font-size:13px;font-weight:700;
-    padding:8px 16px;border-radius:20px;
-    margin-bottom:14px;
-  }
-  .status-dot{width:8px;height:8px;border-radius:50%;background:#15803d;}
-
-  .title{font-size:20px;font-weight:700;margin:0 0 8px;}
-  .sub{font-size:14px;color:var(--muted);margin:0 0 28px;max-width:400px;margin-left:auto;margin-right:auto;}
-
-  .detail-row{
-    display:flex;justify-content:space-between;
-    padding:12px 0;border-bottom:1px solid var(--line);
-    font-size:13px;text-align:left;
-  }
-  .detail-row .val{font-weight:700;}
-  .detail-card{
-    background:#fff;border:1px solid var(--line);border-radius:16px;
-    padding:6px 20px;margin-bottom:28px;text-align:left;
-  }
-
-  .continue-btn{
-    width:100%;background:var(--blue-600);color:#fff;border:none;
-    border-radius:10px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;
-    margin-bottom:12px;
-  }
-  .retry-btn{
-    width:100%;background:#fff;color:var(--blue-700);border:1px solid var(--line);
-    border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;
-  }  .sim-toggle{display:flex;gap:8px;justify-content:center;margin-bottom:20px;}
-  .sim-btn{
-    border:1px solid var(--line);background:#fff;color:var(--muted);
-    font-size:12px;font-weight:600;padding:8px 14px;border-radius:20px;cursor:pointer;
-  }
-  .sim-btn.active{background:var(--blue-600);color:#fff;border-color:var(--blue-600);}
-
-  @media (max-width:640px){
-    .nav{padding:12px 16px;}
-    .nav-links{gap:16px;font-size:13px;}
-    .wrap{padding:32px 20px;}
-    .map-frame{height:220px;}
-    .sim-toggle{flex-wrap:wrap;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-gps">
 
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
   <div class="nav-links">
-    <span>Home</span><span class="active">Check-in</span><span>Records</span>
+    <a href="home.html"
+    <span>Home</span>
+  </a>
+    <span class="active">Check-in</span>
+    <a href="records.html"
+    <span>Records</span>
+  </a>
   </div>
   <div style="display:flex;align-items:center;gap:14px;">
     <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
-    <div class="avatar" id="nav-avatar">JS</div>
+    <div class="profile-menu-wrap">
+      <div class="avatar" id="nav-avatar" style="cursor:pointer;">JS</div>
+      <div class="profile-dropdown" id="profile-dropdown">
+        <div class="profile-dropdown-header"><img class="profile-avatar-img" id="profile-avatar-img" alt="Profile picture"></div>
+        <div class="profile-field"><span class="profile-label" id="profile-id-label">Student ID</span><span class="profile-value" id="profile-id">—</span></div>
+        <div class="profile-field"><span class="profile-label">Full name</span><span class="profile-value" id="profile-name">—</span></div>
+        <div class="profile-field"><span class="profile-label">Email</span><span class="profile-value" id="profile-email">—</span></div>
+        <div class="profile-status" id="profile-status">—</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -141,11 +46,6 @@
 
   <p class="title">Verifying your location</p>
   <p class="sub">We use GPS to confirm you're physically in the room before completing check-in.</p>
-
-  <div class="sim-toggle">
-    <button class="sim-btn active" id="sim-in">Simulate: In range</button>
-    <button class="sim-btn" id="sim-out">Simulate: Out of range</button>
-  </div>
 
   <div class="map-frame">
     <div class="room-label" id="room-label">Room</div>
@@ -166,153 +66,8 @@
 </div>
 
 <script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
-  authDomain: "attender-demo.firebaseapp.com",
-  projectId: "attender-demo",
-  storageBucket: "attender-demo.firebasestorage.app",
-  messagingSenderId: "284650952052",
-  appId: "1:284650952052:web:d50f23ef490124f8148821"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-function getCurrentUser(){
-  return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      unsubscribe();
-      if(!user){ resolve(null); return; }
-      try{
-        const snap = await _getDoc(_doc(db, "users", user.uid));
-        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
-      } catch(e){ resolve(null); }
-    });
-  });
-}
-async function requireRole(requiredRole){
-  const user = await getCurrentUser();
-  if(!user || user.role !== requiredRole){
-    window.location.href = "index.html";
-    return null;
-  }
-  return user;
-}
-function wireLogout(selector = "#logout-link"){
-  const el = document.querySelector(selector);
-  if(!el) return;
-  el.addEventListener('click', async (e) => {
-    e.preventDefault();
-    if(!confirm("Are you sure you want to log out?")) return;
-    await signOut(auth);
-    window.location.href = "index.html";
-  });
-}
-function initials(name){
-  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-}
-import { doc, getDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const currentUser = await requireRole("student");
-if(!currentUser) throw new Error("Redirecting to login");
-wireLogout();
-document.getElementById('nav-avatar').textContent = initials(currentUser.name);
-
-const pendingRaw = sessionStorage.getItem("attendqr_pending");
-if(!pendingRaw){
-  window.location.href = "scan.html";
-}
-const pending = pendingRaw ? JSON.parse(pendingRaw) : {};
-
-const sessionSnap = await getDoc(doc(db, "sessions", "active"));
-const savedSession = sessionSnap.exists() ? sessionSnap.data() : null;
-const session = (savedSession && savedSession.sessionId === pending.sessionId) ? savedSession : null;
-
-let simulateInRange = true;
-
-function setPill(ok, label){
-  const pill = document.getElementById('status-pill');
-  pill.style.background = ok ? "#dcfce7" : "#fee2e2";
-  pill.style.color = ok ? "#15803d" : "#b91c1c";
-  pill.innerHTML = '<span class="status-dot" style="background:' + (ok ? "#15803d" : "#b91c1c") + ';"></span>' + label;
-}
-
-function render(){
-  document.getElementById('room-label').textContent = (pending.building ? pending.building + " · " : "") + (pending.room || "Room");
-  document.getElementById('detail-session').textContent = pending.course || "—";
-  document.getElementById('detail-radius').textContent = session ? session.radius + " m" : "—";
-
-  if(!session){
-    setPill(false, "Session ended");
-    document.getElementById('detail-distance').textContent = "—";
-    document.getElementById('continue-btn').disabled = true;
-    return;
-  }
-
-  if(simulateInRange){
-    const dist = Math.floor(Math.random() * 30) + 5;
-    document.getElementById('detail-distance').textContent = dist + " m";
-    setPill(true, "Within check-in range");
-  } else {
-    const dist = Math.floor(Math.random() * 150) + 80;
-    document.getElementById('detail-distance').textContent = dist + " m";
-    setPill(false, "Outside check-in range");
-  }
-}
-
-document.getElementById('sim-in').addEventListener('click', () => {
-  simulateInRange = true;
-  document.getElementById('sim-in').classList.add('active');
-  document.getElementById('sim-out').classList.remove('active');
-  render();
-});
-document.getElementById('sim-out').addEventListener('click', () => {
-  simulateInRange = false;
-  document.getElementById('sim-out').classList.add('active');
-  document.getElementById('sim-in').classList.remove('active');
-  render();
-});
-document.getElementById('retry-btn').addEventListener('click', render);
-
-document.getElementById('continue-btn').addEventListener('click', async () => {
-  if(!session){
-    alert("This session is no longer active. Ask your lecturer for a new QR code.");
-    return;
-  }
-  if(!simulateInRange){
-    alert("You're outside the allowed check-in radius. Switch to 'Simulate: In range' to test a successful check-in, or move closer for a real GPS check.");
-    return;
-  }
-
-  const minutesSince = (Date.now() - session.createdAt) / 60000;
-  const status = minutesSince <= 10 ? "On time" : "Late";
-  const now = new Date();
-
-  const record = {
-    studentName: pending.studentName,
-    course: pending.course,
-    room: pending.room,
-    building: pending.building,
-    sessionId: pending.sessionId,
-    date: now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-    time: now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
-    status: status,
-    timestamp: now.toISOString()
-  };
-
-  await addDoc(collection(db, "records"), record);
-  sessionStorage.setItem("attendqr_last_record", JSON.stringify(record));
-  sessionStorage.removeItem("attendqr_pending");
-
-  window.location.href = "confirmation.html";
-});
-
-render();
+import { initGpsPage } from "./shared.js";
+initGpsPage();
 </script>
 
 </body>
