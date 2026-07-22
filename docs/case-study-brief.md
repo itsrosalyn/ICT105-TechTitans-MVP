@@ -1,3 +1,22 @@
+# Lab 04 Practice Case Brief
+## QR Code Attendance System with GPS Verification
+
+### Context
+Lecturers often spend valuable class time recording attendance manually, while students may be able to engage in proxy attendance by asking others to check in on their behalf. Manual attendance management also makes it more difficult for lecturers to monitor attendance records and calculate attendance percentages efficiently.
+
+### Problem from Lab 03 Evidence
+The main evidence pattern is that the current attendance process is time-consuming, vulnerable to proxy attendance, and lacks an efficient digital system for recording, verifying, and monitoring attendance.
+
+### Practice Goal for Lab 04
+In this practice case, the team will transform the evidence into:
+- a target user;
+- a user persona;
+- functional and non-functional requirements;
+- user stories with acceptance criteria;
+- MVP feature prioritization;
+- simple user flow and use case diagram;
+- a traceability link from evidence to final prototype deliverables.
+
 # Lab 05 Practice Case Brief: QR code attendance system with GPS verification
 
 ## Case Context
@@ -80,3 +99,21 @@ A web-based attendance prototype where students can log in, access the attendanc
 
 ## Responsible IT Focus for Lab 09
 Students must review what attendance data is collected, determine whether personal information is necessary, ensure users understand how their data is used, properly acknowledge third-party assets (such as Firebase and external libraries), and verify that lecturer/admin functions are clearly separated from student functions to protect attendance records.
+
+# Lab 10 Case Study Brief: QR Code Attendance System with GPS Verification
+
+## Practice Purpose
+This case is used only for Lab 10 guided practice. Students must apply the same implementation process to their own selected group case.
+
+## Problem Context
+Manual attendance recording in classrooms is time-consuming and may allow proxy attendance, where students ask others to record attendance on their behalf. Lecturers also spend additional time managing attendance records and calculating attendance percentages manually.
+
+## Target Users
+- Students who record attendance during class
+- Lecturers who create attendance sessions, generate QR codes, and monitor attendance records
+
+## Minimum Prototype Idea
+A web-based attendance system that allows students to log in, scan a QR code, verify their location using GPS, record attendance, view attendance history and attendance percentage, and allows lecturers to generate QR codes, create attendance sessions, and monitor attendance records through a dashboard.
+
+## Practice Note
+The prototype is developed using HTML, CSS, JavaScript, and Firebase for user authentication and attendance data storage. QR code scanning and GPS location verification are implemented to support attendance recording, while Firebase stores and manages attendance records in real time.
