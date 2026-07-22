@@ -4,138 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Scan to check in</title>
-<style>
-  :root{
-    --blue-600:#2563eb;--blue-700:#1d4ed8;--blue-50:#eff6ff;--blue-100:#dbeafe;
-    --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;
-  }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
-  .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
-  .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
-  .nav-links .active{color:var(--blue-700);}
-  .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-
-  .wrap{max-width:520px;margin:0 auto;padding:48px 40px 60px;text-align:center;}
-
-  .step-track{display:flex;justify-content:center;gap:8px;margin-bottom:28px;}
-  .step-dot{width:34px;height:4px;border-radius:2px;background:var(--blue-600);}
-  .step-dot.todo{background:var(--line);}
-
-  .title{font-size:20px;font-weight:700;margin:0 0 6px;}
-  .sub{font-size:13px;color:var(--muted);margin:0 0 24px;}
-
-  .camera{
-    position:relative;
-    width:100%;
-    aspect-ratio:1/1;
-    background:#0f172a;
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:20px;
-  }
-  .camera-feed{
-    position:absolute;inset:0;
-    background:
-      radial-gradient(circle at 30% 25%, rgba(255,255,255,0.05), transparent 40%),
-      linear-gradient(135deg,#1e293b,#0f172a 60%,#1e293b);
-  }
-  .camera-feed::before{
-    content:"";
-    position:absolute;inset:0;
-    background:
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 26px),
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 26px);
-  }
-  .scan-frame{
-    position:absolute;top:50%;left:50%;
-    width:62%;height:62%;
-    transform:translate(-50%,-50%);
-    pointer-events:none;
-  }
-  .corner{
-    position:absolute;width:26px;height:26px;
-    border-color:#fff;border-style:solid;border-width:0;
-  }
-  .corner.tl{top:0;left:0;border-top-width:3px;border-left-width:3px;border-radius:6px 0 0 0;}
-  .corner.tr{top:0;right:0;border-top-width:3px;border-right-width:3px;border-radius:0 6px 0 0;}
-  .corner.bl{bottom:0;left:0;border-bottom-width:3px;border-left-width:3px;border-radius:0 0 0 6px;}
-  .corner.br{bottom:0;right:0;border-bottom-width:3px;border-right-width:3px;border-radius:0 0 6px 0;}
-  .scan-line{
-    position:absolute;left:4%;right:4%;top:8%;
-    height:2px;
-    background:linear-gradient(90deg, transparent, var(--blue-600), transparent);
-    animation:scan 2.2s ease-in-out infinite;
-  }
-  @keyframes scan{
-    0%{top:8%;}
-    50%{top:88%;}
-    100%{top:8%;}
-  }
-  .camera-hint{
-    position:absolute;bottom:16px;left:0;right:0;
-    text-align:center;
-    color:#fff;
-    font-size:12px;
-    font-weight:600;
-    opacity:0.85;
-    pointer-events:none;
-  }
-  .flash-btn{
-    position:absolute;top:14px;right:14px;
-    width:34px;height:34px;border-radius:50%;
-    background:rgba(255,255,255,0.12);
-    color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:14px;
-  }
-
-  #qr-reader{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-  }
-  #qr-reader video{
-    width:100% !important;
-    height:100% !important;
-    object-fit:cover;
-  }
-  #qr-reader__dashboard, #qr-reader__header_message, #qr-reader__status_span{
-    display:none !important;
-  }
-  #qr-reader__scan_region{
-    border:none !important;
-  }
-
-  .session-card{
-    display:flex;align-items:center;gap:12px;text-align:left;
-    background:#fff;border:1px solid var(--line);border-radius:14px;
-    padding:12px 16px;margin-bottom:20px;
-  }
-  .session-icon{
-    width:38px;height:38px;border-radius:10px;background:var(--blue-50);color:var(--blue-700);
-    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;
-  }
-  .session-title{font-size:13px;font-weight:600;}
-  .session-sub{font-size:12px;color:var(--muted);margin-top:1px;}
-
-  .manual-btn{
-    width:100%;background:#fff;color:var(--blue-700);border:1px solid var(--line);
-    border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:10px;
-  }
-  .cancel-link{font-size:12px;color:var(--muted);text-decoration:none;}
-
-  @media (max-width:640px){
-    .nav{padding:12px 16px;}
-    .nav-links{gap:16px;font-size:13px;}
-    .wrap{padding:28px 20px 40px;}
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-scan">
 
 <div class="nav">
   <div class="brand"><div class="mark">A</div>AttendQR</div>
@@ -150,7 +21,16 @@
   </div>
   <div style="display:flex;align-items:center;gap:14px;">
     <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
-    <div class="avatar" id="nav-avatar">JS</div>
+    <div class="profile-menu-wrap">
+      <div class="avatar" id="nav-avatar" style="cursor:pointer;">JS</div>
+      <div class="profile-dropdown" id="profile-dropdown">
+        <div class="profile-dropdown-header"><img class="profile-avatar-img" id="profile-avatar-img" alt="Profile picture"></div>
+        <div class="profile-field"><span class="profile-label" id="profile-id-label">Student ID</span><span class="profile-value" id="profile-id">—</span></div>
+        <div class="profile-field"><span class="profile-label">Full name</span><span class="profile-value" id="profile-name">—</span></div>
+        <div class="profile-field"><span class="profile-label">Email</span><span class="profile-value" id="profile-email">—</span></div>
+        <div class="profile-status" id="profile-status">—</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -200,138 +80,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 <script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
-  authDomain: "attender-demo.firebaseapp.com",
-  projectId: "attender-demo",
-  storageBucket: "attender-demo.firebasestorage.app",
-  messagingSenderId: "284650952052",
-  appId: "1:284650952052:web:d50f23ef490124f8148821"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-function getCurrentUser(){
-  return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      unsubscribe();
-      if(!user){ resolve(null); return; }
-      try{
-        const snap = await _getDoc(_doc(db, "users", user.uid));
-        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
-      } catch(e){ resolve(null); }
-    });
-  });
-}
-async function requireRole(requiredRole){
-  const user = await getCurrentUser();
-  if(!user || user.role !== requiredRole){
-    window.location.href = "index.html";
-    return null;
-  }
-  return user;
-}
-function wireLogout(selector = "#logout-link"){
-  const el = document.querySelector(selector);
-  if(!el) return;
-  el.addEventListener('click', async (e) => {
-    e.preventDefault();
-    if(!confirm("Are you sure you want to log out?")) return;
-    await signOut(auth);
-    window.location.href = "index.html";
-  });
-}
-function initials(name){
-  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-}
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const currentUser = await requireRole("student");
-if(!currentUser) throw new Error("Redirecting to login");
-wireLogout();
-document.getElementById('nav-avatar').textContent = initials(currentUser.name);
-document.getElementById('student-name').value = currentUser.name;
-
-const html5QrCode = new Html5Qrcode("qr-reader");
-let handled = false;
-
-function getName(){
-  return currentUser ? currentUser.name : null;
-}
-
-function parsePayload(decodedText){
-  try{
-    const data = JSON.parse(decodedText);
-    if(data.sessionId) return data;
-  }catch(e){  }
-  return { sessionId: decodedText, course: "Unknown course", room: "Unknown room", building: "" };
-}
-
-function proceedToGps(payload, name){
-  document.getElementById('session-title').textContent = payload.course || "Session";
-  document.getElementById('session-sub').textContent =
-    (payload.building ? payload.building + " · " : "") + (payload.room || "");
-
-  sessionStorage.setItem("attendqr_pending", JSON.stringify({
-    studentName: name,
-    sessionId: payload.sessionId,
-    course: payload.course,
-    room: payload.room,
-    building: payload.building,
-    scannedAt: new Date().toISOString()
-  }));
-
-  setTimeout(() => { window.location.href = "gps.html"; }, 300);
-}
-
-function onScanSuccess(decodedText, decodedResult){
-  if(handled) return;
-  const name = getName();
-  if(!name) return; 
-  handled = true;
-  html5QrCode.stop().catch(() => {}).finally(() => {
-    proceedToGps(parsePayload(decodedText), name);
-  });
-}
-
-function onScanFailure(error){}
-
-html5QrCode.start(
-  { facingMode: "environment" },
-  {
-    fps: 10,
-    qrbox: { width: 250, height: 250 }
-  },
-  onScanSuccess,
-  onScanFailure
-).catch(err => {
-  console.error("Unable to start QR scanner:", err);
-  document.querySelector('.camera-hint').textContent = "Camera access denied or unavailable — use 'Enter code manually' below.";
-});
-
-document.getElementById('manual-entry-btn').addEventListener('click', async () => {
-  const name = getName();
-  if(!name) return;
-  const code = prompt("Enter the session code shown on the lecturer's screen (e.g. the text under the QR code):");
-  if(!code) return;
-
-  const snap = await getDoc(doc(db, "sessions", "active"));
-  const session = snap.exists() ? snap.data() : null;
-  if(!session || session.sessionId !== code.trim().toUpperCase()){
-    alert("That session code wasn't found. Double check it, or ask your lecturer to generate a new QR.");
-    return;
-  }
-  if(html5QrCode && html5QrCode.isScanning){
-    html5QrCode.stop().catch(() => {});
-  }
-  proceedToGps(session, name);
-});
+import { initScanPage } from "./shared.js";
+initScanPage();
 </script>
 
 </body>
