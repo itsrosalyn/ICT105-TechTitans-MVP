@@ -4,80 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AttendQR — Attendance history</title>
-<style>
-      :root{
-        --blue-600:#2563eb;--blue-700:#1d4ed8;--blue-50:#eff6ff;--blue-100:#dbeafe;
-        --ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;
-      }
-      *{box-sizing:border-box;}
-      body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);}
-      .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:#fff;border-bottom:1px solid var(--line);}
-      .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
-      .brand .mark{width:28px;height:28px;border-radius:8px;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;}
-      .nav-links{display:flex;gap:32px;font-size:14px;font-weight:600;color:var(--muted);}
-      .nav-links .active{color:var(--blue-700);}
-      .avatar{width:34px;height:34px;border-radius:50%;background:var(--blue-100);color:var(--blue-700);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
-
-      .wrap{max-width:960px;margin:0 auto;padding:36px 40px 60px;}
-
-      .page-title{font-size:22px;font-weight:700;margin:0 0 4px;}
-      .page-sub{font-size:13px;color:var(--muted);margin:0 0 24px;}
-
-      .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px;}
-      .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
-      .stat .num{font-size:22px;font-weight:700;color:var(--blue-700);}
-      .stat .label{font-size:11px;color:var(--muted);margin-top:4px;}
-
-      .toolbar{display:flex;gap:10px;margin-bottom:16px;}
-      .toolbar input{
-        flex:1;border:1px solid var(--line);border-radius:10px;
-        padding:10px 14px;font-size:13px;background:#fff;color:var(--ink);
-      }
-      .toolbar select{
-        border:1px solid var(--line);border-radius:10px;
-        padding:10px 14px;font-size:13px;background:#fff;color:var(--ink);
-      }
-
-      .panel{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;}
-      table{width:100%;border-collapse:collapse;font-size:13px;}
-      th{
-        text-align:left;padding:12px 20px;color:var(--muted);
-        font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.03em;
-        border-bottom:1px solid var(--line);background:var(--blue-50);
-      }
-      td{padding:13px 20px;border-bottom:1px solid var(--line);}
-      tr:last-child td{border-bottom:none;}
-      .session-cell{display:flex;align-items:center;gap:10px;}
-      .row-icon{
-        width:32px;height:32px;border-radius:9px;background:var(--blue-50);color:var(--blue-700);
-        display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;
-      }
-      .badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:#dcfce7;color:#15803d;}
-      .badge.late{background:#fef3c7;color:#92400e;}
-      .badge.absent{background:#fee2e2;color:#b91c1c;}
-
-      .pagination{display:flex;justify-content:space-between;align-items:center;padding:16px 4px 0;font-size:12px;color:var(--muted);}
-      .page-btns{display:flex;gap:6px;}
-      .page-btn{width:28px;height:28px;border-radius:7px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;}
-      .page-btn.active{background:var(--blue-600);color:#fff;border-color:var(--blue-600);}
-
-      @media (max-width:900px){
-        .wrap{padding:24px 20px 40px;}
-        .stats{grid-template-columns:1fr 1fr;}
-      }
-      @media (max-width:640px){
-        .nav{padding:12px 16px;}
-        .nav-links{gap:16px;font-size:13px;}
-        .toolbar{flex-wrap:wrap;}
-        .panel{overflow-x:auto;}
-        table{min-width:640px;}
-      }
-      @media (max-width:400px){
-        .stats{grid-template-columns:1fr;}
-      }
-  </style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-records">
 
     <div class="nav">
       <div class="brand"><div class="mark">A</div>AttendQR</div>
@@ -92,7 +21,16 @@
       </div>
       <div style="display:flex;align-items:center;gap:14px;">
         <a href="#" id="logout-link" style="font-size:12px;font-weight:600;color:var(--muted);text-decoration:none;">Log out</a>
-        <div class="avatar" id="nav-avatar">JS</div>
+        <div class="profile-menu-wrap">
+          <div class="avatar" id="nav-avatar" style="cursor:pointer;">JS</div>
+          <div class="profile-dropdown" id="profile-dropdown">
+            <div class="profile-dropdown-header"><img class="profile-avatar-img" id="profile-avatar-img" alt="Profile picture"></div>
+            <div class="profile-field"><span class="profile-label" id="profile-id-label">Student ID</span><span class="profile-value" id="profile-id">—</span></div>
+            <div class="profile-field"><span class="profile-label">Full name</span><span class="profile-value" id="profile-name">—</span></div>
+            <div class="profile-field"><span class="profile-label">Email</span><span class="profile-value" id="profile-email">—</span></div>
+            <div class="profile-status" id="profile-status">—</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -101,9 +39,9 @@
       <p class="page-sub">All your recorded check-ins this term.</p>
 
       <div class="stats">
-        <div class="stat"><div class="num" id="stat-total">18</div><div class="label">Total sessions</div></div>
-        <div class="stat"><div class="num" id="stat-ontime">16</div><div class="label">On time</div></div>
-        <div class="stat"><div class="num" id="stat-late">2</div><div class="label">Late</div></div>
+        <div class="stat"><div class="num" id="stat-total">0</div><div class="label">Total sessions</div></div>
+        <div class="stat"><div class="num" id="stat-ontime">0</div><div class="label">On time</div></div>
+        <div class="stat"><div class="num" id="stat-late">0</div><div class="label">Late</div></div>
         <div class="stat"><div class="num" id="stat-absent">0</div><div class="label">Absent</div></div>
       </div>
 
@@ -129,26 +67,6 @@
           <tr id="header-row">
             <th>Session</th><th>Date</th><th>Time</th><th>Location</th><th>Status</th>
           </tr>
-          <tr>
-            <td><div class="session-cell"><div class="row-icon">I</div>ICT 105</div></td>
-            <td>Jul 7, 2026</td><td>9:02 AM</td><td>Room 204</td><td><span class="badge">On time</span></td>
-          </tr>
-          <tr>
-            <td><div class="session-cell"><div class="row-icon">I</div>ICT 225</div></td>
-            <td>Jul 6, 2026</td><td>1:47 PM</td><td>Room 118</td><td><span class="badge late">5 min late</span></td>
-          </tr>
-          <tr>
-            <td><div class="session-cell"><div class="row-icon">I</div>ICT 415</div></td>
-            <td>Jul 4, 2026</td><td>—</td><td>Room 302</td><td><span class="badge absent">Absent</span></td>
-          </tr>
-          <tr>
-            <td><div class="session-cell"><div class="row-icon">I</div>ICT 105</div></td>
-            <td>Jul 3, 2026</td><td>8:58 AM</td><td>Room 204</td><td><span class="badge">On time</span></td>
-          </tr>
-          <tr>
-            <td><div class="session-cell"><div class="row-icon">I</div>ICT 225</div></td>
-            <td>Jul 2, 2026</td><td>1:32 PM</td><td>Room 118</td><td><span class="badge">On time</span></td>
-          </tr>
         </table>
         <p id="no-results" style="display:none;text-align:center;font-size:13px;color:var(--muted);padding:24px;">No records match your search.</p>
       </div>
@@ -165,135 +83,8 @@
     </div>
 
 <script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, doc as _doc, getDoc as _getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyDekEtcKYdx-zelubr0Qpq8ZNZk2ACkBOU",
-  authDomain: "attender-demo.firebaseapp.com",
-  projectId: "attender-demo",
-  storageBucket: "attender-demo.firebasestorage.app",
-  messagingSenderId: "284650952052",
-  appId: "1:284650952052:web:d50f23ef490124f8148821"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-function getCurrentUser(){
-  return new Promise((resolve) => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      unsubscribe();
-      if(!user){ resolve(null); return; }
-      try{
-        const snap = await _getDoc(_doc(db, "users", user.uid));
-        resolve(snap.exists() ? { uid: user.uid, ...snap.data() } : null);
-      } catch(e){ resolve(null); }
-    });
-  });
-}
-async function requireRole(requiredRole){
-  const user = await getCurrentUser();
-  if(!user || user.role !== requiredRole){
-    window.location.href = "index.html";
-    return null;
-  }
-  return user;
-}
-function wireLogout(selector = "#logout-link"){
-  const el = document.querySelector(selector);
-  if(!el) return;
-  el.addEventListener('click', async (e) => {
-    e.preventDefault();
-    if(!confirm("Are you sure you want to log out?")) return;
-    await signOut(auth);
-    window.location.href = "index.html";
-  });
-}
-function initials(name){
-  return (name || "").split(" ").filter(Boolean).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-}
-import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const currentUser = await requireRole("student");
-if(!currentUser) throw new Error("Redirecting to login");
-wireLogout();
-document.getElementById('nav-avatar').textContent = initials(currentUser.name);
-
-const q = query(collection(db, "records"), where("studentName", "==", currentUser.name));
-const snap = await getDocs(q);
-const myRecords = snap.docs.map(d => d.data()).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-function badgeFor(status){
-  if(status === "Late") return '<span class="badge late">Late</span>';
-  if(status === "Absent") return '<span class="badge absent">Absent</span>';
-  return '<span class="badge">On time</span>';
-}
-
-if(myRecords.length){
-  const headerRow = document.getElementById('header-row');
-  const rowsHtml = myRecords.map(r => {
-    const icon = (r.course || "?").charAt(0);
-    const location = ((r.building ? r.building + " / " : "") + (r.room || "")).trim() || "—";
-    return '<tr>' +
-      '<td><div class="session-cell"><div class="row-icon">' + icon + '</div>' + (r.course || "—") + '</div></td>' +
-      '<td>' + (r.date || "—") + '</td>' +
-      '<td>' + (r.time || "—") + '</td>' +
-      '<td>' + location + '</td>' +
-      '<td>' + badgeFor(r.status) + '</td>' +
-      '</tr>';
-  }).join("");
-  headerRow.insertAdjacentHTML('afterend', rowsHtml);
-
-  const onTimeCount = myRecords.filter(r => r.status === "On time").length;
-  const lateCount = myRecords.filter(r => r.status === "Late").length;
-  document.getElementById('stat-total').textContent = 18 + myRecords.length;
-  document.getElementById('stat-ontime').textContent = 16 + onTimeCount;
-  document.getElementById('stat-late').textContent = 2 + lateCount;
-}
-
-const searchInput = document.getElementById('search-input');
-const courseFilter = document.getElementById('course-filter');
-const statusFilter = document.getElementById('status-filter');
-const table = document.getElementById('records-table');
-const noResults = document.getElementById('no-results');
-
-function applyFilters(){
-  const term = searchInput.value.trim().toLowerCase();
-  const course = courseFilter.value;
-  const status = statusFilter.value;
-
-  const rows = Array.from(table.querySelectorAll('tr')).filter(tr => tr.id !== 'header-row');
-  let visibleCount = 0;
-
-  rows.forEach(tr => {
-    const rowText = tr.textContent.toLowerCase();
-    const rowCourseCell = tr.querySelector('.session-cell');
-    const rowCourse = rowCourseCell ? rowCourseCell.textContent.trim().slice(1) : "";
-    const rowStatusEl = tr.querySelector('.badge');
-    const rowStatus = rowStatusEl ? rowStatusEl.textContent.trim() : "";
-
-    const matchesTerm = !term || rowText.includes(term);
-    const matchesCourse = !course || rowCourse === course;
-    const matchesStatus = !status || rowStatus === status ||
-      (status === "Late" && rowStatusEl && rowStatusEl.classList.contains('late')) ||
-      (status === "Absent" && rowStatusEl && rowStatusEl.classList.contains('absent')) ||
-      (status === "On time" && rowStatusEl && !rowStatusEl.classList.contains('late') && !rowStatusEl.classList.contains('absent'));
-
-    const show = matchesTerm && matchesCourse && matchesStatus;
-    tr.style.display = show ? "" : "none";
-    if(show) visibleCount++;
-  });
-
-  noResults.style.display = visibleCount === 0 ? "" : "none";
-  table.style.display = visibleCount === 0 ? "none" : "";
-}
-
-searchInput.addEventListener('input', applyFilters);
-courseFilter.addEventListener('change', applyFilters);
-statusFilter.addEventListener('change', applyFilters);
+import { initRecordsPage } from "./shared.js";
+initRecordsPage();
 </script>
 
     </body>
