@@ -1,0 +1,4 @@
+field,allowed_values,notes
+attendance_status,Present; Late; Absent,Use only one value per record.
+gps_status,Verified; Not Verified,Indicates the GPS verification result.
+priority,Low; Medium; High,Helps lecturers identify students who may be at risk of falling below the 80% attendance requirement.
