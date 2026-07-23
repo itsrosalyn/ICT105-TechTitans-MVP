@@ -1,0 +1,16 @@
+Column,Table,Meaning,Data Type,Example,Why Students Need It
+AttendanceID,PrototypeRecords,Unique attendance record ID,Text,A001,Connects attendance records to the activity log.
+AttendanceDate,PrototypeRecords,Date attendance was recorded,Date,15-07-26,Used for attendance trends and reporting.
+SessionDate,PrototypeRecords,Date of the attendance session,Date,15-07-26,Used to identify each class session.
+CourseCode,PrototypeRecords,Course associated with the attendance,Text,ICT105,Used to group attendance by course.
+AttendanceStatus,PrototypeRecords,Attendance result,Text,Present,Used to calculate attendance statistics.
+GPSStatus,PrototypeRecords,GPS verification result,Text,Verified,Used to confirm attendance location.
+AttendancePercentage,PrototypeRecords,Student's current attendance percentage,Decimal Number,92.5,Used to monitor attendance requirements.
+RequirementID,PrototypeRecords,Requirement supported by the record,Text,FR-08,Used for requirement traceability.
+OwnerRole,PrototypeRecords,Role responsible for the record,Text,Lecturer,Used for management and reporting.
+EventID,ActivityLog,Unique activity event ID,Text,E001,Used to count activity events.
+EventDateTime,ActivityLog,Date and time of the activity,Date/Time,15-07-26 09:15,Used for activity timeline analysis.
+UserRole,ActivityLog,User performing the action,Text,Student,Used for filtering by user role.
+ActionType,ActivityLog,Action performed,Text,QRCheckIn,Used to analyze system usage.
+DeviceType,ActivityLog,Device used to access the system,Text,Mobile,Used to compare device usage.
+ProcessingTimeMinutes,ActivityLog,Time taken to complete the action,Whole Number,2,Used to measure system efficiency.
