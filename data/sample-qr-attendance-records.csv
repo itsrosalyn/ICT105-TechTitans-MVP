@@ -1,0 +1,13 @@
+attendance_id,course_code,session_name,attendance_date,attendance_status,gps_status,attendance_percentage,priority,lecturer_name
+A001,ICT105,130,15-07-26,Present,Verified,100,Low,Dr. John
+A002,ICT105,130,15-07-26,Present,Verified,98,Low,Dr. John
+A003,ICT105,130,15-07-26,Late,Verified,90,Low,Dr. John
+A004,ICT105,130,15-07-26,Present,Verified,93,Low,Dr. John
+A005,ICT105,130,15-07-26,Absent,Not Verified,78,High,Dr. John
+A006,ICT105,130,15-07-26,Present,Verified,85,Medium,Dr. John
+A007,ICT105,130,15-07-26,Present,Verified,96,Low,Dr. John
+A008,ICT105,130,15-07-26,Present,Verified,88,Medium,Dr. John
+A009,ICT105,131,22-07-26,Present,Verified,100,Low,Dr. John
+A010,ICT105,131,22-07-26,Late,Verified,95,Low,Dr. John
+A011,ICT105,131,22-07-26,Present,Verified,82,Medium,Dr. John
+A012,ICT105,131,22-07-26,Present,Verified,91,Low,Dr. John
