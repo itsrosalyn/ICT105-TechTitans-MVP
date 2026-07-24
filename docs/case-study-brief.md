@@ -117,3 +117,25 @@ A web-based attendance system that allows students to log in, scan a QR code, ve
 
 ## Practice Note
 The prototype is developed using HTML, CSS, JavaScript, and Firebase for user authentication and attendance data storage. QR code scanning and GPS location verification are implemented to support attendance recording, while Firebase stores and manages attendance records in real time.
+
+# Lab 11 Case Study Brief:  QR Code Attendance System with GPS Verification
+
+## Practice Case Context
+Manual attendance recording in classrooms consumes valuable class time and is vulnerable to proxy attendance, where students ask others to check in on their behalf. Lecturers also spend additional time managing attendance records, monitoring attendance percentages, and identifying students who do not meet the university's attendance requirements. A QR Code Attendance System with GPS Verification provides a faster, more accurate, and more secure way to record and manage attendance.
+
+## Sprint 2 Practice Goal
+In Lab 11, the practice goal is to improve the working prototype from Lab 10 by strengthening attendance data handling, integrating Firebase data storage, and providing useful attendance analytics through the lecturer dashboard.
+
+## Required Practice Functions
+Record attendance after successful QR code scanning and GPS verification.
+Display attendance records for both students and lecturers.
+Search or filter attendance records by course, date, attendance status, or student.
+View detailed attendance information for each attendance record or session.
+Generate and display attendance statistics on the lecturer dashboard without allowing attendance records to be modified.
+Display dashboard metrics such as:
+- Total attendance records
+- Total attendance sessions
+- Students present
+- Students absent
+- Overall attendance percentage
+- Students below the required 80% attendance threshold
