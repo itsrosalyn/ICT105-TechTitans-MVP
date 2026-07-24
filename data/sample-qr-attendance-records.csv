@@ -1,0 +1,13 @@
+attendance_id,course_code,session_name,attendance_date,attendance_status,gps_status,attendance_percentage,priority,lecturer_name
+A001,ICT105,130,15-07-26,Present,Verified,100,Low,Dr. Herison Surbakti
+A002,ICT105,130,15-07-26,Present,Verified,98,Low,Dr. Herison Surbakti
+A003,ICT105,130,15-07-26,Late,Verified,90,Low,Dr. Herison Surbakti
+A004,ICT105,130,15-07-26,Present,Verified,93,Low,Dr. Herison Surbakti
+A005,ICT105,130,15-07-26,Absent,Not Verified,78,High,Dr. Herison Surbakti
+A006,ICT105,130,15-07-26,Present,Verified,85,Medium,Dr. Herison Surbakti
+A007,ICT105,130,15-07-26,Present,Verified,96,Low,Dr. Herison Surbakti
+A008,ICT105,130,15-07-26,Present,Verified,88,Medium,Dr. Herison Surbakti
+A009,ICT105,131,22-07-26,Present,Verified,100,Low,Dr. Herison Surbakti
+A010,ICT105,131,22-07-26,Late,Verified,95,Low,Dr. Herison Surbakti
+A011,ICT105,131,22-07-26,Present,Verified,82,Medium,Dr. Herison Surbakti
+A012,ICT105,131,22-07-26,Present,Verified,91,Low,Dr. Herison Surbakti
