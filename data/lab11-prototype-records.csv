@@ -1,13 +1,13 @@
 AttendanceID,AttendanceDate,SessionID,CourseCode,LecturerName,AttendanceStatus,GPSStatus,AttendancePercentage,RequirementID,OwnerRole
-A001,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,90.0,FR-03,Lecturer
-A002,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,88.0,FR-03,Lecturer
-A003,15-07-26,130,ICT105,"Dr. Herison Surbakti",Late,Verified,85.7,FR-07,Lecturer
-A004,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,92.0,FR-10,Lecturer
-A005,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,87.5,FR-11,Lecturer
-A006,15-07-26,130,ICT105,"Dr. Herison Surbakti",Absent,Not Verified,78.0,FR-05,Lecturer
-A007,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,91.0,FR-09,Lecturer
-A008,22-07-26,131,ICT105,"Dr. Herison Surbakti",Late,Verified,84.0,FR-06,Lecturer
-A009,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,89.5,FR-08,Lecturer
-A010,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,86.0,FR-07,Lecturer
-A011,22-07-26,131,ICT105,"Dr. Herison Surbakti",Absent,Not Verified,80.0,FR-12,Lecturer
-A012,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,93.0,FR-08,Lecturer
+A001,15-07-26,130,ICT105,"Dr. John",Present,Verified,90.0,FR-03,Lecturer
+A002,15-07-26,130,ICT105,"Dr. John",Present,Verified,88.0,FR-03,Lecturer
+A003,15-07-26,130,ICT105,"Dr. John",Late,Verified,85.7,FR-07,Lecturer
+A004,15-07-26,130,ICT105,"Dr. John",Present,Verified,92.0,FR-10,Lecturer
+A005,15-07-26,130,ICT105,"Dr. John",Present,Verified,87.5,FR-11,Lecturer
+A006,15-07-26,130,ICT105,"Dr. John",Absent,Not Verified,78.0,FR-05,Lecturer
+A007,22-07-26,131,ICT105,"Dr. John",Present,Verified,91.0,FR-09,Lecturer
+A008,22-07-26,131,ICT105,"Dr. John",Late,Verified,84.0,FR-06,Lecturer
+A009,22-07-26,131,ICT105,"Dr. John",Present,Verified,89.5,FR-08,Lecturer
+A010,22-07-26,131,ICT105,"Dr. John",Present,Verified,86.0,FR-07,Lecturer
+A011,22-07-26,131,ICT105,"Dr. John",Absent,Not Verified,80.0,FR-12,Lecturer
+A012,22-07-26,131,ICT105,"Dr. John",Present,Verified,93.0,FR-08,Lecturer
