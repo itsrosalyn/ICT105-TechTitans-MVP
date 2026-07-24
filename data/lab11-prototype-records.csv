@@ -1,13 +1,13 @@
-Record_ID,Session,Date,Time,Location,Status
-AT001,ICT110,2026-07-16,8:41 PM,"Building 3 / Room 216",On time
-AT002,ICT101,2026-07-15,10:27 PM,"Building 3 / Room 216",On time
-AT003,ICT101,2026-07-15,5:22 PM,"Building 3 / Room 216",On time
-AT004,ICT113,2026-07-15,4:39 PM,"Building 3 / Room 301",On time
-AT005,ICT102,2026-07-15,4:36 PM,"Building 3 / Room 504",On time
-AT006,ICT105,2026-07-15,4:02 PM,"Building 3 / Room 216",Late
-AT007,ICT105,2026-07-07,9:02 AM,"Room 204",On time
-AT008,ICT225,2026-07-06,1:47 PM,"Room 118","5 min late"
-AT009,ICT201,2026-07-04,10:01 AM,"Building 5 / Room 205",On time
-AT010,ICT215,2026-07-03,1:30 PM,"Computer Lab 2",Late
-AT011,ICT220,2026-07-02,9:00 AM,"Building 6 / Room 101",On time
-AT012,ICT310,2026-07-01,2:15 PM,"Building 2 / Room 404",Absent
+AttendanceID,AttendanceDate,SessionID,CourseCode,LecturerName,AttendanceStatus,GPSStatus,AttendancePercentage,RequirementID,OwnerRole
+A001,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,90.0,FR-03,Lecturer
+A002,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,88.0,FR-03,Lecturer
+A003,15-07-26,130,ICT105,"Dr. Herison Surbakti",Late,Verified,85.7,FR-07,Lecturer
+A004,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,92.0,FR-10,Lecturer
+A005,15-07-26,130,ICT105,"Dr. Herison Surbakti",Present,Verified,87.5,FR-11,Lecturer
+A006,15-07-26,130,ICT105,"Dr. Herison Surbakti",Absent,Not Verified,78.0,FR-05,Lecturer
+A007,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,91.0,FR-09,Lecturer
+A008,22-07-26,131,ICT105,"Dr. Herison Surbakti",Late,Verified,84.0,FR-06,Lecturer
+A009,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,89.5,FR-08,Lecturer
+A010,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,86.0,FR-07,Lecturer
+A011,22-07-26,131,ICT105,"Dr. Herison Surbakti",Absent,Not Verified,80.0,FR-12,Lecturer
+A012,22-07-26,131,ICT105,"Dr. Herison Surbakti",Present,Verified,93.0,FR-08,Lecturer
