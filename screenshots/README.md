@@ -1,3 +1,4 @@
+
 # Screenshots Folder
 
 Place screenshots of your MVP experiment here, such as:
@@ -28,4 +29,15 @@ Optional screenshots:
 - [search-filter.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/records-page.png)
 - [validation-message.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/confirmation-page.png)
 - [mobile-view.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/10bbd066ab6f0e300daf500988746205b337abba/screenshots/mobile-view.png)
+
+# Screenshots Folder
+
+Save updated Lab 11 screenshots in this folder.
+
+Recommended filenames:
+
+- [updated-record-list.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/6c8b713662319da7467850a2ddeec707772bcea7/screenshots/records-page.png)
+- [updated-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e55830b826d1095a1d565b401319407f0e076a48/screenshots/lecturer-dashboard.png)
+- [updated-mobile-view.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/f62c84b874b46eedcb12da5613e67366437466bd/screenshots/mobile-view.png)
+
 
