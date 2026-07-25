@@ -320,7 +320,6 @@ Our goal in Lab 10 is to begin building the first working version of the prototy
 | Lecturer Attendance Management      | FR-09          | ✅ Implemented | [prototype/qr-generation.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/qr-generation.html)     |
 | Lecturer Dashboard                  | FR-12          | ✅ Implemented | [prototype/lecturer-dashboard.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/8b99c614af57a90cf083d7d286a46d8719ecda06/prototype/lecturer-dashboard.html)|
 
-
 ### Screenshots
 - **Home page**
   <img src="https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/home-page.png" width="100%" />
@@ -335,3 +334,55 @@ Our goal in Lab 10 is to begin building the first working version of the prototy
 
 ### Team Contribution
 All group members contributed to the same GitHub repository/page.
+
+## Lab 11: MVP Implementation Sprint 2 and Startup Metrics
+
+### Prototype Progress
+
+From Lab 10 to Lab 11, the project focused on strengthening the implementation phase by improving project documentation, organizing implementation data, and supporting startup metrics analysis. The team refined the Firebase-based attendance dashboard, organized datasets and implementation records, documented feature implementation progress, and updated supporting project documents such as the README, Case Study Brief, and Weekly Logbook. The prototype was also reviewed to improve interface consistency and implementation readiness.
+
+### Implemented / Improved Features
+
+| Requirement ID | Feature | Status | Evidence |
+|---|---|---|---|
+| FR-06 | Lecturers can monitor attendance records through the dashboard. | Improved | Lecturer Dashboard |
+| FR-08 | Firebase stores and displays attendance records. | Improved and tested | Firebase Integration |
+| FR-12 | Attendance dashboard displays attendance information and summaries. | Improved | Lecturer Dashboard |
+
+### Startup/Product Metrics
+
+| Metric ID | Metric Name | Purpose |
+|---|---|---|
+| M-01 | Total Check-ins | Measures the total number of successful attendance check-ins recorded in the system. |
+| M-02 | Late Arrivals | Tracks the number of students who checked in late to identify attendance trends. |
+| M-03 | On-Time Check-ins | Measures the number of students who completed attendance within the allowed check-in period. |
+| M-04 | Average Attendance Rate | Calculates the overall attendance percentage for classes and students. |
+| M-05 | QR Scan Success Rate | Measures how successfully students complete the QR code scanning process. |
+| M-06 | GPS Verification Success Rate | Measures the percentage of successful GPS location verifications during attendance. |
+
+### Prototype Screenshots
+
+- [Login Page](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/login-page.png)
+- [Home Page](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/home-page.png)
+- [QR Code Scan Page](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/scanqr-page.png)
+- [GPS check page](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/gpscheck-page.png)
+- [Confirmation page](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/confirmation-page.png)
+- [Attendance History](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/records-page.png)
+- [Lecturer Dashboard](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/lecturer-dashboard.png)
+- [QR generation page](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/qr-generation.png)
+
+### Member Contributions
+
+| Member | Contribution |
+|---|---|
+| **Pan Thway Chal Ko Ko Lwin** | Updated the README, Case Study Brief, and Weekly Logbook documentation. |
+| **Thun Thiri Khin** | Prepared startup metrics documentation, implementation analytics flow diagram, and Power BI dashboard screenshot. |
+| **Mya Hninsi Phyu** | Created sample datasets, activity logs, and the project data dictionary. |
+| **Phoo Myat Thwin** | Documented feature implementation status, prototype testing notes, and prototype records. |
+
+### Remaining Work
+
+- Complete final UI consistency improvements.
+- Verify all attendance workflows for both student and lecturer accounts.
+- Fix any remaining bugs identified during testing.
+- Prepare the final prototype and documentation for project presentation and submission.
