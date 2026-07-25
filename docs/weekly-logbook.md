@@ -435,7 +435,7 @@ Tech Titans
 - Complete Firebase integration and database connectivity.
 - Verify all responsible IT documentation before the final submission.
 
-  # Weekly Logbook - Lab 10
+# Weekly Logbook - Lab 10
 
 ## Lab Topic
 
@@ -484,3 +484,60 @@ MVP Implementation Sprint 1
 - Finalize and complete working draft for FR-07.
 - Complete end-to-end integration test documentation test and conduct final accuracy testing for GPS geo-fencing.
 
+# Weekly Logbook - Lab 11
+
+## Lab Topic
+
+**MVP Implementation Sprint 2 and Startup Metrics**
+
+## Group Case
+
+**TechTitans - QR Code Attendance System with GPS Verification**
+
+## Work Completed Today
+
+- Improved project documentation, including the case study brief and weekly logbook.
+- Organized project data by creating sample datasets, an activity log, and a data dictionary.
+- Prepared implementation documentation, including feature implementation status and prototype testing notes.
+- Prepared startup metrics documentation and an implementation analytics flow diagram.
+- Continued improving the prototype UI and Firebase data integration.
+- Fixed interface issues identified during previous testing.
+  
+## Member Contributions
+
+| Member | Contribution | Evidence |
+|---|---|---|
+| **Pan Thway Chal Ko Ko Lwin** | Updated project documentation, including the README, case study brief, and weekly logbook. | [README.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/970255d4cfd3d23f39b2c217a0b935991e1cf085/README.md), weekly-logbook.md, [case-study-brief.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/case-study-brief.md) |
+| **Thun Thiri Khin** | Prepared startup metrics documentation, implementation analytics flow diagram, and Power BI dashboard screenshot. | [startup-metrics.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/startup-metrics.md), [implementation-metrics-flow.mmd](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/diagrams/implementation-metrics-flow.mmd), [lab11-powerbi-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/lab11-powerbi-dashboard.png) |
+| **Phoo Myat Thwin** | Documented feature implementation status, prototype testing notes, and prototype records..| [feature-implementation-status.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/feature-implementation-status.md), [prototype-testing-notes.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/prototype-testing-notes.md), [lab11-prototype-records.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-prototype-records.csv) |
+| **Mya Hninsi Phyu** | Organized project datasets by creating sample data, activity logs, and the data dictionary. | [sample-data.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/sample-qr-attendance-records.csv), [lab11-activity-log.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-activity-log.csv), [lab11-data-dictionary.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-data-dictionary.csv) |
+
+## Requirements Addressed
+
+* **FR-06** – Lecturers can view attendance records through the dashboard.
+* **FR-08** – Attendance data is retrieved and displayed from Firebase.
+* **FR-12** – Dashboard displays attendance information for monitoring.
+
+## Metrics Added
+
+| Metric ID | Metric Name | Purpose |
+|---|---|---|
+| M-01 | Total Check-ins | Measures the total number of successful attendance check-ins recorded in the system. |
+| M-02 | Late Arrivals | Tracks the number of students who checked in late to identify attendance trends. |
+| M-03 | On-Time Check-ins | Measures the number of students who completed attendance within the allowed check-in period. |
+| M-04 | Average Attendance Rate | Calculates the overall attendance percentage for classes and students. |
+| M-05 | QR Scan Success Rate | Measures how successfully students complete the QR code scanning process. |
+| M-06 | GPS Verification Success Rate | Measures the percentage of successful GPS location verifications during attendance. |
+
+## Problems Found
+
+* Some UI/UX issues were identified, including layout consistency and navigation improvements.
+* Minor issues occurred while displaying Firebase data, requiring adjustments to the data retrieval process.
+* Additional testing was needed to ensure all dashboard information displayed correctly.
+
+## Next Action Before Lab 12
+
+* Finalize remaining UI improvements.
+* Complete testing of Firebase integration across all pages.
+* Verify that attendance records display correctly for both student and lecturer accounts.
+* Fix any remaining bugs and prepare the prototype for the final demonstration.
