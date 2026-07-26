@@ -339,15 +339,16 @@ All group members contributed to the same GitHub repository/page.
 
 ### Prototype Progress
 
-From Lab 10 to Lab 11, the project focused on strengthening the implementation phase by improving project documentation, organizing implementation data, and supporting startup metrics analysis. The team refined the Firebase-based attendance dashboard, organized datasets and implementation records, documented feature implementation progress, and updated supporting project documents such as the README, Case Study Brief, and Weekly Logbook. The prototype was also reviewed to improve interface consistency and implementation readiness.
+Lab 11 focused on strengthening the prototype implementation by improving project documentation, implementation tracking, project datasets, and startup metrics documentation. The team organized implementation records, updated supporting documents, refined the lecturer dashboard, and reviewed existing attendance and startup metrics to improve the project's readiness for final evaluation.
 
 ### Implemented / Improved Features
 
 | Requirement ID | Feature | Status | Evidence |
 |---|---|---|---|
-| FR-06 | Lecturers can monitor attendance records through the dashboard. | Improved | Lecturer Dashboard |
-| FR-08 | Firebase stores and displays attendance records. | Improved and tested | Firebase Integration |
-| FR-12 | Attendance dashboard displays attendance information and summaries. | Improved | Lecturer Dashboard |
+| FR-03 | Student scans a QR code and submits GPS location for attendance verification. | Completed | [scan.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/97066285002ac03d86256436c8ce16ce5e684d2f/prototype/scanqr-page.html),[gpscheck-page.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/97066285002ac03d86256436c8ce16ce5e684d2f/prototype/gpscheck-page.html) |
+| FR-06 | Students can search or filter attendance history. | Completed | [records.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/97066285002ac03d86256436c8ce16ce5e684d2f/prototype/records-page.html) |
+| FR-08 | Attendance tracker calculates attendance percentage and monitors the 80% attendance requirement. | Completed | [home.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/97066285002ac03d86256436c8ce16ce5e684d2f/prototype/home-page.html), [records.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/97066285002ac03d86256436c8ce16ce5e684d2f/prototype/records-page.html) |
+| FR-12 | Lecturer dashboard displays attendance summaries, attendance records, and attendance analytics. | Completed | [lecture-dashboard.html](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/97066285002ac03d86256436c8ce16ce5e684d2f/prototype/lecturer-dashboard.html) |
 
 ### Startup/Product Metrics
 
@@ -375,14 +376,15 @@ From Lab 10 to Lab 11, the project focused on strengthening the implementation p
 
 | Member | Contribution |
 |---|---|
-| **Pan Thway Chal Ko Ko Lwin** | Updated the README, Case Study Brief, and Weekly Logbook documentation. |
+| **Pan Thway Chal Ko Ko Lwin** | Updated the README, Case Study Brief, and Weekly Logbook. |
 | **Thun Thiri Khin** | Prepared startup metrics documentation, implementation analytics flow diagram, and Power BI dashboard screenshot. |
 | **Mya Hninsi Phyu** | Created sample datasets, activity logs, and the project data dictionary. |
 | **Phoo Myat Thwin** | Documented feature implementation status, prototype testing notes, and prototype records. |
 
 ### Remaining Work
 
-- Complete final UI consistency improvements.
-- Verify all attendance workflows for both student and lecturer accounts.
-- Fix any remaining bugs identified during testing.
-- Prepare the final prototype and documentation for project presentation and submission.
+- Complete any remaining UI consistency improvements across all prototype pages.
+- Perform final testing for the complete attendance workflow.
+- Resolve any remaining issues identified during testing.
+- Review all project documentation for consistency and completeness.
+- Prepare the final prototype and supporting documents for presentation and submission.
