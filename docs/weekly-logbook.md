@@ -496,27 +496,28 @@ MVP Implementation Sprint 1
 
 ## Work Completed Today
 
-- Improved project documentation, including the case study brief and weekly logbook.
-- Organized project data by creating sample datasets, an activity log, and a data dictionary.
-- Prepared implementation documentation, including feature implementation status and prototype testing notes.
-- Prepared startup metrics documentation and an implementation analytics flow diagram.
-- Continued improving the prototype UI and Firebase data integration.
-- Fixed interface issues identified during previous testing.
+- Updated project documentation, including the Case Study Brief, Weekly Logbook, and README.
+- Organized project datasets by creating sample attendance records, an activity log, and a data dictionary.
+- Prepared implementation documentation, including the feature implementation status and prototype testing notes.
+- Completed startup metrics documentation and the implementation analytics flow diagram.
+- Refined the prototype user interface based on previous testing feedback.
+- Reviewed and verified existing attendance features and implementation documentation for final prototype readiness.
   
 ## Member Contributions
 
 | Member | Contribution | Evidence |
 |---|---|---|
-| **Pan Thway Chal Ko Ko Lwin** | Updated project documentation, including the README, case study brief, and weekly logbook. | [README.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/970255d4cfd3d23f39b2c217a0b935991e1cf085/README.md), weekly-logbook.md, [case-study-brief.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/case-study-brief.md) |
+| **Pan Thway Chal Ko Ko Lwin** | Updated project documentation, including the README, case study brief, and weekly logbook. | [README.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/970255d4cfd3d23f39b2c217a0b935991e1cf085/README.md), [weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e4ea48a66167ef3ca1f679e70108a39cd5b77777/docs/weekly-logbook.md), [case-study-brief.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/case-study-brief.md) |
 | **Thun Thiri Khin** | Prepared startup metrics documentation, implementation analytics flow diagram, and Power BI dashboard screenshot. | [startup-metrics.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/startup-metrics.md), [implementation-metrics-flow.mmd](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/diagrams/implementation-metrics-flow.mmd), [lab11-powerbi-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/screenshots/lab11-powerbi-dashboard.png) |
-| **Phoo Myat Thwin** | Documented feature implementation status, prototype testing notes, and prototype records..| [feature-implementation-status.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/feature-implementation-status.md), [prototype-testing-notes.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/prototype-testing-notes.md), [lab11-prototype-records.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-prototype-records.csv) |
+| **Phoo Myat Thwin** | Documented feature implementation status, prototype testing notes, and prototype records.| [feature-implementation-status.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/feature-implementation-status.md), [prototype-testing-notes.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/docs/prototype-testing-notes.md), [lab11-prototype-records.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-prototype-records.csv) |
 | **Mya Hninsi Phyu** | Organized project datasets by creating sample data, activity logs, and the data dictionary. | [sample-data.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/sample-qr-attendance-records.csv), [lab11-activity-log.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-activity-log.csv), [lab11-data-dictionary.csv](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/9e7ade5e09227915ee25f849b171e6c149b4d684/data/lab11-data-dictionary.csv) |
 
 ## Requirements Addressed
 
-* **FR-06** – Lecturers can view attendance records through the dashboard.
-* **FR-08** – Attendance data is retrieved and displayed from Firebase.
-* **FR-12** – Dashboard displays attendance information for monitoring.
+* **FR-03** – Verified the QR code scanning and GPS location submission workflow.
+* **FR-06** – Reviewed and tested the attendance history search and filtering functionality.
+* **FR-08** – Verified attendance tracking and attendance percentage calculations against the 80% attendance requirement.
+* **FR-12** – Reviewed lecturer dashboard summaries and analytics while updating implementation documentation.
 
 ## Metrics Added
 
@@ -532,12 +533,12 @@ MVP Implementation Sprint 1
 ## Problems Found
 
 * Some UI/UX issues were identified, including layout consistency and navigation improvements.
-* Minor issues occurred while displaying Firebase data, requiring adjustments to the data retrieval process.
+* Minor issues occurred while displaying Firebase attendance data on the lecturer dashboard, requiring adjustments to the data retrieval process.
 * Additional testing was needed to ensure all dashboard information displayed correctly.
 
 ## Next Action Before Lab 12
 
 * Finalize remaining UI improvements.
-* Complete testing of Firebase integration across all pages.
+* Complete final testing of Firebase-based attendance features across all prototype pages.
 * Verify that attendance records display correctly for both student and lecturer accounts.
 * Fix any remaining bugs and prepare the prototype for the final demonstration.
