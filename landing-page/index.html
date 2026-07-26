@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AttendQR — QR + GPS Attendance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><span class="mark">A</span>AttendQR</div>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#try">Try Demo</a>
+  </div>
+</nav>
+
+<section class="hero-wrap">
+  <div class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">ICT105 MVP prototype — Tech Titans</p>
+      <h1>Fast, Secure Attendance with QR Code & GPS Verification</h1>
+      <p class="subtitle">
+        Students scan a QR code and verify their GPS location to record
+        attendance. Lecturers can generate attendance sessions, monitor
+        attendance records, and track students who fall below the
+        university's 80% attendance requirement.
+      </p>
+      <div class="hero-actions">
+        <button class="primary-btn" id="ctaButton">Try the Demo</button>
+      </div>
+      <p class="small-note">ICT105 Tech Titans Project</p>
+    </div>
+    <div class="hero-visual">
+      <div class="qr-frame">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" fill="#fff"/>
+          <g fill="#1d4ed8">
+            <rect x="8" y="8" width="24" height="24"/>
+            <rect x="14" y="14" width="12" height="12" fill="#fff"/>
+            <rect x="17" y="17" width="6" height="6"/>
+            <rect x="68" y="8" width="24" height="24"/>
+            <rect x="74" y="14" width="12" height="12" fill="#fff"/>
+            <rect x="77" y="17" width="6" height="6"/>
+            <rect x="8" y="68" width="24" height="24"/>
+            <rect x="14" y="74" width="12" height="12" fill="#fff"/>
+            <rect x="17" y="77" width="6" height="6"/>
+            <rect x="40" y="8" width="6" height="6"/><rect x="52" y="8" width="6" height="6"/>
+            <rect x="40" y="20" width="6" height="6"/><rect x="46" y="26" width="6" height="6"/>
+            <rect x="58" y="14" width="6" height="6"/><rect x="40" y="40" width="6" height="6"/>
+            <rect x="52" y="40" width="6" height="6"/><rect x="64" y="40" width="6" height="6"/>
+            <rect x="76" y="40" width="6" height="6"/><rect x="40" y="52" width="6" height="6"/>
+            <rect x="58" y="52" width="6" height="6"/><rect x="70" y="52" width="6" height="6"/>
+            <rect x="46" y="64" width="6" height="6"/><rect x="64" y="64" width="6" height="6"/>
+            <rect x="76" y="64" width="6" height="6"/><rect x="40" y="76" width="6" height="6"/>
+            <rect x="52" y="76" width="6" height="6"/><rect x="70" y="76" width="6" height="6"/>
+            <rect x="82" y="76" width="6" height="6"/><rect x="58" y="82" width="6" height="6"/>
+            <rect x="76" y="88" width="6" height="6"/>
+          </g>
+        </svg>
+      </div>
+      <span class="timer-pill"><span class="timer-dot"></span>Active · 15 min session</span>
+    </div>
+  </div>
+</section>
+
+<section class="demo-wrap">
+  <div class="panel">
+    <div class="panel-head">
+      <span class="panel-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+      </span>
+      <div>
+        <div class="panel-title">Today's Status</div>
+        <div class="panel-subtitle">Attendance Overview</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num" id="attendanceCount">12</div><div class="label">Attendance Records</div></div>
+      <div class="stat"><div class="num" id="ctaCount">0</div><div class="label">CTA Clicks</div></div>
+    </div>
+    <div class="status-list">
+      <div class="status-pill ok"><span><span class="status-dot"></span>GPS Verified</span><span>11</span></div>
+      <div class="status-pill warn"><span><span class="status-dot"></span>Below 80%</span><span>1</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="section grid-two">
+  <div class="info-card">
+    <span class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+      Problem
+    </span>
+    <h2>Manual roll calls don't hold up</h2>
+    <p>Manual roll calls are slow and easy to game — one student can answer for
+    a friend who never walked into the room, leaving lecturers with
+    attendance numbers they can't fully trust.</p>
+  </div>
+  <div class="info-card">
+    <span class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      Solution
+    </span>
+    <h2>Two checks, one scan</h2>
+    <p>Students scan a session QR code, which also checks their GPS position,
+    so a record only saves when both the code and location match the
+    classroom. Lecturers track the 80% rule from a live dashboard.</p>
+  </div>
+</section>
+
+<section id="who" class="section grid-two">
+  <div class="info-card">
+    <span class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Who it's for
+    </span>
+    <h2>Students and lecturers, one login</h2>
+    <p>Built for university students who check in to class sessions, and
+    lecturers who need to run those sessions and confirm the 80% attendance
+    rule — both log in from the same page and land on the view built for
+    their role.</p>
+  </div>
+  <div class="info-card">
+    <span class="tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.6 2.3 7.2-6.3-4.6-6.3 4.6 2.3-7.2-6-4.6h7.6z"/></svg>
+      Expected value
+    </span>
+    <h2>Numbers both sides can trust</h2>
+    <p>Students get a check-in that takes seconds and a clear record of their
+    own attendance. Lecturers get attendance numbers they can trust, without
+    manually cross-checking a paper sheet against who was actually in the
+    room.</p>
+  </div>
+</section>
+
+<section id="features" class="section">
+  <h2>Key prototype features</h2>
+  <p class="lead">Four steps, from scan to dashboard.</p>
+  <div class="cards">
+    <article>
+      <div class="idx">1</div>
+      <h3>QR check-in</h3>
+      <p>Students scan a session code to start their attendance record.</p>
+    </article>
+    <article>
+      <div class="idx">2</div>
+      <h3>GPS verification</h3>
+      <p>The scan is only accepted inside the classroom's location radius.</p>
+    </article>
+    <article>
+      <div class="idx">3</div>
+      <h3>Attendance history</h3>
+      <p>Students see their own check-ins and running attendance percentage.</p>
+    </article>
+    <article>
+      <div class="idx">4</div>
+      <h3>Lecturer dashboard</h3>
+      <p>Open a session, watch check-ins arrive, flag anyone under 80%.</p>
+    </article>
+  </div>
+</section>
+
+<section id="try" class="cta-wrap">
+  <div class="cta-panel">
+    <div class="cta-copy">
+      <span class="cta-tag"><span></span>Live prototype</span>
+      <h2>Try the prototype</h2>
+      <p>Open the live prototype and walk through the check-in flow — QR scan, GPS check, instant record.</p>
+      <button class="secondary-btn cta-btn" id="demoButton">Open Prototype Demo</button>
+      <p id="demoMessage" class="message"></p>
+      <div class="cta-checks">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>QR scan</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>GPS check</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Instant record</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metrics" class="section">
+  <div class="section-head-row">
+    <h2>Acquisition metrics</h2>
+    <span class="live-dot" aria-hidden="true"></span>
+  </div>
+  <div class="metrics-panel">
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Metric</th><th>What it means</th><th>Current demo value</th></tr></thead>
+        <tbody>
+          <tr><td>CTA clicks</td><td>Interest in trying the prototype</td><td id="ctaTableCount">–</td></tr>
+          <tr><td>Demo attempts</td><td>Users who opened the prototype workflow</td><td id="demoCount">–</td></tr>
+          <tr><td>Feedback target</td><td>Minimum number of useful feedback responses</td><td>20</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footnote">
+    <span class="footnote-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
+    </span>
+    <span class="footnote-title">Responsible data note</span>
+    <p>This prototype only collects attendance status, QR scan events, and
+    a single GPS check at the moment of check-in — no continuous or
+    background location tracking is performed.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
