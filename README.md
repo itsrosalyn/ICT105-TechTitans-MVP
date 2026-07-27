@@ -394,8 +394,8 @@ Lab 11 focused on strengthening the prototype implementation by improving projec
 ## Lab 12 - Landing Page and Digital Go-to-Market
 
 ### Landing Page
-- Landing page folder/link: [https://attend-qr-1.netlify.app/index.html](https://attendqr-landingpage.netlify.app/)
-- Main CTA: Try the Demo
+- Landing page folder/link: [https://attendqr-landingpage.netlify.app/index.html](https://attendqr-landingpage.netlify.app/)
+- Main CTA: https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/b19e4c350ce84161b3aef13ad636a3d77ceaf4a4/screenshots/call-to-action.png/
 - Prototype/demo link: [https://attend-qr-1.netlify.app/index.html](https://attend-qr-1.netlify.app/index.html/)
 
 ### Go-to-Market Plan
@@ -404,12 +404,12 @@ Lab 11 focused on strengthening the prototype implementation by improving projec
 - Main marketing message: AttendQR makes classroom attendance faster, more accurate, and more secure with QR code and GPS verification.
 
 ### Acquisition Metrics
-- Metric 1: Number of landing page visitors
-- Metric 2: Number of prototype demo clicks
-- Metric 3: Number of user feedback submissions
+- Metric 1: Number of interest in trying the prototype
+- Metric 2: Number of users who opened the prototype workflow
+- Metric 3: Number of minumum number of useful feedback responses
 
 ### Screenshots
-- Landing page screenshot: /screenshots/landing-page.png
+- Landing page screenshot: **landing-page.png**<img src=https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/adb2545683f63c7754aa7d9fe0dd86708b42c8e0/screenshots/landing-page.png/>
 - CTA screenshot: **call-to-action.png**<img src= https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/f68c824b7453bae9ea62844e8f266ae4f43d10a0/screenshots/call-to-action.png/>
 
 ### Requirement Alignment
