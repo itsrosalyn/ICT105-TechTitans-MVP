@@ -1,7 +1,5 @@
 
-# Screenshots Folder
-
-Place screenshots of your MVP experiment here, such as:
+# Screenshots Folder of MVP experiment
 
 - [login-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2cdabcaec1dd58fd3a9a7ac05b519024ff9e054e/screenshots/login-page.png)
 - [home-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2cdabcaec1dd58fd3a9a7ac05b519024ff9e054e/screenshots/home-page.png)
@@ -13,9 +11,7 @@ Place screenshots of your MVP experiment here, such as:
 - [qr-generation.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2cdabcaec1dd58fd3a9a7ac05b519024ff9e054e/screenshots/qr-generation.png)
 
 
-# Screenshots Folder
-
-Place Lab 10 screenshot evidence here.
+# Screenshots Folder for Lab 10
 
 Required screenshots:
 - [homepage.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2cdabcaec1dd58fd3a9a7ac05b519024ff9e054e/screenshots/home-page.png)
@@ -30,14 +26,18 @@ Optional screenshots:
 - [validation-message.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/52aec1e464004b4599a870e964f923ed06100a6d/screenshots/confirmation-page.png)
 - [mobile-view.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/10bbd066ab6f0e300daf500988746205b337abba/screenshots/mobile-view.png)
 
-# Screenshots Folder
-
-Save updated Lab 11 screenshots in this folder.
-
-Recommended filenames:
+# Screenshots Folder for Lab 11 
 
 - [updated-record-list.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/6c8b713662319da7467850a2ddeec707772bcea7/screenshots/records-page.png)
 - [updated-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/e55830b826d1095a1d565b401319407f0e076a48/screenshots/lecturer-dashboard.png)
 - [updated-mobile-view.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/f62c84b874b46eedcb12da5613e67366437466bd/screenshots/mobile-view.png)
+
+
+# Screenshots Folder for Lab 12
+
+- [Landing Page](https://attendqr-landingpage.netlify.app/)
+- [Call to Action](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/call-to-action.png)
+- [Prototype Link](https://attend-qr-1.netlify.app/index.html)
+- [Acquisition Metrics Table](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/acquisition-metrics-table.png)
 
 
