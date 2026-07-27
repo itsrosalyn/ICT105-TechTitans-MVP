@@ -8,10 +8,10 @@ AttendQR makes classroom attendance faster, more accurate, and more secure with 
 
 | Channel | Message | CTA | Link/QR Placeholder |
 | --- | --- | --- | --- |
-| Class chat | Skip manual attendance! Use AttendQR to check in quickly with QR code and GPS verification. | Try Demo | https://attend-qr-1.netlify.app/index.html |
-| Email | We are testing AttendQR, a smart attendance system that helps students check in quickly and helps lecturers manage attendance more efficiently. | Give Feedback | https://attend-qr-1.netlify.app/index.html |
-| Poster/QR | Scan the QR code to experience fast and secure classroom attendance with AttendQR. | Scan QR | QR Code linking to https://attend-qr-1.netlify.app/index.html |
-| Social media | Experience smarter attendance with AttendQR—QR code check-in, GPS verification, and real-time attendance tracking. | Test it Now | https://attend-qr-1.netlify.app/index.html |
+| Class chat | Skip manual attendance! Use AttendQR to check in quickly with QR code and GPS verification. | Try Demo | [https://attend-qr-1.netlify.app/index.html](https://attendqr-landingpage.netlify.app/) |
+| Email | We are testing AttendQR, a smart attendance system that helps students check in quickly and helps lecturers manage attendance more efficiently. | Give Feedback | [https://attendqr-landingpage.netlify.app/](https://attendqr-landingpage.netlify.app/) |
+| Poster/QR | Scan the QR code to experience fast and secure classroom attendance with AttendQR. | Scan QR | QR Code linking to [https://attend-qr-1.netlify.app/index.html](https://attendqr-landingpage.netlify.app/) |
+| Social media | Experience smarter attendance with AttendQR—QR code check-in, GPS verification, and real-time attendance tracking. | Test it Now | [https://attend-qr-1.netlify.app/index.html](https://attendqr-landingpage.netlify.app/) |
 
 ## Message Quality Check
 
