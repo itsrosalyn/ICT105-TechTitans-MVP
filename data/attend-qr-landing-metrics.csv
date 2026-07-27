@@ -1,0 +1,6 @@
+Metric ID,Metric Name,Definition,Value,Data Source
+M-01,Landing page views,Number of people who opened the AttendQR landing page.,110,Netlify Analytics/manual tracking spreadsheet
+M-02,CTA clicks,"Number of users who clicked the ""Try the Demo"" button.",66,Firebase Firestore (attendqr/counters) 
+M-03,Demo attempts,Number of users who successfully opened the AttendQR prototype.,59,Firebase Firestore prototype counter 
+M-04,Feedback responses,Number of users who submitted feedback after testing the prototype.,34,Feedback form/manual feedback record
+M-05,Conversion rate,Percentage of landing page visitors who proceeded to the prototype.,53.60%,Netlify Analytics combined with Firebase counters.

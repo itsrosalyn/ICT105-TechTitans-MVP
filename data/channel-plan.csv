@@ -1,0 +1,5 @@
+Channel,Target User,Key Message,Call-to-Action (CTA),Success Metric,Responsible IT Consideration
+Class chat,ICT students,Reduce manual attendance and check in quickly using QR code and GPS verification.,Try Demo,CTA clicks,Collect only the attendance data necessary for verification and explain how QR and GPS data are used.
+Poster/QR,Students on campus,Experience fast and secure classroom attendance by scanning the QR code.,Scan QR,QR scans and demo attempts,Use GPS verification only during attendance check-in and avoid storing unnecessary location data.
+Email,Students and lecturers,Test the AttendQR prototype and share your feedback to help improve the system.,Give Feedback,Feedback responses,Clearly explain the purpose of data collection and how attendance records are managed.
+Social media,University students,"Experience smarter attendance with QR code check-in, GPS verification, and real-time attendance tracking.",Test it Now,Landing page visits and demo attempts,Provide clear privacy information and obtain user consent before collecting attendance information.
