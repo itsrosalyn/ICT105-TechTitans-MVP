@@ -47,7 +47,7 @@ AttendQR provides a simple attendance system where lecturers generate a QR code 
 **Try the Demo**
 
 Prototype:
-https://attend-qr-1.netlify.app/index.html
+[https://attend-qr-1.netlify.app/index.html](https://attendqr-landingpage.netlify.app/)
 
 ## Responsible Data Message
 
