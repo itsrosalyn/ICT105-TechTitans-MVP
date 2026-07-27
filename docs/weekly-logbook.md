@@ -542,3 +542,61 @@ MVP Implementation Sprint 1
 * Complete final testing of Firebase-based attendance features across all prototype pages.
 * Verify that attendance records display correctly for both student and lecturer accounts.
 * Fix any remaining bugs and prepare the prototype for the final demonstration.
+
+# Weekly Logbook - Lab 12
+
+## Group Name
+
+Tech Titabs
+
+## Project Title
+
+**AttendQR - QR Code Attendance System with GPS Verification**
+
+## Lab Date
+
+July 27, 2026
+
+## Work Completed Today
+
+| Member Name | Contribution | File/Commit Evidence |
+| --- | --- | --- |
+| **Mya Hninsi Phyu** | Developed landing page code structure, documented landing page URL, and captured visual screenshots for both the landing page and the prototype demo login screen | [Style.css of Landing Page](), [Script.css of Landing Page](), [Landing Page Link](), [Landing Page Screenshot](), [Prototype Link]() |
+| **Phoo Myat Thwin** | Drafted marketing messages, structured landing page text content for AttendQR, recorded CTA evidence, and updated project README. | [Marketing Message](). [Landing Page Content](), [Call to Action](), [README]() |
+| **Thun Thiri Khin** | Author of the go-to-market plan, created the landing page-to-prototype flow diagram, documented the weekly logbook, updated case study brief, and organized screenshot documentation. | [Go to Market Plan](), [Landing Page to Prototype Flow](), [Weekly Logbook](), [Case Study Brief](), [README of Screenshots]() |
+| **Pan Thway Chal Ko Ko Lwin** | Formulated acquisition metrics strategy, created tracking CSV templates with sample channel performance data, and captured metrics table screenshot. | [Acquisition Metrics Templates](), [Channel Plan Templates](), [Sample Lost Found Landing Metrics](), [Acquisition Metrics Table]() |
+
+## Landing Page Progress
+
+Created a dedicated front-end directory (⁠landing-page/⁠) containing ⁠index.html⁠, ⁠style.css⁠, and ⁠script.js⁠. The landing page introduces AttendQR to ICT students and lecturers, highlighting how dynamic QR scanning combined with indoor GPS verification eliminates manual sign-in queues and prevents proxy attendance in Room 3-216.
+
+## Go-to-Market Progress
+
+Defined a targeted Go-to-Market plan tailored to ICT students and lecturers. Identified three key channels:
+- **Class Chat Groups:** Direct reach to students with messaging focused on fast, 3-second check-ins.
+- **Campus QR Posters / Desk Flyers:** Physical triggers placed inside Room 3-216 to prompt immediate seat verification.
+- **Lecturer Course Portals / Slides:** Pitching complete proxy elimination to course coordinators.
+
+Outlined a 5-step launch sequence and specified risk mitigation strategies (such as grace radii and manual lecturer overrides) for indoor GPS variance.
+
+## Metrics Plan
+
+Established an acquisition tracking framework focusing on key early-user conversion indicators:
+ - **M-01 (Landing Page Views):** Tracked via Netlify Analytics (Target: \ge 30 views).
+ - **M-02 (CTA Clicks):** Tracked via Firebase Firestore counter ⁠attendqr/counters⁠ (Target: \ge 50% click rate).
+ - **M-03 (Demo Attempts):** Count of live prototype launches (Target: \ge 15 attempts).
+ - **M-04 (Feedback Responses):** Form submissions post-demo (Target: \ge 20 responses).
+ - **M-05 (Interest Conversion):** Overall funnel conversion rate from landing page visits to demo execution (Target: \ge 50%).
+Includes an evaluation plan to iterate on headline clarity, CTA prominence, and workflow simplicity if target thresholds are missed.
+
+## Problems Encountered
+
+- **Indoor GPS Accuracy Variance:** Weak cellular and GPS signal reception inside Room 3-216 caused potential false location verification failures during initial testing. Planned a temporary grace radius and lecturer manual override toggle on the dashboard for edge cases.
+  
+-  **Dynamic QR Expiration Timing:** Balancing session security with smooth user check-in led to timeout issues where QR tokens refreshed before mobile devices could verify GPS coordinates. Adjusted the refresh window and scanner responsiveness to ensure fluid 3-second check-ins.
+
+## Next Action Before Lab 13
+
+- Execute end-to-end user testing of the prototype login and QR scanner interface with live GPS parameters in Room 3-216.
+- Collect initial landing page conversion feedback and adjust CTA positioning accordingly.
+- Finalize Lab 12 repository submission and ensure all updated Markdown documents and image assets are pushed to GitHub.
