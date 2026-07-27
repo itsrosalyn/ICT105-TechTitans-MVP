@@ -139,3 +139,26 @@ Display dashboard metrics such as:
 - Students absent
 - Overall attendance percentage
 - Students below the required 80% attendance threshold
+
+
+  
+# Lab 12 Case Study Brief:  QR Code Attendance System with GPS Verification
+
+## Case context
+
+Lecturers and students often face delays and inaccuracies during class attendance taking. Traditional paper sign-in sheets or static QR codes lead to long queues, lost teaching time, proxy check-ins (students signing in for absent friends), and lack of real-time attendance tracking for course coordinators.
+
+## Proposed prototype
+
+A Smart Campus Attendance & Verification System (**AttendQR**) that allows users to:
+- generate dynamic session QR codes (Lecturer view);
+- scan QR codes to mark attendance instantly (Student view);
+- verify student physical presence in Room 3-216 via GPS geo-fencing;
+- view personal attendance history and status (On-time, Late, Absent);
+- filter and search student attendance records;
+- manage attendance overrides and flagged records;
+-  view real-time dashboard metrics (e.g., total check-ins, late arrivals, average attendance rate).
+
+## Lab 12 practice focus
+
+For this practice case, create a project landing page that explains **AttendQR**, targets campus students and lecturers, and invites users to try the live prototype demo or submit a test check-in.
