@@ -388,3 +388,38 @@ Lab 11 focused on strengthening the prototype implementation by improving projec
 - Resolve any remaining issues identified during testing.
 - Review all project documentation for consistency and completeness.
 - Prepare the final prototype and supporting documents for presentation and submission.
+
+# README Update Template - Lab 12
+
+## Lab 12 - Landing Page and Digital Go-to-Market
+
+### Landing Page
+- Landing page folder/link: [https://attend-qr-1.netlify.app/index.html](https://attendqr-landingpage.netlify.app/)
+- Main CTA: Try the Demo
+- Prototype/demo link: [https://attend-qr-1.netlify.app/index.html](https://attend-qr-1.netlify.app/index.html/)
+
+### Go-to-Market Plan
+- Target early users: ICT students and lecturers at Rangsit University
+- Selected channels: Class chat, Email, Poster with QR Code, Social media
+- Main marketing message: AttendQR makes classroom attendance faster, more accurate, and more secure with QR code and GPS verification.
+
+### Acquisition Metrics
+- Metric 1: Number of landing page visitors
+- Metric 2: Number of prototype demo clicks
+- Metric 3: Number of user feedback submissions
+
+### Screenshots
+- Landing page screenshot: /screenshots/landing-page.png
+- CTA screenshot: **call-to-action.png**<img src= https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/f68c824b7453bae9ea62844e8f266ae4f43d10a0/screenshots/call-to-action.png/>
+
+### Requirement Alignment
+The landing page introduces AttendQR, explains the attendance problems identified during customer discovery, presents the prototype features, identifies the target users, and includes a clear "Try the Demo" CTA that links directly to the working prototype. This aligns with the system requirements by providing users with access to the main attendance workflow.
+
+### Member Contributions
+
+| Member | Contribution | Commit/Issue Evidence |
+| --- | --- | --- |
+| Mya Hninsi Phyu | Developed the landing page interface and connected it to the prototype | Issue #59 |
+| Phoo Myat Thwin | Created the marketing message, landing page content, CTA screenshot, and updated the README | Issue #60 |
+| Pan Thway Chal Ko Ko Lwin | Created acquisition metrics, marketing analytics, and supporting data templates | Issue #61 |
+| Thun Thiri Khin | Prepared the go-to-market plan, project documentation, and updated the case study brief | Issue #62 |
