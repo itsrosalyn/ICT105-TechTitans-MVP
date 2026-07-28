@@ -162,3 +162,21 @@ A Smart Campus Attendance & Verification System (**AttendQR**) that allows users
 ## Lab 12 practice focus
 
 For this practice case, create a project landing page that explains **AttendQR**, targets campus students and lecturers, and invites users to try the live prototype demo or submit a test check-in.
+
+# Lab 13 Case Study Brief: AttendQR – QR Code Attendance System with GPS Verification
+
+## Context
+
+University lecturers often spend several minutes taking attendance manually at the beginning of class. This reduces teaching time and may allow proxy attendance when students ask friends to mark attendance for them. Current alternatives include paper attendance sheets, verbal roll calls, and basic QR code systems without location verification.
+
+## Prototype Summary
+
+AttendQR allows lecturers to generate a QR code for each class session. Students scan the QR code and complete GPS verification to record their attendance. The system provides instant attendance confirmation, attendance history, and a dashboard for lecturers to manage attendance records efficiently.
+
+## Lab 13 Practice Goal
+
+Use this case to practice sales scenario writing, demo script preparation, user testing planning, testing result analysis, and final improvement listing for the AttendQR prototype.
+
+## Reminder
+
+This case study is based on our team's AttendQR prototype and supports the final project documentation and presentation.
