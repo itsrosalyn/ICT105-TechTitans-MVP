@@ -66,6 +66,11 @@
 
       <div class="form-error" id="login-error"></div>
 
+      <div class="role-toggle">
+        <button class="active" id="login-role-student" onclick="setLoginRole('student')">Student</button>
+        <button id="login-role-lecturer" onclick="setLoginRole('lecturer')">Lecturer</button>
+      </div>
+
       <div class="field">
         <label>School email</label>
         <input type="text" id="login-email" placeholder="jordan@rsu.ac.th">
