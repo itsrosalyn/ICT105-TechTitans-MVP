@@ -60,6 +60,7 @@
                <option value="ICT 212">ICT 212</option>
         </select>
         <select id="status-filter"><option value="">All statuses</option><option>On time</option><option>Late</option><option>Absent</option></select>
+        <select id="semester-filter"><option value="">All semesters</option><option value="Semester 1">Semester 1</option><option value="Semester 2">Semester 2</option><option value="Summer">Summer</option></select>
       </div>
 
       <div class="panel">
@@ -82,10 +83,22 @@
       </div>
     </div>
 
+    <div class="record-modal-backdrop" id="record-modal-backdrop">
+      <div class="record-modal">
+        <button class="record-modal-close" id="record-modal-close" aria-label="Close">&times;</button>
+        <p class="record-modal-title" id="rm-course">—</p>
+        <div class="detail-row"><span>Date</span><span class="val" id="rm-date">—</span></div>
+        <div class="detail-row"><span>Time</span><span class="val" id="rm-time">—</span></div>
+        <div class="detail-row"><span>Location</span><span class="val" id="rm-location">—</span></div>
+        <div class="detail-row"><span>Distance from room</span><span class="val" id="rm-distance">—</span></div>
+        <div class="detail-row"><span>Status</span><span class="badge" id="rm-status">—</span></div>
+      </div>
+    </div>
+
 <script type="module">
 import { initRecordsPage } from "./shared.js";
 initRecordsPage();
 </script>
 
-    </body>
-    </html>
+</body>
+</html>
