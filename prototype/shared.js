@@ -89,6 +89,13 @@ export async function initLoginPage(){
   const STAFF_ID_RE = /^T\d{4}$/i;
 
   let signupRole = "student";
+  let loginRole = "student";
+
+  window.setLoginRole = function(role){
+    loginRole = role;
+    document.getElementById('login-role-student').classList.toggle('active', role === 'student');
+    document.getElementById('login-role-lecturer').classList.toggle('active', role === 'lecturer');
+  };
 
   window.setMode = function(mode){
     const isLogin = mode === "login";
@@ -125,13 +132,17 @@ export async function initLoginPage(){
     document.getElementById(elId).classList.remove('show');
   }
 
-  async function routeByRole(uid){
+  async function routeByRole(uid, expectedRole){
     const snap = await getDoc(doc(db, "users", uid));
     if(!snap.exists()){
       showError('login-error', "We couldn't find your profile. Please sign up again.");
       return;
     }
     const profile = snap.data();
+    if(profile.role !== expectedRole){
+      showError('login-error', "This account is registered as a " + (profile.role === "lecturer" ? "Lecturer" : "Student") + ". Select the correct role above and try again.");
+      return;
+    }
     window.location.href = (profile.role === "lecturer") ? "lecturer-dashboard.html" : "home.html";
   }
 
@@ -150,7 +161,7 @@ export async function initLoginPage(){
     btn.disabled = true; btn.textContent = "Logging in…";
     try{
       const cred = await signInWithEmailAndPassword(auth, email, password);
-      await routeByRole(cred.user.uid);
+      await routeByRole(cred.user.uid, loginRole);
     } catch(err){
       showError('login-error', "Invalid email or password.");
     } finally{
@@ -243,9 +254,17 @@ export async function initHomePage(){
   const absentCount = myRecords.filter(r => r.status === "Absent").length;
   const attendedCount = onTimeCount + lateCount;
 
-  document.getElementById('stat-rate').textContent = totalSessions > 0
-    ? Math.round((attendedCount / totalSessions) * 100) + "%"
-    : "—";
+  const rateEl = document.getElementById('stat-rate');
+  const rateLabelEl = rateEl.nextElementSibling;
+  if(totalSessions > 0){
+    const ratePct = Math.round((attendedCount / totalSessions) * 100);
+    const belowRequirement = ratePct < 80;
+    rateEl.textContent = ratePct + "%";
+    rateEl.style.color = belowRequirement ? "#b91c1c" : "";
+    if(rateLabelEl) rateLabelEl.textContent = belowRequirement ? "Attendance rate (below 80% requirement)" : "Attendance rate";
+  } else {
+    rateEl.textContent = "—";
+  }
   document.getElementById('stat-sessions').textContent = totalSessions;
   document.getElementById('stat-late').textContent = lateCount;
 
@@ -380,6 +399,15 @@ export async function initRecordsPage(){
     return '<span class="badge">On time</span>';
   }
 
+  function semesterOf(dateStr){
+    const d = new Date(dateStr);
+    if(isNaN(d)) return "";
+    const m = d.getMonth(); // 0 = Jan
+    if(m >= 7) return "Semester 1";  // Aug–Dec
+    if(m <= 3) return "Semester 2";  // Jan–Apr
+    return "Summer";                 // May–Jul
+  }
+
   const onTimeCount = myRecords.filter(r => r.status === "On time").length;
   const lateCount = myRecords.filter(r => r.status === "Late").length;
   const absentCount = myRecords.filter(r => r.status === "Absent").length;
@@ -391,10 +419,10 @@ export async function initRecordsPage(){
 
   if(myRecords.length){
     const headerRow = document.getElementById('header-row');
-    const rowsHtml = myRecords.map(r => {
+    const rowsHtml = myRecords.map((r, i) => {
       const icon = (r.course || "?").charAt(0);
       const location = ((r.building ? r.building + " / " : "") + (r.room || "")).trim() || "—";
-      return '<tr>' +
+      return '<tr data-idx="' + i + '" data-semester="' + semesterOf(r.date) + '">' +
         '<td><div class="session-cell"><div class="row-icon">' + icon + '</div>' + (r.course || "—") + '</div></td>' +
         '<td>' + (r.date || "—") + '</td>' +
         '<td>' + (r.time || "—") + '</td>' +
@@ -408,6 +436,7 @@ export async function initRecordsPage(){
   const searchInput = document.getElementById('search-input');
   const courseFilter = document.getElementById('course-filter');
   const statusFilter = document.getElementById('status-filter');
+  const semesterFilter = document.getElementById('semester-filter');
   const table = document.getElementById('records-table');
   const noResults = document.getElementById('no-results');
   const paginationEl = document.querySelector('.pagination');
@@ -417,7 +446,7 @@ export async function initRecordsPage(){
   const PAGE_SIZE = 5;
   let currentPage = 1;
 
-  function matchesFilters(tr, term, course, status){
+  function matchesFilters(tr, term, course, status, semester){
     const rowText = tr.textContent.toLowerCase();
     const rowCourseCell = tr.querySelector('.session-cell');
     const rowCourse = rowCourseCell ? rowCourseCell.textContent.trim().slice(1) : "";
@@ -430,8 +459,9 @@ export async function initRecordsPage(){
       (status === "Late" && rowStatusEl && rowStatusEl.classList.contains('late')) ||
       (status === "Absent" && rowStatusEl && rowStatusEl.classList.contains('absent')) ||
       (status === "On time" && rowStatusEl && !rowStatusEl.classList.contains('late') && !rowStatusEl.classList.contains('absent'));
+    const matchesSemester = !semester || tr.dataset.semester === semester;
 
-    return matchesTerm && matchesCourse && matchesStatus;
+    return matchesTerm && matchesCourse && matchesStatus && matchesSemester;
   }
 
   function renderPaginationControls(matchCount, totalPages){
@@ -473,9 +503,10 @@ export async function initRecordsPage(){
     const term = searchInput.value.trim().toLowerCase();
     const course = courseFilter.value;
     const status = statusFilter.value;
+    const semester = semesterFilter.value;
 
     const rows = Array.from(table.querySelectorAll('tr')).filter(tr => tr.id !== 'header-row');
-    const matching = rows.filter(tr => matchesFilters(tr, term, course, status));
+    const matching = rows.filter(tr => matchesFilters(tr, term, course, status, semester));
     const totalPages = Math.max(1, Math.ceil(matching.length / PAGE_SIZE));
     if(currentPage > totalPages) currentPage = totalPages;
     if(currentPage < 1) currentPage = 1;
@@ -495,8 +526,30 @@ export async function initRecordsPage(){
   searchInput.addEventListener('input', () => { currentPage = 1; applyFilters(); });
   courseFilter.addEventListener('change', () => { currentPage = 1; applyFilters(); });
   statusFilter.addEventListener('change', () => { currentPage = 1; applyFilters(); });
+  semesterFilter.addEventListener('change', () => { currentPage = 1; applyFilters(); });
 
   applyFilters();
+
+  const modalBackdrop = document.getElementById('record-modal-backdrop');
+  function openRecordModal(r){
+    document.getElementById('rm-course').textContent = r.course || "—";
+    document.getElementById('rm-date').textContent = r.date || "—";
+    document.getElementById('rm-time').textContent = r.time || "—";
+    document.getElementById('rm-location').textContent = ((r.building ? r.building + " / " : "") + (r.room || "")).trim() || "—";
+    document.getElementById('rm-distance').textContent = (r.distance != null) ? r.distance + " m from room at check-in" : (r.status === 'Absent' ? "Did not check in" : "Not available at the moment");
+    const statusEl = document.getElementById('rm-status');
+    statusEl.textContent = r.status || "—";
+    statusEl.className = 'badge' + (r.status === 'Late' ? ' late' : r.status === 'Absent' ? ' absent' : '');
+    modalBackdrop.classList.add('open');
+  }
+  table.addEventListener('click', (e) => {
+    const tr = e.target.closest('tr');
+    if(!tr || tr.id === 'header-row' || !tr.dataset.idx) return;
+    const r = myRecords[Number(tr.dataset.idx)];
+    if(r) openRecordModal(r);
+  });
+  document.getElementById('record-modal-close').addEventListener('click', () => modalBackdrop.classList.remove('open'));
+  modalBackdrop.addEventListener('click', (e) => { if(e.target === modalBackdrop) modalBackdrop.classList.remove('open'); });
 }
 
 // ---- confirmation.html ----
@@ -538,7 +591,7 @@ export async function initGpsPage(){
   if(pendingRaw){
     try{ pending = JSON.parse(pendingRaw); } catch(e){ pending = null; }
   }
-  const PENDING_MAX_AGE_MS = 20 * 60 * 1000; // discard stale scans so an old check-in can't be replayed later
+  const PENDING_MAX_AGE_MS = 20 * 60 * 1000; 
   if(pending && pending.scannedAt){
     const age = Date.now() - new Date(pending.scannedAt).getTime();
     if(!isFinite(age) || age > PENDING_MAX_AGE_MS){
@@ -558,6 +611,7 @@ export async function initGpsPage(){
 
   let withinRange = false;
   let locating = false;
+  let lastDistance = null;
 
   function setPill(ok, label){
     const pill = document.getElementById('status-pill');
@@ -625,6 +679,7 @@ export async function initGpsPage(){
         const { latitude, longitude } = position.coords;
         const dist = haversineDistanceMeters(latitude, longitude, session.lat, session.lng);
         const radius = Number(session.radius);
+        lastDistance = Math.round(dist);
 
         document.getElementById('detail-distance').textContent = Math.round(dist) + " m";
 
@@ -687,7 +742,8 @@ export async function initGpsPage(){
       date: now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
       time: now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
       status: status,
-      timestamp: now.toISOString()
+      timestamp: now.toISOString(),
+      distance: lastDistance
     };
 
     await addDoc(collection(db, "records"), record);
@@ -743,7 +799,7 @@ export async function initLecturerDashboardPage(){
 
     document.getElementById('stat-total-checkins').textContent = allRecords.length;
 
-    const todaysSessions = history.filter(s => isToday(s.createdAt));
+    const todaysSessions = history.filter(s => isToday(s.createdAt) && !(activeSession && s.sessionId === activeSession.sessionId));
     if(activeSession && isToday(activeSession.createdAt)){
       todaysSessions.push({ ...activeSession, _live: true });
     }
@@ -877,7 +933,6 @@ export async function initQrPage(){
   let activeSessionId = null;
   let unsubscribeRecords = null;
 
-  // Fixed classroom GPS anchors, keyed by course.
   const COURSE_LOCATIONS = {
     "ICT 101": { lat: 13.96358, lng: 100.58673 },
     "ICT 102": { lat: 13.96358, lng: 100.58673 },
@@ -980,6 +1035,7 @@ export async function initQrPage(){
 
     try{
       await setDoc(sessionRef, session);
+      await addDoc(collection(db, "sessions_history"), session);
       activeSessionId = sessionId;
       renderQR(session);
       watchRecords(sessionId);
@@ -998,6 +1054,34 @@ export async function initQrPage(){
     if(!activeSessionId) return;
     clearQrError();
     try{
+      const endedSnap = await getDoc(sessionRef);
+      const endedSession = endedSnap.exists() ? endedSnap.data() : null;
+
+      if(endedSession){
+        const [courseRecordsSnap, sessionRecordsSnap] = await Promise.all([
+          getDocs(query(collection(db, "records"), where("course", "==", endedSession.course))),
+          getDocs(query(collection(db, "records"), where("sessionId", "==", endedSession.sessionId)))
+        ]);
+       
+        const enrolled = new Set(courseRecordsSnap.docs.map(d => d.data().studentName));
+        const checkedIn = new Set(sessionRecordsSnap.docs.map(d => d.data().studentName));
+        const absentees = Array.from(enrolled).filter(name => !checkedIn.has(name));
+
+        const now = new Date();
+        await Promise.all(absentees.map(name => addDoc(collection(db, "records"), {
+          studentName: name,
+          course: endedSession.course,
+          room: endedSession.room,
+          building: endedSession.building,
+          sessionId: endedSession.sessionId,
+          date: now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+          time: "—",
+          status: "Absent",
+          timestamp: now.toISOString(),
+          distance: null
+        })));
+      }
+
       await deleteDoc(sessionRef);
     } catch(err){
       console.error("Ending session failed:", err);
