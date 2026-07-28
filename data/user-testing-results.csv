@@ -1,0 +1,8 @@
+Tester_ID,Tester_Type,Task_ID,Task_Description,Completed,Completion_Time_Min,Confusion_Point,Feedback_Score_1_5,Comment,Related_Requirement
+U01,Student user,T01,Scan course QR code using mobile browser,Yes,0.8,None,5,Scanning was instant and logged attendance smoothly,FR-01
+U02,Student user,T02,Scan course QR code with default browser settings,No,4.5,Camera access blocked by browser,2,Camera was blocked by browser permissions without clear prompt,FR-01/FR-02
+U03,Student user,T03,View attendance history and attendance percentage,Yes,1.2,None,5,Clear summary of total present and absent sessions,FR-04
+U04,Student user,T04,Submit late arrival reason request,Partial,3.1,Unsure where to attach proof document,3,Form field for notes was easy but upload option was hidden,FR-06
+U05,Student user,T05,View real-time attendance status on student dashboard,Yes,1.0,None,4,Status updated immediately after scanning,FR-04/FR-05
+U06,Lecturer user,T06,Generate dynamic QR code for live lecture session,Yes,1.5,Dynamic refresh rate setting,4,QR code generated quickly; timer feature was helpful,FR-03
+U07,Lecturer user,T07,Manual override student attendance and export report,Yes,3.8,Manual override button placement,4,Exported Excel report cleanly but override button was small,FR-07/FR-08
