@@ -18,16 +18,16 @@ Demonstrate how AttendQR provides a secure and efficient attendance system by al
 
 ## Demo Flow
 
-| Step | Screen / Feature | What Presenter Says | Requirement ID | Expected User Value |
-| --- | --- | --- | --- | --- |
-| 1 | Landing Page | Introduce AttendQR, explain the problem of manual attendance and proxy attendance, and identify students and lecturers as target users. | FR-01 | Understand the project's purpose and target users. |
-| 2 | User Login / Registration | Show how a new user creates an account and how existing users log in to access the system. | FR-02 | Users can securely access the appropriate functions. |
-| 3 | QR Code Check-in & GPS Verification | Demonstrate scanning the QR code, GPS location verification, validation, and attendance confirmation message. | FR-03, FR-10, FR-11 | Students can record attendance accurately and prevent proxy attendance. |
-| 4 | Attendance History | Show the attendance history page, attendance records, search and filter functions, and explain how students can review their attendance records. | FR-05, FR-06, FR-07 | Students can easily review and verify their attendance records. |
-| 5 | Lecturer Functions | Demonstrate generating a QR code, creating an attendance session, viewing attendance lists, and monitoring attendance percentages. | FR-08, FR-09 | Lecturers can efficiently manage attendance and identify students below the attendance requirement. |
-| 6 | Dashboard | Display attendance summary, attendance statistics, and students approaching or below the 80% attendance requirement. | FR-12 | Lecturers gain a quick overview of attendance performance. |
-| 7 | Responsive Design & Privacy | Briefly explain the responsive interface and responsible handling of attendance and GPS data. | FR-13, FR-14, FR-15 | Users experience a consistent interface while understanding how their attendance data is protected. |
-| 8 | Closing | Summarize the benefits of AttendQR and explain how QR code and GPS verification improve attendance management while reducing proxy attendance. | FR-16 | Audience understands the overall value of the system. |
+| Step  | Screen / Feature                    | What Presenter Says                                                                                                                                  | Requirement ID          | Expected User Value                                                                     |
+| ----- | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------------- |
+| **1** | Landing Page                        | Introduce AttendQR, explain the problem of manual attendance and proxy attendance, and identify students and lecturers as the target users.          | **FR-01**               | Understand the project's purpose and target users.                                      |
+| **2** | User Registration & Login           | Show how a new user creates an account and how existing users log in to access the system.                                                           | **FR-02**               | Users can securely access the appropriate functions.                                    |
+| **3** | QR Code Check-in & GPS Verification | Demonstrate scanning the QR code, GPS verification, attendance validation, and the confirmation message after a successful check-in.                 | **FR-03, FR-10, FR-11** | Students can record attendance accurately while reducing proxy attendance.              |
+| **4** | Attendance History                  | Show the attendance history page with attendance summaries, attendance records, and the search and filter functions.                                 | **FR-05, FR-06**        | Students can quickly review and search their attendance records.                        |
+| **5** | Attendance Detail                   | Select an attendance record to open the detail popup displaying the session, date, time, location, and attendance status.                            | **FR-07**               | Students can view detailed information for each attendance record.                      |
+| **6** | Lecturer Functions                  | Demonstrate creating an attendance session, generating a QR code, viewing the attendance list, and monitoring student attendance percentages.        | **FR-08, FR-09**        | Lecturers can efficiently manage attendance sessions and monitor student participation. |
+| **7** | Dashboard                           | Display attendance summaries, statistics, and students approaching or below the 80% attendance requirement.                                          | **FR-12**               | Lecturers gain a quick overview of attendance performance.                              |
+| **8** | Closing                             | Summarize how AttendQR improves attendance management through QR code scanning and GPS verification while reducing manual work and proxy attendance. | **FR-16**               | Audience understands the overall value of the system.                                   |
 
 ---
 
