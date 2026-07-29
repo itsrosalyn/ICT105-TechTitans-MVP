@@ -423,3 +423,32 @@ The landing page introduces AttendQR, explains the attendance problems identifie
 | Phoo Myat Thwin | Created the marketing message, landing page content, CTA screenshot, and updated the README | Issue #60 |
 | Pan Thway Chal Ko Ko Lwin | Created acquisition metrics, marketing analytics, and supporting data templates | Issue #61 |
 | Thun Thiri Khin | Prepared the go-to-market plan, project documentation, and updated the case study brief | Issue #62 |
+
+# Lab 13: Sales Scenario, Demo Script, and User Testing
+
+## Lab 13 Objective
+
+In Lab 13, our team prepared the final sales scenario, demo script, user testing plan, user testing results, and final improvement list to ensure the AttendQR prototype is ready for the final demonstration in Lab 14.
+
+## Files Completed
+
+- [x] /docs/sales-scenario.md
+- [x] /docs/demo-script.md
+- [x] /docs/user-testing-plan.md
+- [x] /docs/user-testing-results.md
+- [x] /docs/final-improvement-list.md
+- [x] /docs/weekly-logbook.md
+- [x] /screenshots/demo-flow.png
+- [x] /screenshots/user-testing-evidence.png
+
+## Prototype / Demo Link
+
+### Landing Page
+https://attendqr-landingpage.netlify.app/
+
+### Prototype Demo
+https://attend-qr-1.netlify.app/index.html
+
+## Final Preparation Status
+
+The AttendQR prototype is ready for the Lab 14 final demonstration. The prototype includes student and lecturer workflows, QR code attendance, GPS location verification, attendance history, attendance detail view, search and filtering, lecturer dashboard, attendance analytics, Firebase data storage, and responsive interfaces. Final user testing was completed, feedback was documented, and identified improvements were compiled to enhance the overall user experience and system reliability.
