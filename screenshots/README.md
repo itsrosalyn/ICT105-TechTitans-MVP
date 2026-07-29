@@ -41,7 +41,7 @@ Optional screenshots:
 - [Acquisition Metrics Table](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/main/screenshots/acquisition-metrics-table.png)
 
 
-# Screenshot Guide for Lab 13
+# Screenshots for Lab 13
 
 - [demo-flow.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0bfb3d43e8368fdd98063e897f0a3d5d3b0721bd/screenshots/demo-flow.png)
 - [user-testing-evidence.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0bfb3d43e8368fdd98063e897f0a3d5d3b0721bd/screenshots/user-testing-evidence.png)
