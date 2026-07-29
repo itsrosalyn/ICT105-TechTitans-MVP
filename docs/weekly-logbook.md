@@ -600,3 +600,81 @@ Includes an evaluation plan to iterate on headline clarity, CTA prominence, and 
 - Execute end-to-end user testing of the prototype login and QR scanner interface with live GPS parameters in Room 3-216.
 - Collect initial landing page conversion feedback and adjust CTA positioning accordingly.
 - Finalize Lab 12 repository submission and ensure all updated Markdown documents and image assets are pushed to GitHub.
+
+# Weekly Logbook - Lab 13
+
+## Group Name
+
+Tech Titans
+
+## Project Title
+
+AttendQR: QR Code Attendance System with GPS Verification
+
+## Date
+
+29 July 2026
+
+---
+
+## Members and Contributions
+
+| Member | Contribution This Lab | GitHub Evidence |
+| --- | --- | --- |
+| Mya Hninsi Phyu | Prepared the demo script, updated the weekly logbook and README, and created screenshots for the testing results summary, and final improvement list. | [Issue 66](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/66) |
+| Phoo Myat Thwin | Prepared the sales scenario, final improvement list, user testing flow diagram, and updated the case study brief. | [Issue 65](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/65) |
+| Pan Thway Chal Ko Ko Lwin | Finalized the prototype and demo link, prepared the demo outline, created the demo flow diagram, and captured the demo flow screenshot. | [Issue 63](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/63) |
+| Thun Thiri Khin | Prepared the user testing plan, user testing results, testing dataset, and captured user testing evidence screenshots. | [Issue 64](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/64) |
+
+---
+
+## Work Completed
+
+- Sales scenario describing the product value, target users, and demonstration approach.
+- Demo script covering the complete student and lecturer workflows.
+- User testing plan, participant tasks, and success criteria.
+- User testing results and participant feedback summary.
+- Final improvement list based on testing outcomes.
+- Demo flow, testing evidence, and supporting screenshots.
+
+---
+
+## Key Decisions
+
+- Finalized the complete demonstration flow for both student and lecturer users.
+- Refined the prototype based on user testing feedback while maintaining the project's MVP scope.
+- Used Firebase as the cloud database for storing and managing attendance records.
+- Improved the attendance details interface with a popup view for better usability.
+- Confirmed that the prototype features align with the documented system requirements, user stories, and MVP feature list.
+
+---
+
+## Problems Encountered
+
+- Synchronizing Firebase data across the student and lecturer prototype pages.
+- Refining the prototype based on user testing feedback while staying within the MVP scope.
+- Ensuring all implemented features aligned with the documented system requirements (FR-01 to FR-16).
+- Maintaining consistency between the prototype, documentation, and screenshots after multiple feature updates.
+- Coordinating GitHub contributions and merging changes from multiple team members.
+- Preparing demonstration materials while ensuring the presentation accurately reflected the final prototype.
+
+---
+
+## Next Actions Before Lab 14
+
+- Complete the final prototype packaging and repository cleanup.
+- Update the remaining Lab 14 documentation and final submission files.
+- Prepare the final pitch materials and presentation.
+- Review repository structure, screenshots, prototype links, and documentation for consistency.
+- Rehearse the final demonstration and confirm presenter roles.
+
+---
+
+## Requirement Traceability Notes
+
+Before the final Lab 14 submission, the team will perform a final requirement audit to ensure:
+
+- All implemented prototype features are consistent with the documented system requirements (FR-01–FR-16).
+- Every major screen is traceable to the corresponding requirements, user stories, and MVP feature list.
+- The prototype, screenshots, documentation, and repository files are complete and consistent.
+- The deployed prototype, landing page, and demo links are accessible without broken links.
