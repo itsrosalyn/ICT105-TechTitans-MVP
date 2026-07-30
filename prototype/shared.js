@@ -327,6 +327,7 @@ export async function initScanPage(){
 
     sessionStorage.setItem("attendqr_pending", JSON.stringify({
       studentName: name,
+      studentId: currentUser.schoolId,
       sessionId: payload.sessionId,
       course: payload.course,
       room: payload.room,
@@ -735,6 +736,7 @@ export async function initGpsPage(){
 
     const record = {
       studentName: pending.studentName,
+      studentId: pending.studentId,
       course: pending.course,
       room: pending.room,
       building: pending.building,
@@ -771,6 +773,7 @@ export async function initLecturerDashboardPage(){
 
   let unsubscribeRecords = null;
   let firstLoadDone = false;
+  let latestTodaysSessions = [];
   function revealOnce(){
     if(!firstLoadDone){
       firstLoadDone = true;
@@ -815,19 +818,26 @@ export async function initLecturerDashboardPage(){
       emptyEl.style.display = "";
     } else {
       emptyEl.style.display = "none";
-      const rowsHtml = todaysSessions.map(s => {
-        const count = allRecords.filter(r => r.sessionId === s.sessionId).length;
+      const rowsHtml = todaysSessions.map((s, i) => {
+        const sessionRecords = allRecords.filter(r => r.sessionId === s.sessionId);
+        const attendees = sessionRecords.filter(r => r.status !== "Absent");
+        const absentees = sessionRecords.filter(r => r.status === "Absent");
+        const count = attendees.length;
         const time = new Date(s.createdAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
         const status = s._live ? '<span class="badge live">Live</span>' : '<span class="badge">Ended</span>';
-        return '<tr>' +
+        return '<tr data-idx="' + i + '" style="cursor:pointer;">' +
           '<td><div class="session-cell"><div class="row-icon">' + courseIcon(s.course) + '</div>' + (s.course || "—") + '</div></td>' +
           '<td>' + (s.room || "—") + '</td>' +
           '<td>' + time + '</td>' +
-          '<td>' + count + ' checked in</td>' +
+          '<td style="text-decoration:underline dotted;">' + count + ' checked in' + (absentees.length ? ' · ' + absentees.length + ' absent' : '') + '</td>' +
           '<td>' + status + '</td>' +
           '</tr>';
       }).join("");
       headerRow.insertAdjacentHTML('afterend', rowsHtml);
+      latestTodaysSessions = todaysSessions.map(s => ({
+        session: s,
+        records: allRecords.filter(r => r.sessionId === s.sessionId)
+      }));
     }
     const now = Date.now();
     const WEEK = 7 * 24 * 60 * 60 * 1000;
@@ -891,6 +901,31 @@ export async function initLecturerDashboardPage(){
           '</div>'
         ).join("");
   }
+
+  const sessionModalBackdrop = document.getElementById('session-modal-backdrop');
+  function openSessionModal(entry){
+    const { session: s, records } = entry;
+    const present = records.filter(r => r.status !== "Absent");
+    const absent = records.filter(r => r.status === "Absent");
+    const nameLine = r => '<div style="padding:4px 0;">' + r.studentName + (r.studentId ? ' <span style="color:var(--muted);">(' + r.studentId + ')</span>' : '') + '</div>';
+
+    document.getElementById('sm-title').textContent = s.course || "—";
+    document.getElementById('sm-room').textContent = s.room || "—";
+    document.getElementById('sm-time').textContent = new Date(s.createdAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    document.getElementById('sm-present-count').textContent = present.length;
+    document.getElementById('sm-absent-count').textContent = absent.length;
+    document.getElementById('sm-present-list').innerHTML = present.length ? present.map(nameLine).join("") : '<div style="color:var(--muted);">No check-ins yet</div>';
+    document.getElementById('sm-absent-list').innerHTML = absent.length ? absent.map(nameLine).join("") : '<div style="color:var(--muted);">None</div>';
+    sessionModalBackdrop.classList.add('open');
+  }
+  document.getElementById('todays-sessions-table').addEventListener('click', (e) => {
+    const tr = e.target.closest('tr');
+    if(!tr || tr.id === 'todays-header-row' || !tr.dataset.idx) return;
+    const entry = latestTodaysSessions[Number(tr.dataset.idx)];
+    if(entry) openSessionModal(entry);
+  });
+  document.getElementById('session-modal-close').addEventListener('click', () => sessionModalBackdrop.classList.remove('open'));
+  sessionModalBackdrop.addEventListener('click', (e) => { if(e.target === sessionModalBackdrop) sessionModalBackdrop.classList.remove('open'); });
 
   onSnapshot(doc(db, "sessions", "active"), async (snap) => {
     document.getElementById('stat-live-count').textContent = snap.exists() ? 1 : 0;
@@ -999,7 +1034,8 @@ export async function initQrPage(){
     }
     listEl.innerHTML = records.slice().reverse().map(r => {
       const initials = r.studentName.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
-      return '<div class="live-row"><div class="live-avatar">' + initials + '</div><div class="live-name">' + r.studentName + '</div><span class="live-time">' + r.time + '</span></div>';
+      const idTag = r.studentId ? ' <span style="color:var(--muted);font-weight:400;">(' + r.studentId + ')</span>' : '';
+      return '<div class="live-row"><div class="live-avatar">' + initials + '</div><div class="live-name">' + r.studentName + idTag + '</div><span class="live-time">' + r.time + '</span></div>';
     }).join("");
   }
 
@@ -1063,6 +1099,11 @@ export async function initQrPage(){
           getDocs(query(collection(db, "records"), where("sessionId", "==", endedSession.sessionId)))
         ]);
        
+        const idByName = {};
+        courseRecordsSnap.docs.forEach(d => {
+          const data = d.data();
+          if(data.studentId) idByName[data.studentName] = data.studentId;
+        });
         const enrolled = new Set(courseRecordsSnap.docs.map(d => d.data().studentName));
         const checkedIn = new Set(sessionRecordsSnap.docs.map(d => d.data().studentName));
         const absentees = Array.from(enrolled).filter(name => !checkedIn.has(name));
@@ -1070,6 +1111,7 @@ export async function initQrPage(){
         const now = new Date();
         await Promise.all(absentees.map(name => addDoc(collection(db, "records"), {
           studentName: name,
+          studentId: idByName[name] || null,
           course: endedSession.course,
           room: endedSession.room,
           building: endedSession.building,
