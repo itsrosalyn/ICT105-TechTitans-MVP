@@ -6,7 +6,7 @@ Recommended duration: 5-7 minutes.
 
 ## 1. Opening
 
-- **Project:** AttendQR
+- **Project:** AttendQR: QR Code Attendance System with GPS Verification
 - **Problem:** Paper sign-ins and static QR codes allow proxy attendance and waste valuable class time.
 - **Target Users:** ICT Students & Lecturers
 - **Value Proposition:** Fast, proxy-proof check-ins combining dynamic QR codes with indoor location verification.
