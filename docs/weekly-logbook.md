@@ -678,3 +678,92 @@ Before the final Lab 14 submission, the team will perform a final requirement au
 - Every major screen is traceable to the corresponding requirements, user stories, and MVP feature list.
 - The prototype, screenshots, documentation, and repository files are complete and consistent.
 - The deployed prototype, landing page, and demo links are accessible without broken links.
+
+# Weekly Logbook - Lab 14
+
+## Group Name
+
+Tech Titans
+
+## Date
+
+30/07/2026
+
+## Members Present
+
+| Member Name | Attendance |
+|---|---|
+| Mya Hninsi Phyu | Present |
+| Phoo Myat Thwin | Present |
+| Pan Thway Chal Ko Ko Lwin | Present |
+| Thun Thiri Khin | Present |
+
+## What We Completed Today
+
+- Reviewed the final MVP prototype and checked that the main attendance workflow was complete.
+- Verified the core features:
+  - Student registration and login
+  - QR code attendance check-in
+  - GPS verification process
+  - Attendance confirmation
+  - Attendance history and percentage tracking
+  - Lecturer QR generation and attendance monitoring
+- Completed final README updates and organized project files for submission.
+- Reviewed documentation consistency between requirements, user stories, feature list, prototype, and demo flow.
+- Prepared final presentation materials and demonstration sequence.
+
+## Final Prototype Updates
+
+- Finalized the clickable prototype and verified navigation between screens.
+- Organized final prototype screenshots for submission.
+- Updated prototype documentation:
+  - `/prototype/final-prototype-link.md`
+  - `/screenshots/final-prototype-screenshots/`
+- Checked that all required screens were included:
+  - Landing page
+  - Login Page
+  - QR scanning
+  - GPS verification
+  - Attendance confirmation
+  - Attendance history
+  - Lecturer dashboard
+
+## Final Documentation Updates
+
+- Updated and reviewed final project documentation:
+  - `/docs/system-requirements.md`
+  - `/docs/requirement-traceability-matrix.md`
+  - `/docs/mvp-feature-list.md`
+  - `/docs/feature-implementation-status.md`
+  - `/docs/final-prototype-report.md`
+  - `/docs/final-demo-script.md`
+  - `/docs/final-reflection.md`
+- Updated `README.md` with:
+  - Project overview
+  - Target users
+  - Final prototype information
+  - Documentation links
+  - Screenshots and presentation details
+
+## GitHub Contributions Today
+
+| Member | File/Issue/Commit Updated | Evidence Link |
+|---|---|---|
+| Mya Hninsi Phyu | Final Documentation & Repository Preparation. Updated `/docs/final-prototype-report.md`, `/docs/final-submission-checklist.md`, `/docs/weekly-logbook.md`, and `README.md` | [Issue 67](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/67) |
+| Phoo Myat Thwin | Requirements Audit & Final Reflection. Updated `/docs/system-requirements.md`, `/docs/feature-implementation-status.md`, and `/docs/final-reflection.md` | [Issue 68](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/68) |
+| Pan Thway Chal Ko Ko Lwin | Final Prototype, Screenshots & Pitch. Updated `/prototype/final-prototype-link.md`, `/screenshots/final-required-screens.png`, and `/pitch/final-pitch-outline.md` | [Issue 69](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/69) |
+| Thun Thiri Khin | Requirements Traceability & Demo Documentation. Updated `/docs/requirement-traceability-matrix.md`, `/docs/mvp-feature-list.md`, and `/docs/final-demo-script.md` | [Issue 70](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/70) |
+
+## Problems Found Before Submission
+
+- Some documentation sections required final consistency checks.
+- Needed to ensure screenshots matched the described prototype features.
+- Minor formatting issues were found in README and documentation files.
+- Required final verification that all GitHub files and links were correctly organized.
+
+## Action Before Final Presentation
+
+- Perform one final prototype demonstration test.
+- Review pitch outline and assign speaking sections.
+- Ensure all team members understand the demo workflow.
+- Submit final documentation, prototype, and presentation materials.
