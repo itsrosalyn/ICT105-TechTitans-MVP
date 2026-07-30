@@ -97,6 +97,21 @@
 
 </div>
 
+<div class="record-modal-backdrop" id="session-modal-backdrop">
+  <div class="record-modal" style="max-width:420px;">
+    <button class="record-modal-close" id="session-modal-close" aria-label="Close">&times;</button>
+    <p class="record-modal-title" id="sm-title">—</p>
+    <div class="detail-row"><span>Room</span><span class="val" id="sm-room">—</span></div>
+    <div class="detail-row"><span>Time</span><span class="val" id="sm-time">—</span></div>
+    <div style="margin-top:16px;">
+      <p style="font-size:12px;font-weight:700;color:#15803d;margin:0 0 8px;">Present (<span id="sm-present-count">0</span>)</p>
+      <div id="sm-present-list" style="font-size:13px;margin-bottom:16px;"></div>
+      <p style="font-size:12px;font-weight:700;color:#b91c1c;margin:0 0 8px;">Absent (<span id="sm-absent-count">0</span>)</p>
+      <div id="sm-absent-list" style="font-size:13px;"></div>
+    </div>
+  </div>
+</div>
+
 <script type="module">
 import { initLecturerDashboardPage } from "./shared.js";
 initLecturerDashboardPage();
