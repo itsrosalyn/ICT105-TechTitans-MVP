@@ -485,7 +485,7 @@ This system provides a digital attendance solution that improves speed, accuracy
 
 - Prototype folder/link: [/prototype/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/181a06b1c26c334914a768ff48900acea982ff7a/prototype)
 - Landing page link: [/prototype/index.html](https://attend-qr-1.netlify.app)
-- Final demo link: [[Final demo link](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/181a06b1c26c334914a768ff48900acea982ff7a/prototype/final-demo-link.md)
+- Final demo link: [Final demo link](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/181a06b1c26c334914a768ff48900acea982ff7a/prototype/final-demo-link.md)
 
 ## Final Documentation
 
@@ -504,11 +504,11 @@ This system provides a digital attendance solution that improves speed, accuracy
 
 Final prototype screenshots:
 
-- [/screenshots/final-prototype-screenshots/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/181a06b1c26c334914a768ff48900acea982ff7a/screenshots/final-prototype-screenshots)
+- [/screenshots/final-prototype-screenshots/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/9fddca413c1635dc70440fd7d89c4cfb6c2db104/screenshots/final-prototype-screenshots)
 
 The screenshot file contains the final required prototype screens:
 - Landing page
-- Student login page
+- Login page
 - QR code scanning page
 - GPS verification page
 - Attendance confirmation page
