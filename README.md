@@ -226,8 +226,6 @@ A clickable web prototype was selected because it allows students and lecturers 
 ### Connection to Final Prototype
 EThe MVP experiment will provide evidence on whether the proposed attendance workflow is easy to use and addresses the identified user problems. Feedback from students and lecturers will be used to improve the QR code scanning process, GPS verification, attendance history, dashboard, and overall user interface before developing the final prototype. The experiment results will also help determine whether the current design should be continued or revised based on user validation.
 
-# README Update - Lab 08
-
 ## Lab 08: Customer Validation and Analytics Sheet
 
 ### Validation Objective
@@ -295,8 +293,6 @@ No changes were made to [system-requirements.md](https://github.com/itsrosalyn/I
 | **Pan Thway Chal Ko Ko Lwin** | Conducted the security and risk assessment by preparing the security review and identifying potential risks and mitigation strategies for the prototype. |
 | **Mya Hninsi Phyu** | Prepared the legal, ethical, and privacy documentation to ensure the prototype follows responsible IT practices and data protection principles. |
 | **Phoo Myat Thwin** | Updated the project README, prepared the user consent statement, and completed the Lab 09 weekly logbook. |
-
-# README Update Template - Lab 10
 
 ## Lab 10 - MVP Implementation Sprint 1
 
@@ -389,8 +385,6 @@ Lab 11 focused on strengthening the prototype implementation by improving projec
 - Review all project documentation for consistency and completeness.
 - Prepare the final prototype and supporting documents for presentation and submission.
 
-# README Update Template - Lab 12
-
 ## Lab 12 - Landing Page and Digital Go-to-Market
 
 ### Landing Page
@@ -452,3 +446,96 @@ https://attend-qr-1.netlify.app/index.html
 ## Final Preparation Status
 
 The AttendQR prototype is ready for the Lab 14 final demonstration. The prototype includes student and lecturer workflows, QR code attendance, GPS location verification, attendance history, attendance detail view, search and filtering, lecturer dashboard, attendance analytics, Firebase data storage, and responsive interfaces. Final user testing was completed, feedback was documented, and identified improvements were compiled to enhance the overall user experience and system reliability.
+
+# Lab 14: Final MVP Release and Venture Pitch
+
+## Project Title
+
+QR Code Attendance System with GPS Verification
+
+## Group Members
+
+| Name | Role | Main Contribution |
+|---|---|---|
+| Mya Hninsi Phyu | Team Leader / Final Documentation & Repository Preparation | Managed final documentation, repository organization, final prototype report, submission checklist, weekly logbook, and README updates |
+| Phoo Myat Thwin | Requirements Audit & Final Reflection | Reviewed system requirements, feature implementation status, and completed final reflection documentation |
+| Pan Thway Chal Ko Ko Lwin | Final Prototype & Presentation | Updated final prototype link documentation, organized final screenshots, and prepared final pitch outline |
+| Thun Thiri Khin | Requirements Traceability & Demo Documentation | Updated requirement traceability matrix, MVP feature list, and final demo script to validate feature implementation |
+
+## Project Overview
+
+The QR Code Attendance System with GPS Verification is a web-based attendance management system designed to improve the efficiency and reliability of lecture attendance tracking.
+
+The system combines QR code scanning with GPS verification to reduce attendance fraud, prevent proxy attendance, and provide lecturers with a faster way to monitor student attendance records.
+
+The final MVP prototype demonstrates the core attendance workflow, including student check-in, location verification, attendance confirmation, and attendance tracking.
+
+## Target Users
+
+- **Students** – Record attendance quickly through QR scanning and GPS verification.
+- **Lecturers** – Generate attendance QR codes and monitor student attendance records.
+
+## Problem Solved
+
+Traditional attendance methods such as manual roll calls and paper-based records are time-consuming and can allow inaccurate attendance tracking or proxy attendance.
+
+This system provides a digital attendance solution that improves speed, accuracy, and transparency by verifying attendance using QR codes and GPS location checking.
+
+## Final Prototype
+
+- Prototype folder/link: [/prototype/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/181a06b1c26c334914a768ff48900acea982ff7a/prototype)
+- Landing page link: [/prototype/index.html](https://attend-qr-1.netlify.app)
+- Final demo link: [[Final demo link](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/181a06b1c26c334914a768ff48900acea982ff7a/prototype/final-demo-link.md)
+
+## Final Documentation
+
+- System requirements: `/docs/system-requirements.md`
+- User stories: `/docs/user-stories.md`
+- Requirement traceability matrix: `/docs/requirement-traceability-matrix.md`
+- MVP feature list: `/docs/mvp-feature-list.md`
+- Feature implementation status: `/docs/feature-implementation-status.md`
+- Final prototype report: `/docs/final-prototype-report.md`
+- Final demo script: `/docs/final-demo-script.md`
+- Final reflection: `/docs/final-reflection.md`
+- Final submission checklist: `/docs/final-submission-checklist.md`
+- Weekly logbook: `/docs/weekly-logbook.md`
+
+## Screenshots
+
+Final prototype screenshots:
+
+- [/screenshots/final-prototype-screenshots/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/181a06b1c26c334914a768ff48900acea982ff7a/screenshots/final-prototype-screenshots)
+
+The screenshot file contains the final required prototype screens:
+- Landing page
+- Student login page
+- QR code scanning page
+- GPS verification page
+- Attendance confirmation page
+- Attendance history page
+- Lecturer QR generation page
+- Lecturer dashboard page
+
+## Pitch
+
+- Final pitch slides or outline: `/pitch/final-pitch-outline.md`
+
+## Data and Diagrams
+
+- Final sample data: [sample-qr-attendance-records](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/181a06b1c26c334914a768ff48900acea982ff7a/data/sample-qr-attendance-records.csv)
+- Final diagrams: [/diagrams/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/181a06b1c26c334914a768ff48900acea982ff7a/diagrams)
+
+Includes:
+- System architecture diagram
+- Use case diagram
+- Data flow diagram
+- Sample attendance records
+- Prototype workflow diagrams
+
+## Final Submission Notes
+
+The final submission includes the completed MVP prototype, documentation, screenshots, diagrams, sample data, and presentation materials.
+
+The prototype demonstrates the main solution by showing how QR code attendance combined with GPS verification can improve attendance accuracy and reduce manual tracking problems.
+
+All documentation and prototype materials have been reviewed and updated for final presentation and submission.
