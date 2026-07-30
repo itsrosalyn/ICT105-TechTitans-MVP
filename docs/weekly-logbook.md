@@ -717,18 +717,16 @@ Tech Titans
 ## Final Documentation Updates
 
 - Updated and reviewed:
-  - `/docs/system-requirements.md`
-  - `/pitch/final-pitch-outline.md`
-  - `/docs/requirement-traceability-matrix.md`
-  - `/docs/mvp-feature-list.md`
-  - `/docs/feature-implementation-status.md`
-  - `/docs/final-prototype-report.md`
-  - `/docs/final-demo-script.md`
-  - `/docs/final-reflection.md`
-  - `/docs/final-submission-checklist.md`
-  - `/docs/weekly-logbook.md`
-  - `/screenshots/final-prototype-screenshots/`
-- Updated `README.md` with the final project overview, prototype information, screenshots, and documentation links.
+  - [/docs/system-requirements.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/system-requirements.md)
+  - [/pitch/final-pitch-outline.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/pitch/final-pitch-outline.md)
+  - [/docs/requirement-traceability-matrix.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/requirement-traceability-matrix.md)
+  - [/docs/mvp-feature-list.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/mvp-feature-list.md)
+  - [/docs/feature-implementation-status.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/mvp-feature-list.md)
+  - [/docs/final-prototype-report.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-prototype-report.md)
+  - [/docs/final-demo-script.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-demo-script.md)
+  - [/docs/final-reflection.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-reflection.md)
+  - [/docs/final-submission-checklist.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-submission-checklist.md)
+  - [/screenshots/final-prototype-screenshots/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/9fddca413c1635dc70440fd7d89c4cfb6c2db104/screenshots/final-prototype-screenshots)
 
 ---
 
