@@ -1,4 +1,3 @@
-
 # Screenshots Folder of MVP experiment
 
 - [login-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2cdabcaec1dd58fd3a9a7ac05b519024ff9e054e/screenshots/login-page.png)
@@ -47,4 +46,19 @@ Optional screenshots:
 - [user-testing-evidence.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0bfb3d43e8368fdd98063e897f0a3d5d3b0721bd/screenshots/user-testing-evidence.png)
 - [testing-results-summary.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0bfb3d43e8368fdd98063e897f0a3d5d3b0721bd/screenshots/testing-results-summary.png)
 - [final-improvement-list.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0bfb3d43e8368fdd98063e897f0a3d5d3b0721bd/screenshots/final-improvement-list.png)
+
+# Screenshots for Lab 14(Final)
+
+- [final-signup-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-signuppge.png)
+- [final-login-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-loginpage.png)
+- [final-home-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-homepage.png)
+- [final-scanqr-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-scan-qrpage.png)
+- [final-gpscheck-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-gpscheck-page.png)
+- [final-confirmation-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-confirmation-page.png)
+- [final-records-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-records-page.png)
+- [final-records-page-detail.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-records-page-detail.png)
+- [final-lecturer-dashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-lecturerdashboard.png)
+- [final-lecturer-dashboard-detail.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-lecturer-dashboard-detail.png)
+- [final-qr-generation.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/355d1815b9fea4da46f2f764c86f24b4798fa13a/screenshots/final-prototype-screenshots/final-qr-generationpage.png)
+
 
