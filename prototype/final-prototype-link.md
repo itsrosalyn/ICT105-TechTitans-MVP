@@ -9,8 +9,17 @@
   - Users may either **sign up for a new account** or **log in with an existing account**.
   - A real university email address is **not required**. Any valid email format (for example, `student@rsu.ac.th`) can be used to create a demo account.
   - When logging in, select either the **Student** or **Lecturer** role to explore the corresponding features.
+  - Alternatively, the instructor may use the following test accounts to view the existing demo data:
+    **Lecturer**
+    - Email: herison@rsu.ac.th
+    - Password: 123456
+
+    **Student**
+    - Email: crystal.k68@rsu.ac.th
+    - Password: 562225
 - **Notes for lecturer:**
   - The prototype demonstrates the complete attendance workflow, including login, QR code scanning, GPS verification, attendance confirmation, attendance history, QR code generation, and the lecturer dashboard.
   - Firebase Authentication and Firestore are used to store and retrieve attendance data in real time.
   - The GPS verification is configured for the predefined classroom locations used in the project demonstration.
   - This is an MVP prototype developed for academic purposes, so some functions use sample data or simplified workflows to demonstrate the system requirements.
+  
