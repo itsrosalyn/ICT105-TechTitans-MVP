@@ -687,7 +687,7 @@ Tech Titans
 
 ## Date
 
-30/07/2026
+30 July 2026
 
 ## Members Present
 
@@ -700,70 +700,58 @@ Tech Titans
 
 ## What We Completed Today
 
-- Reviewed the final MVP prototype and checked that the main attendance workflow was complete.
-- Verified the core features:
-  - Student registration and login
-  - QR code attendance check-in
-  - GPS verification process
-  - Attendance confirmation
-  - Attendance history and percentage tracking
-  - Lecturer QR generation and attendance monitoring
-- Completed final README updates and organized project files for submission.
-- Reviewed documentation consistency between requirements, user stories, feature list, prototype, and demo flow.
-- Prepared final presentation materials and demonstration sequence.
+- Finalized the AttendQR MVP prototype for submission.
+- Verified the complete student workflow, including registration, login, QR code attendance check-in, GPS verification, attendance confirmation, attendance history, attendance details, and attendance percentage tracking.
+- Verified the lecturer workflow, including QR code generation, attendance session management, attendance monitoring, present and absent student tracking, and dashboard statistics.
+- Reviewed all documentation to ensure consistency with the system requirements, user stories, MVP feature list, and final prototype.
+- Prepared the repository, presentation materials, and final project submission.
 
 ## Final Prototype Updates
 
-- Finalized the clickable prototype and verified navigation between screens.
-- Organized final prototype screenshots for submission.
-- Updated prototype documentation:
-  - `/prototype/final-prototype-link.md`
-  - `/screenshots/final-prototype-screenshots/`
-- Checked that all required screens were included:
-  - Landing page
-  - Login Page
-  - QR scanning
-  - GPS verification
-  - Attendance confirmation
-  - Attendance history
-  - Lecturer dashboard
+- Completed the final interactive AttendQR prototype.
+- Verified navigation and functionality across all prototype screens.
+- Confirmed Firebase attendance recording and automatic absent marking.
+- Reviewed the responsiveness of the landing page and prototype.
+- Updated the final prototype link and captured all required screenshots for submission.
 
 ## Final Documentation Updates
 
-- Updated and reviewed final project documentation:
+- Updated and reviewed:
   - `/docs/system-requirements.md`
+  - `/pitch/final-pitch-outline.md`
   - `/docs/requirement-traceability-matrix.md`
   - `/docs/mvp-feature-list.md`
   - `/docs/feature-implementation-status.md`
   - `/docs/final-prototype-report.md`
   - `/docs/final-demo-script.md`
   - `/docs/final-reflection.md`
-- Updated `README.md` with:
-  - Project overview
-  - Target users
-  - Final prototype information
-  - Documentation links
-  - Screenshots and presentation details
+  - `/docs/final-submission-checklist.md`
+  - `/docs/weekly-logbook.md`
+  - `/screenshots/final-prototype-screenshots/`
+- Updated `README.md` with the final project overview, prototype information, screenshots, and documentation links.
+
+---
 
 ## GitHub Contributions Today
 
 | Member | File/Issue/Commit Updated | Evidence Link |
 |---|---|---|
-| Mya Hninsi Phyu | Final Documentation & Repository Preparation. Updated `/docs/final-prototype-report.md`, `/docs/final-submission-checklist.md`, `/docs/weekly-logbook.md`, and `README.md` | [Issue 67](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/67) |
-| Phoo Myat Thwin | Requirements Audit & Final Reflection. Updated `/docs/system-requirements.md`, `/docs/feature-implementation-status.md`, and `/docs/final-reflection.md` | [Issue 68](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/68) |
-| Pan Thway Chal Ko Ko Lwin | Final Prototype, Screenshots & Pitch. Updated `/prototype/final-prototype-link.md`, `/screenshots/final-required-screens.png`, and `/pitch/final-pitch-outline.md` | [Issue 69](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/69) |
-| Thun Thiri Khin | Requirements Traceability & Demo Documentation. Updated `/docs/requirement-traceability-matrix.md`, `/docs/mvp-feature-list.md`, and `/docs/final-demo-script.md` | [Issue 70](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/70) |
+| Mya Hninsi Phyu | Final documentation, final prototype report, submission checklist, weekly logbook, and README update | [Issue 67](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/67) |
+| Phoo Myat Thwin | R System requirements, feature implementation status, and final reflection | [Issue 68](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/68) |
+| Pan Thway Chal Ko Ko Lwin | Final prototype, prototype link, screenshots, and final pitch outline | [Issue 69](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/69) |
+| Thun Thiri Khin | Requirement Traceability, MVP feature list, and final demo script | [Issue 70](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/issues/70) |
 
 ## Problems Found Before Submission
 
-- Some documentation sections required final consistency checks.
-- Needed to ensure screenshots matched the described prototype features.
-- Minor formatting issues were found in README and documentation files.
-- Required final verification that all GitHub files and links were correctly organized.
+- Refined several prototype screens after the final review to improve usability and consistency.
+- Verified that all implemented features matched the documented system requirements and MVP scope.
+- Checked that screenshots accurately represented the latest version of the prototype.
+- Performed final consistency checks across the prototype, documentation, and GitHub repository before submission.
 
 ## Action Before Final Presentation
 
-- Perform one final prototype demonstration test.
+- Perform one final end-to-end demonstration of the prototype.
+- Verify QR code scanning, GPS verification, Firebase attendance recording, and automatic absent marking.
 - Review pitch outline and assign speaking sections.
 - Ensure all team members understand the demo workflow.
 - Submit final documentation, prototype, and presentation materials.
