@@ -13,13 +13,13 @@ Recommended duration: 5-7 minutes.
 
 ## 2. User Scenario
 
-In Room 3-216, a student opens AttendQR on their phone, scans the lecturer's live dynamic QR code, and gets verified as present in under 3 seconds.
+In Room 3-216, a lecturer starts an attendance session and generates a QR code for the class. A student also opens AttendQR, registers or logs in, scans the QR code, completes GPS verification, and receives an attendance confirmation. The attendance record is stored in Firebase and can be viewed later by both the student and lecturer.
 
 ## 3. Prototype Walkthrough
 
 | Step | Screen / Feature | What to Demonstrate | Requirement ID |
 |---|---|---|---|
-| 1 | Landing Page | Introduce AttendQR and click Try the Demo to open the live prototype. | FR-01 |
+| 1 | Landing Page | Introduce AttendQR, explain the problem, target users and click Try the Demo to open the live prototype. | FR-01 |
 | 2 | User Registration & Login | Demonstrate student account registration and login. | FR-02 |
 | 3 | QR Code Check-in & GPS Verification | Scan the QR code, verify GPS location, and display the attendance confirmation message. | FR-03, FR-10, FR-11 |
 | 4 | Attendance History | Display the student's attendance records and attendance percentage. | FR-05 |
@@ -34,9 +34,16 @@ In Room 3-216, a student opens AttendQR on their phone, scans the lecturer's liv
 ## 4. Evidence and Validation
 
 - Tested with 7 participants (5 students, 2 lecturers) with a 100% task completion rate.
-- Fixed camera permission prompts and mobile button scaling based on user feedback.
+- Verified attendance recording using Firebase Authentication and Firestore.
 - Evidence collected via testing logs and spreadsheet records (⁠user-testing-evidence.png⁠).
-- 
+- User feedback resulted in several improvements, including:
+  - Attendance detail popup
+  - Improved lecturer dashboard
+  - Landing page connected to the live prototype
+  - Automatic absent marking
+  - Improved GPS validation messages
+  - Improved dashboard layout
+
 ## 5. Closing
 
-AttendQR offers a browser-based, instant attendance solution for modern classrooms. Next steps include university LMS integration and automated class alerts.
+AttendQR demonstrates how QR code scanning combined with GPS verification can improve attendance accuracy, reduce manual administrative work, and discourage proxy attendance. The prototype successfully validates the core MVP and provides a strong foundation for future enhancements such as report export, notifications, advanced analytics, and integration with university systems.
