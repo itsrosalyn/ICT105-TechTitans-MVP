@@ -723,7 +723,7 @@ Tech Titans
   - [/docs/mvp-feature-list.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/mvp-feature-list.md)
   - [/docs/feature-implementation-status.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/1769314393734b58594f2e7cd2051817b785b701/docs/feature-implementation-status.md)
   - [/docs/final-prototype-report.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2b0d542f6ff3120ae170c808295e24b6ec5674ae/docs/final-prototype-report.md)
-  - [/docs/final-demo-script.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-demo-script.md)
+  - [/docs/final-demo-script.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2f49ead05d84cafaaaee62908806fd25475ab09d/docs/final-demo-script.md)
   - [/docs/final-reflection.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-reflection.md)
   - [/docs/final-submission-checklist.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-submission-checklist.md)
   - [/screenshots/final-prototype-screenshots/](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/9fddca413c1635dc70440fd7d89c4cfb6c2db104/screenshots/final-prototype-screenshots)
