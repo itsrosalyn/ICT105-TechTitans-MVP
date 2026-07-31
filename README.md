@@ -495,10 +495,10 @@ Traditional attendance methods such as manual roll calls and paper attendance sh
 - MVP feature list: [/docs/mvp-feature-list.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/mvp-feature-list.md)
 - Feature implementation status: [/docs/feature-implementation-status.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/1769314393734b58594f2e7cd2051817b785b701/docs/feature-implementation-status.md)
 - Final prototype report: [/docs/final-prototype-report.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2b0d542f6ff3120ae170c808295e24b6ec5674ae/docs/final-prototype-report.md)
-- Final demo script: [/docs/final-demo-script.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-demo-script.md)
+- Final demo script: [/docs/final-demo-script.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/2f49ead05d84cafaaaee62908806fd25475ab09d/docs/final-demo-script.md)
 - Final reflection: [/docs/final-reflection.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-reflection.md)
 - Final submission checklist: [/docs/final-submission-checklist.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/0864193cc5b284bbb6f2f93d04be2df4aefa2e71/docs/final-submission-checklist.md)
-- Weekly logbook: [/docs/weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/6faeb921f412673089d17fb026d3e6cea001b213/docs/weekly-logbook.md)
+- Weekly logbook: [/docs/weekly-logbook.md](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/94a9850b86f2de172ef6f080b37bac80f3628357/docs/weekly-logbook.md)
 
 ## Screenshots
 
