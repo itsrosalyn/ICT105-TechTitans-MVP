@@ -125,9 +125,9 @@ A responsive landing page introduces the project and provides access to the live
 | FR-11          | Confirmation message                                               | US-03         | [final-confirmation-page.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/5bb54776f692f3ad0aae13b533428b615031ead3/screenshots/final-prototype-screenshots/final-confirmation-page.png)                    | ✅ Complete |
 | FR-12          | Dashboard, summary, or simple analytics view                       | US-06         | [final-lecturerdashboard.png](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/5bb54776f692f3ad0aae13b533428b615031ead3/screenshots/final-prototype-screenshots/final-lecturerdashboard.png)                        | ✅ Complete |
 | FR-13          | Consistent user interface                                          | All           | [final-prototype-screenshots](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/tree/5bb54776f692f3ad0aae13b533428b615031ead3/screenshots/final-prototype-screenshots)                              | ✅ Complete |
-| FR-14          | Responsive design                                                  | All           | [final-prototype-link](https://attend-qr-1.netlify.app)| ✅ Complete |
+| FR-14          | Responsive design                                                  | All           | [final-prototype-link](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/34eb7b7f8d7c64f2a0995411bd5c8b4b00836da2/prototype/final-prototype-link.md)| ✅ Complete |
 | FR-15          | Privacy notice                                                     | All           | [final-landing-page-link](https://attendqr-landingpage.netlify.app/)| ✅ Complete |
-| FR-16          | Traceability to Lab 04 requirements                                | All           | [prototype-traceability](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/5bb54776f692f3ad0aae13b533428b615031ead3/docs/system-requirements.md)| ✅ Complete |
+| FR-16          | Traceability to Lab 04 requirements                                | All           | [prototype-traceability](https://github.com/itsrosalyn/ICT105-TechTitans-MVP/blob/34eb7b7f8d7c64f2a0995411bd5c8b4b00836da2/docs/requirement-traceability-matrix.md)| ✅ Complete |
 
 
 ---
