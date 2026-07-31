@@ -20,12 +20,11 @@ In Room 3-216, a student opens AttendQR on their phone, scans the lecturer's liv
 | Step | Screen/Feature | What to Demonstrate | Requirement ID |
 |---|---|---|---|
 | 1 | Homepage | Show value proposition and click "Try the Demo" | FR-01 |
-| 2 | QR Scanner | Demonstrate student login and live QR check-in | FR-03 |
-| 3 | Record list | View real-time personal attendance history | FR-05 |
-| 4 | Search/filter | Search and filter past check-ins by date/course | FR-06 |
-| 5 | Detail view | Inspect check-in timestamp and GPS verification status | FR-07 |
-| 6 | Admin/status | Showcase lecturer view and manual status override | FR-08, FR-09 |
-| 7 | Dashboard/metrics | Present live class attendance rates and summarymetrics | FR-11 |
+| 2 | Record list | View real-time personal attendance history | FR-05 |
+| 3 | Search/filter | Search and filter past check-ins by date/course | FR-06 |
+| 4 | Detail view | Inspect check-in timestamp and GPS verification status | FR-07 |
+| 5 | Admin/status | Showcase lecturer view and manual status override | FR-08, FR-09 |
+| 6 | Dashboard/metrics | Present live class attendance rates and summarymetrics | FR-11 |
 
 ## 4. Evidence and Validation
 
