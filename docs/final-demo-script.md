@@ -17,14 +17,19 @@ In Room 3-216, a student opens AttendQR on their phone, scans the lecturer's liv
 
 ## 3. Prototype Walkthrough
 
-| Step | Screen/Feature | What to Demonstrate | Requirement ID |
+| Step | Screen / Feature | What to Demonstrate | Requirement ID |
 |---|---|---|---|
-| 1 | Homepage | Show value proposition and click "Try the Demo" | FR-01 |
-| 2 | Record list | View real-time personal attendance history | FR-05 |
-| 3 | Search/filter | Search and filter past check-ins by date/course | FR-06 |
-| 4 | Detail view | Inspect check-in timestamp and GPS verification status | FR-07 |
-| 5 | Admin/status | Showcase lecturer view and manual status override | FR-08, FR-09 |
-| 6 | Dashboard/metrics | Present live class attendance rates and summarymetrics | FR-11 |
+| 1 | Landing Page | Introduce AttendQR and click Try the Demo to open the live prototype. | FR-01 |
+| 2 | User Registration & Login | Demonstrate student account registration and login. | FR-02 |
+| 3 | QR Code Check-in & GPS Verification | Scan the QR code, verify GPS location, and display the attendance confirmation message. | FR-03, FR-10, FR-11 |
+| 4 | Attendance History | Display the student's attendance records and attendance percentage. | FR-05 |
+| 5 | Search & Filter | Demonstrate searching or filtering attendance records by course or semester. | FR-06 |
+| 6 | Attendance Details | Open the attendance details popup to show the course, session, date, time, GPS verification status, and attendance status. | FR-07 |
+| 7 | Lecturer Functions | Generate a QR code, monitor attendance records, attendance percentages, and automatic absent marking. | FR-08, FR-09 |
+| 8 | Dashboard & Metrics | Display attendance summaries, present and absent statistics, and attendance percentages. | FR-12 |
+| 9 | Requirement Traceability | Briefly explain how the implemented features satisfy the documented system requirements and MVP features. | FR-16 |
+
+---
 
 ## 4. Evidence and Validation
 
